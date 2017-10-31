@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="编者按: 本文由著名风险投资机构GRP Partners的合伙人Mark__Suster撰写，中文版由天地会珠海分舵进行编译。文中作者根据自己深厚的风投经验，给大家阐述了在一轮融资过程中风投和创始人都需要注意的一些陷阱…最近几年我写了大量的文章来描述“可转换债券”对初创企业带来的消极影响，大家可以到这里，这里和这里看看。事实上早在2010年外界宣称“可转换债券”大获全胜的那时候开始，我就一直提醒">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创始人和VC疯狂撕逼，究竟所为何事？">
+<meta property="og:url" content="http://yoursite.com/2015/06/07/投前估值vs投后估值/index.html">
+<meta property="og:site_name" content="科技向前冲">
+<meta property="og:description" content="编者按: 本文由著名风险投资机构GRP Partners的合伙人Mark__Suster撰写，中文版由天地会珠海分舵进行编译。文中作者根据自己深厚的风投经验，给大家阐述了在一轮融资过程中风投和创始人都需要注意的一些陷阱…最近几年我写了大量的文章来描述“可转换债券”对初创企业带来的消极影响，大家可以到这里，这里和这里看看。事实上早在2010年外界宣称“可转换债券”大获全胜的那时候开始，我就一直提醒">
+<meta property="og:updated_time" content="2017-07-17T04:12:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="创始人和VC疯狂撕逼，究竟所为何事？">
+<meta name="twitter:description" content="编者按: 本文由著名风险投资机构GRP Partners的合伙人Mark__Suster撰写，中文版由天地会珠海分舵进行编译。文中作者根据自己深厚的风投经验，给大家阐述了在一轮融资过程中风投和创始人都需要注意的一些陷阱…最近几年我写了大量的文章来描述“可转换债券”对初创企业带来的消极影响，大家可以到这里，这里和这里看看。事实上早在2010年外界宣称“可转换债券”大获全胜的那时候开始，我就一直提醒">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'kzlathander'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/06/07/投前估值vs投后估值/"/>
+
+
+
+
+
+  <title>创始人和VC疯狂撕逼，究竟所为何事？ | 科技向前冲</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">科技向前冲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-startup">
+          <a href="/categories/创业" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fire"></i> <br />
+            
+            创业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pm">
+          <a href="/categories/产品" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-mobile-phone"></i> <br />
+            
+            产品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-oversea">
+          <a href="/categories/Hacker-News" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            海外
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-innovation">
+          <a href="/categories/创新" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            创新
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/06/07/投前估值vs投后估值/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kzlathander">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技向前冲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">创始人和VC疯狂撕逼，究竟所为何事？</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-06-07T12:15:53+08:00">
+                2015-06-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/创业/" itemprop="url" rel="index">
+                    <span itemprop="name">创业</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/创业/风投/" itemprop="url" rel="index">
+                    <span itemprop="name">风投</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>编者按: <a href="http://www.bothsidesofthetable.com/2015/06/05/what-is-it-like-to-negotiate-a-vc-round/" target="_blank" rel="external">本文</a>由著名风险投资机构GRP Partners的合伙人<em>Mark__Suster</em>撰写，中文版由天地会珠海分舵进行编译。文中作者根据自己深厚的风投经验，给大家阐述了在一轮融资过程中风投和创始人都需要注意的一些陷阱…<br>最近几年我写了大量的文章来描述“可转换债券”对初创企业带来的消极影响，大家可以到<a href="http://www.bothsidesofthetable.com/2014/09/17/bad-notes-on-venture-capital/" target="_blank" rel="external">这里</a>，<a href="http://www.bothsidesofthetable.com/2015/05/30/one-simple-paragraph-every-entrepreneur-should-add-to-their-convertible-notes/" target="_blank" rel="external">这里</a>和<a href="http://www.bothsidesofthetable.com/2015/05/30/one-simple-paragraph-every-entrepreneur-should-add-to-their-convertible-notes/" target="_blank" rel="external">这里</a>看看。事实上早在<a href="http://www.bothsidesofthetable.com/2010/08/30/is-convertible-debt-preferable-to-equity/" target="_blank" rel="external">2010年外界宣称“可转换债券”大获全胜</a>的那时候开始，我就一直提醒大家需要对此保持警惕。</p>
+</blockquote>
+<p>今天，我想跟大家说下的是，一个VC是如何看待你在某一轮融资中的股权定价的，特别是当该轮融资中还牵涉到“可转换债券”的时候。其实当我自己的公司在每次进行融资的时候，我都会提醒自己要警惕可转换债券所可能给我们带来的麻烦。所以我每次都会回想起Brad Feld有关这方面的那一篇优秀的文章《<a href="http://www.feld.com/archives/2015/06/pre-money-vs-post-money-confusion-convertible-notes.html" target="_blank" rel="external">投前估值(pre-money) vs. 投后估值(post-money)转换所带来的问题</a>》，希望大家有时间的话也好好参详下。</p>
+<p>这里我尝试跟大家简要归结下这是怎么一回事。</p>
+<p>&nbsp;</p>
+<h2 id="投前估值-vs-投后估值"><a href="#投前估值-vs-投后估值" class="headerlink" title="投前估值 vs. 投后估值"></a><strong><span style="color: #993300;">投前估值 vs. 投后估值</span></strong></h2><hr>
+<p>在过去，VC通常都是以“投前估值”进行投资的。如果你在公司投前估值(比如800万)的基础上加上你将要融进来的资金(比如200万)，你就会得到你的投后估值了。投前估值(800万) + 融资(200万) = 投后估值(1000万)，也就是说现在投资人将会拥有你的公司的200万/1000万 = 20%。这种方法一直沿用到大概2009年，因为此前的投资基本上都是来自一到两个投资人而已，且此前在初创企业早期的融资中通常还没有“可转换债券”的介入，同时也不像现在的一轮融资活动中动不动还会冒出20多个天使投资和6个种子投资出来。</p>
+<p>所以投资交易中一般只会涉及一个VC或者两个VC, 故当时对一个投资的描述经常使用的说法就是“在20美元的基础上再融资5美元”，事实上指的就是在2000万美元的“投前估值”的基础上再融资500万美元。</p>
+<p>问题来了，正如Brad在他的文章说所讨论的那样: 如果公司此前有发行了可转换债券的情况下，那问题又会变成什么样呢？比如还是沿用前面的例子，你的公司在募资之前如果已经发行了100万美元的可转换债券(最终债券持有人有权选择是否将这些债券直接转换成股票)，如果这样的话，那么就是800万的投前估值加上你100万的债券(今后可能需要兑换成的100万等值股票)，再加上我现在投进来的200万，总共就是1100万的投后估值了，那么我现在就只能拥有该公司18.18%的股权而非20%了，而这不是我当初答应投资你的公司所预期的份额了。</p>
+<p>所以这里前所未有的问题就是“究竟可转换债券是应该算在投前估值呢？还是应该算在投后估值？“， 这就是导致在募资过程中各方争论不休和剑拔弩张的很大一部分根源了。</p>
+<p>如果只把该100万债券算在投前估值当中的话，这样我的200万投资将会获得公司20%的股权，那么就是说你此前的“有效投前估值”其实只有700万美元(若另外的100万美金是债券的话)。</p>
+<p>这里还有另外的一个问题就是，在当今的募资环境中，当有一个投资人牵头投入了200万美金之后，其他的投资人很容易就跟风进行投资，从而很有可能一轮下来的投资就会变成275万美金。那么在这种情况下，新加进来的资金，加上如果把那100万债券算在投后估值的话，我投进来的这200万一下子就只能获得公司17%的股权了(200万/1175万)。</p>
+<p>通过上面的分析，相信大家已经很清楚为什么可转换债券会带来如此多的剑拔弩张和误解了。</p>
+<p>&nbsp;</p>
+<h2 id="风投-vs-创始人"><a href="#风投-vs-创始人" class="headerlink" title="风投 vs. 创始人"></a><span style="color: #993300;"><strong>风投 vs. 创始人</strong></span></h2><hr>
+<p>那么站在一个VC的角度，它对初创企业早期的融资又是如何看待的了？其实说穿了很简单，就以当VC的我自己作为例子，我会这样去看：</p>
+<p><strong>我愿意给你的公司投入多少钱？</strong>这其实主要跟我所在的基金公司的规模大小有关系(比如如果我的基金现在只有1000万美元的话，我是不大可能给你一家公司就投入200万美元的，否则我的公司就不能作多元化的投资了)，也跟我对你公司的风险评估，以及下一点描述的我对你公司的股权拥有百分比的欲望有关系。</p>
+<p><strong>我究竟想拥有你公司的多少股权？</strong>如果我所处的基金是一个投资集中型的基金公司的话(一般只会投20到30个投资组合)， 我很有可能就会希望拥有你公司20%以上的股权，因为我的投资组合不多。相反，如果我是一个发散型的投资基金(比如投50-70个投资组合)的话，我不大会在意是否在你的公司拥有董事会席位，而是更关心多元化的投资，这种情况下我也许就只会打算拥有你公司的5-10%的股权就足够了，更多的投资就交给其他的投资人吧。</p>
+<p><strong>你的期权池有多大？</strong>为什么投资人关心你的期权池呢？举例说明，假如你现在的期权池只占6％，而你又计划将需要通过分配期权的方式吸引和招揽更多的高管进来的话，慢慢你期权池就不够用。你就会尝试在今后扩大你的期权池，这样的话我本来拥有的20%很快就会变成15%，这样我在你融资时候得到的公司股权百分比就远远高于现实中事实能获得的百分比了，因为我的股权很快就会被你将要扩大的期权池给稀释掉了。换一个角度，如果你现在已经有8个高管了，所以我就会认为你将不会再需要太大的期权池，所以如果这个时候你期权池只占8%的话，我还是可以欣然接受的。如果你的企业中你是单独创业，还没有打造出一个团队的话，我就会期望你的期权池是15%左右的大小。</p>
+<p>以上就是一个投资人对你的初创公司所最关心的三个方面了。当然，投资人还会关心一些控制权方面的东西(董事会席位，保护性条款，知识产权归属分配，等等)， 但这些其实都听标准化的，没有太多的歧义在里面。所以我们只需要关心这几个就够了：</p>
+<p><div style="padding-left: 30px;">1. 股权百分比</div></p>
+<p><div style="padding-left: 30px;">2. 我要写多大的支票</div></p>
+<p><div style="padding-left: 30px;">3. 期权池大小(将来被稀释的可能性大小)</div></p>
+<p><div style="padding-left: 30px;"></div><br>&nbsp;</p>
+<h2 id="估值陷阱"><a href="#估值陷阱" class="headerlink" title="估值陷阱"></a><span style="color: #993300;">估值陷阱</span></h2><hr>
+<p>没有经验的风投往往会身陷与“投前估值 vs. 投后估值“这个陷阱当中。这我在几年前其实已经向大家解析清楚了。大概4年前开始，我对我所有投资的估值都是使用”投后估值“的方法。所以我如果要对一家公司投入500万，而我又想拥有20%的股权的话，我就会开出投后估值2500万的情况下进行500万的投资的这个条件(相对更早之前盛行的 – 在2000万投前估值投入500万的情况，不需要去考虑太多可转换债券等所带来的各种烦恼和争执)。该公司的创始人就会决定我的500万换他20%的股权是否是一件值得做的交易。</p>
+<p>在很多情况下，当投资人和创始人几近要敲定这笔交易的时候，此时却发现当中存在着可转换债券问题，或者有一些所谓可以提供增值服务的其他一些投资人在这时想要挤进来进行投资的话，那么投资人和创始人又要重新回到谈判桌上。而这，在某一种程度上，往往就是投资人和创始人的不信任和矛盾的开端了。</p>
+<p>对我自己来说，我是很清楚的。如果你作为创始人，你觉得另外一个投资人可以带来非常丰厚的增值服务的话，没问题！你只要去稀释其他人的股权就好了。如果你想要再融资550万美金？随你！反正我们之前已经定好了我这边是占20%的股权的了(上面提及的投后估值所带给我的保障)，就算你要再去融700万，我这边的股权也是雷打不动，何足惧哉！</p>
+<p>搞笑的是很多创始人在募资的时候往往根本不会考虑太多过度融资所带来的股权稀释的问题。如我之前所说的，如果你在投前估值800万美金的情况下想融资200万，你就会被稀释掉20%的股权，同时还很有可能其他跟风的投资人见到有人投资200万，就会想分一杯羹，随后跟风进行投资，最终你可能就会得到350万美金的投资。这时创始人可能就会想，”欧耶！350万美金当然比200万美金好了！“</p>
+<p>其实这对VC和创始人都是个问题。创始人现在被稀释掉了26%的股权，而他们往往却对这个事情不敏感，还一根筋的认为他的企业越多投资者投钱越好。风投当然也不高兴了，因为本来自己一个人的时候是拿20%的股权的，现在一下子给稀释到剩下17.4%了。</p>
+<p>当我进行投后估值的投资的时候，我会允许创始人决定此后他可以自行决定需要继续进行多少的融资。我发现这些创始人根本不担心过度融资的问题。一旦他们知道自己可以随意进行不限额(在需要的范围内)的融资之后，他们主观情绪上就不会对更大的融资对他自己的股权所带来的稀释有太多的警惕。而对于我自己，因为我提出的是投后估值的条款，所以我则不需要担心那些可转换债券、其他投资者能带给我任何稀释我股权的问题。</p>
+<p>所以最终作为风投的我和作为创始人的你所剩下需要谈判的问题就变成:</p>
+<p><div style="padding-left: 30px;">1. 我投多少钱</div></p>
+<p><div style="padding-left: 30px;">2. 我能获得的投后估值</div></p>
+<p><div style="padding-left: 30px;">3. 你的未分配期权池究竟多大为之合适</div><br>&nbsp;</p>
+<hr>
+<p><em><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></p>
+<p><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></p>
+<p>&nbsp;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/06/06/价值链/" rel="next" title="你非Uber,其实你更应该降低(对，是降低)你的价值链">
+                <i class="fa fa-chevron-left"></i> 你非Uber,其实你更应该降低(对，是降低)你的价值链
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/06/09/贝比鲁斯效应/" rel="prev" title="首次披露的大量风投公司信息揭示了VC界的“贝比·鲁斯”效应“">
+                首次披露的大量风投公司信息揭示了VC界的“贝比·鲁斯”效应“ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="kzlathander" />
+          <p class="site-author-name" itemprop="name">kzlathander</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#投前估值-vs-投后估值"><span class="nav-number">1.</span> <span class="nav-text">投前估值 vs. 投后估值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#风投-vs-创始人"><span class="nav-number">2.</span> <span class="nav-text">风投 vs. 创始人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#估值陷阱"><span class="nav-number">3.</span> <span class="nav-text">估值陷阱</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kzlathander</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

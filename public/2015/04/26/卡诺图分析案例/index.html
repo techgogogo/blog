@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="编者注：本文来自Nir的博客，中文版由天地会珠海分舵编译。文中引入卡诺图模型的方式，通过分析Apple Watch的三种功能类型之余，还向创业者们阐述了应该如何做好一个产品…如果你是苹果所预言的将会购买它的Apple Watch的190万人中的其中一员，那么恐怕这里我要给你预先泼一盘冷水 - 我敢打赌Apple Watch中缺失掉的功能会让你抓狂到爆血管。  但我并不是说这会成为你不去购买的原因">
+<meta property="og:type" content="article">
+<meta property="og:title" content="卡诺图分析为什么Apple Watch有这么严重的缺陷还被疯抢">
+<meta property="og:url" content="http://yoursite.com/2015/04/26/卡诺图分析案例/index.html">
+<meta property="og:site_name" content="科技向前冲">
+<meta property="og:description" content="编者注：本文来自Nir的博客，中文版由天地会珠海分舵编译。文中引入卡诺图模型的方式，通过分析Apple Watch的三种功能类型之余，还向创业者们阐述了应该如何做好一个产品…如果你是苹果所预言的将会购买它的Apple Watch的190万人中的其中一员，那么恐怕这里我要给你预先泼一盘冷水 - 我敢打赌Apple Watch中缺失掉的功能会让你抓狂到爆血管。  但我并不是说这会成为你不去购买的原因">
+<meta property="og:image" content="http://nireyal.wpengine.netdna-cdn.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-10-at-8.21.36-PM.png">
+<meta property="og:image" content="http://nireyal.wpengine.netdna-cdn.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-07-at-8.55.59-AM.png">
+<meta property="og:updated_time" content="2017-07-17T04:30:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="卡诺图分析为什么Apple Watch有这么严重的缺陷还被疯抢">
+<meta name="twitter:description" content="编者注：本文来自Nir的博客，中文版由天地会珠海分舵编译。文中引入卡诺图模型的方式，通过分析Apple Watch的三种功能类型之余，还向创业者们阐述了应该如何做好一个产品…如果你是苹果所预言的将会购买它的Apple Watch的190万人中的其中一员，那么恐怕这里我要给你预先泼一盘冷水 - 我敢打赌Apple Watch中缺失掉的功能会让你抓狂到爆血管。  但我并不是说这会成为你不去购买的原因">
+<meta name="twitter:image" content="http://nireyal.wpengine.netdna-cdn.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-10-at-8.21.36-PM.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'kzlathander'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/04/26/卡诺图分析案例/"/>
+
+
+
+
+
+  <title>卡诺图分析为什么Apple Watch有这么严重的缺陷还被疯抢 | 科技向前冲</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">科技向前冲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-startup">
+          <a href="/categories/创业" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fire"></i> <br />
+            
+            创业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pm">
+          <a href="/categories/产品" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-mobile-phone"></i> <br />
+            
+            产品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-oversea">
+          <a href="/categories/Hacker-News" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            海外
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-innovation">
+          <a href="/categories/创新" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            创新
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/04/26/卡诺图分析案例/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kzlathander">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技向前冲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">卡诺图分析为什么Apple Watch有这么严重的缺陷还被疯抢</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-04-26T09:55:15+08:00">
+                2015-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品/" itemprop="url" rel="index">
+                    <span itemprop="name">产品</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品/创业/" itemprop="url" rel="index">
+                    <span itemprop="name">创业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>编者注：<a href="http://www.nirandfar.com/2015/04/apple-watch-kano-model.html" target="_blank" rel="external">本文</a>来自Nir的博客，中文版由天地会珠海分舵编译。文中引入卡诺图模型的方式，通过分析Apple Watch的三种功能类型之余，还向创业者们阐述了应该如何做好一个产品…<br>如果你是苹果所预言的将会购买它的Apple Watch的190万人中的其中一员，那么恐怕这里我要给你预先泼一盘冷水 - 我敢打赌Apple Watch中缺失掉的功能会让你抓狂到爆血管。</p>
+</blockquote>
+<p>但我并不是说这会成为你不去购买的原因。事实上，我自己也订购了一个。但正是这种自相矛盾的行为恰恰描述了一个公司打造一个产品需要学习的一个重要的课程。</p>
+<p>其实大家心里也应早打了预防针，一般一个产品的第一版本出来都不会好到哪里去的。但是，为什么有些产品尽管存在着一些让人难以容忍的缺陷，还是会有大批的用户愿意购买使用，个中原因你又又认真的推敲过，研究过吗？</p>
+<p>&nbsp;</p>
+<h1 id="引见Noriaki-Kano博士和卡诺图"><a href="#引见Noriaki-Kano博士和卡诺图" class="headerlink" title="引见Noriaki Kano博士和卡诺图"></a>引见Noriaki Kano博士和卡诺图</h1><hr>
+<p>为了说明为什么你可能会对Apple Watch失望，这里我们先认识下东京理工大学教授Noriaki Kano。在1980年，Noriaki Kano教授创造了一个模型来解析客户满意度的理论。</p>
+<p>Kano认为产品都存在一些特别的属性直接关系到用户对该产品的喜欢程度。他发现其中有些方面的属性比其他方面产生更明显的影响。Kano描述了3中产品属性类型 - 令人兴奋型，期望型，基本型。</p>
+<p><img src="http://nireyal.wpengine.netdna-cdn.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-10-at-8.21.36-PM.png" alt="kano"></p>
+<ul>
+<li>一个令人兴奋的功能属性，指的就是产品中的一个令用户很兴奋的却又没有预期到的功能。比如，如果Apple Watch能在每天早上给你煮杯咖啡的话，这将就会是一个非常令人兴奋的出人意外的功能了。</li>
+<li>一个期望型功能属性，指的就是一个用户预期之中的功能了。这种功能越多，用户就越满足。比如耗电量就是Apple Watch中的一个期望型属性。一个手表的电量可以用上一天这是用户预期该产品默认会有的功能，但如果你的电池能持续时间更长，用户就会越开心了，因为用户不需要经常为充电而烦恼了。</li>
+</ul>
+<p>相比令人兴奋型的功能，用户更容易用语言表达出对期望型功能的期望 - “我希望它的耗电量更低” - 相反，对于令人兴奋型的功能需求，用户在真正见到实物之前是不可能将其描述清楚的。这就好比一个笑话中的引人发笑的地方，如果你已经预先知道了这个笑话引人发笑的地方在哪里的话，你就不可能再觉得它能让你笑得肠子都出来了，从而你也不大可能再去从头到尾的去读一篇这个笑话了。</p>
+<ul>
+<li>最后，基本型功能就是产品中那些必须有的“基本”功能了。用户不仅是期望你有这些功能，且你是必须有这个功能。如果Apple Watch打着一个手表的名义，而其实它却是个周星星手上得风筒，或者说它根本就不准的话，那需要个手表的你肯定是不会购买得了。<br>而事实上，我们很多人都把基本功能当成令人兴奋的功能来看待了。请看下面Twitter上一个疯狂转发和收藏的短文：</li>
+</ul>
+<p><img src="http://nireyal.wpengine.netdna-cdn.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-07-at-8.55.59-AM.png" alt="Screen Shot 2015-04-07 at 8.55.59 AM"></p>
+<blockquote>
+<p>大意就是：Apple Watch实在太令人兴奋了。我们之前需要看时间的时候都要往裤裆里掏，把我们的手机给掏出来进行查看。现在我们不需要再在裤裆里乱掏了，我门竟然直接在抬下手就能看到现在几点了。这是在是天才的创举啊！(编者注：你丫的！这班野蛮的Yahoo没见过手表啊？买不起劳力士，来我们深圳华强北嘛，一百块劳力士卡西欧任挑！)<br>废话少说，言归正传。苹果的CEO Tim Cook当然是知道Apple Watch是必须提供时间显示的这个基本功能的了。Cook一直强调说Apple Watch的时间精度去到50毫秒。另外，当电量不足的情况下，Apple Watch将会进入”省电模式“，将会把所有除了时间显示外的其他功能都关闭掉。</p>
+</blockquote>
+<p>很显然，苹果非常清楚时间显示是一个基本型的功能需求。但是，当说到这个基本功能的时候，其实有些功能点是有所缺失的 - 这就是我今天在这里告诉你Apple Watch可能会让你很抓狂的一个问题了。</p>
+<p>### </p>
+<h1 id="小问题？大问题？"><a href="#小问题？大问题？" class="headerlink" title="小问题？大问题？"></a>小问题？大问题？</h1><hr>
+<p>对于所有的手表来说，让用户无时无刻可以看到当前的时间是一个很基本的需求，你只需要低头瞄一眼你的手表就完事了 - 但Apple Watch却不是这么回事。</p>
+<p>为了省电，Apple Watch在认为你没有在使用它的时候会把显示关掉，你低头一看看到的是一片漆黑(下意识的还以为碰到了Windows胆战心惊的蓝屏了)。为了打开它，你需要用足够的动量来挥动你的手腕(试想你在开会的时候在桌子底下做这个动作，别人不是以为你在没专心听讲进行微信“摇一摇”，就是以为你在做一些噁心的事情了)，用苹果的话来说就是，“晃动启动“。</p>
+<p>早期的Apple Watch观察员John Gruber曾经写过一篇描述他使用Apple Watch的体验的文章，说的是当时他正在开会：</p>
+<blockquote>
+<p>“会议时间已经到了3:00钟左右了吧，这时我打算看下手表确定下会议是否该结束了，所以不时的每隔几分钟就低头看下我的Apple Watch，但看到的都是一片漆黑 … 我能做的唯一的事情就是挥动手腕来唤醒时间显示 - 在这种情况下，我需要进行比查看普通手表更大的动作才能看下现在是什么时间。“<br>相信我们大家都有跟一个口若悬河的同事或者朋友进行会议的情况，在时间快到的时候你往往需要检查时间看看是否应该结束当前会议而去参加另外一场需要准时参加的会议了。但是为了看个时间而让你的手甩动的快要痉挛的话，这也太过分了吧，这时你不咀咒它才怪了。</p>
+</blockquote>
+<p>Gruber继续说道：</p>
+<blockquote>
+<p>“… 对于普通的手表来说，也许有些功能也是需要点时间来适应了才能更好的习惯它，而Apple Watch这种做法相比普通手表带来了更多的不便。这对人的习惯是一个挑战：一个普通的手表从不会黑屏，但Apple Watch却不能长期显示时间。“<br>这个看似微不足道的功能缺陷其实是影响非常大的，其他智能手表制造商一看到Apple Watch的这个缺陷，立刻就觉得苹果将会失掉这次机会而让Apple Watch走向败局。最近就有个Pebble Time智能手表横空出世，它使用了一个耗电量低的颜色和电子纸显示屏，所以人家的手表就从不黑屏。</p>
+</blockquote>
+<p>### </p>
+<h1 id="瑕不掩瑜"><a href="#瑕不掩瑜" class="headerlink" title="瑕不掩瑜"></a>瑕不掩瑜</h1><hr>
+<p>当然，这并不是说你将不会去购买Apple Watch。 也许苹果可以将唤醒屏幕的操作做的更容易而让大部分人不会感觉这是个问题。毕竟，就算甩动你的手腕多么的不方便，但总比你要往裤兜里掏来得方便和雅观吧。但是，如果屏幕太容易唤醒的话，就会导致Apple Watch的电量过快消耗殆尽，这就算对一个中庸得用户来说也很难接受。所以，为了让你自己不要过于失望，建议你还是降低你对Apple Watch的预期，总会有一些你在普通便宜的手机上看到的功能，在Apple Watch上是看不到的。</p>
+<p>其实大家应该都还记得，iPhone刚刚出来的时候也有很多问题的。该东东在开始的时候甚至也是不能提供卡诺图钟描述的基本功能的，说白了吧，就是它不能进行正常的通话那个问题！</p>
+<p>随着时间的推移，技术也在快速推进，但是为什么大家都能够对这些貌似致命的产品缺陷进行容忍呢？再次，我们需要搬出上面的卡诺图来让大家更好的去了解究竟用户的心态是怎么样的。</p>
+<p>使用iPhone的人(包括果粉)就算其拥有如此致命缺陷还依然初衷不变的原因是，因为它提供了让人兴奋的功能来弥补了基本型功能的不足。主要指的就是，苹果商店以及它上面几乎无穷无尽的各种出类拔萃的应用，给苹果使用者带来了持续的兴奋高潮，这就算是乔布斯也是始料不及的。</p>
+<p>所以，虽然iPhone时至今日依然不能给你煮咖啡，但它能够做很多其他令你惊喜的口瞪目呆的事情，而这些事情是你在购买它的时候根本没有预料到的(从检测你的心率到星座定位)，最终你就会将那些缺陷抛之脑后了。</p>
+<p>再说回我们的Apple Watch，像当时的iPhone一样，相信苹果也并不会在第一代中去耗资源解决这些基本型的功能问题。最终，更好的电池产品或者耗电更低的屏幕的替代品将会出现，但相信到时你也不会因此而觉得有多兴奋。因为最终的令人兴奋的功能应该是藏在Apple Watch之后的，如iPhone那样的，那些大量的应用。Cook最近就给内部员工发了个email宣布说已经有超过1,000个Apple Watch的应用给提交到商店上面了。</p>
+<p>这里我们不妨猜猜Apple Watch紧跟着会出现哪些令你兴奋不已的应用和其他功能吧。我敢打赌Apple Watch 2代将会配备一个前置摄像头，这样用户就会比掏手机更方便的进行拍照了。同时苹果也会不断的加入一些相关的功能来让用户拍得更开心拍得质量更高。如果读者有什么其他得猜想的话，欢迎你在文章后面提出来，我们大家一起进行猜想。</p>
+<p>我们对技术都会有爱之深/恨之切的情结，所以Apple Watch也不例外。通过应用上卡诺图模型，相信大家就应该知道应该如何去跨越你产品难以避免会发生的一些缺陷 - 去持续的用新的令人兴奋的产品/更新来让你的用户惊呼尖叫吧！</p>
+<hr>
+<p>&nbsp;</p>
+<p><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</p>
+<p><strong>版权</strong>:本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 若非授权，转发时切勿删除联系信息，否则追究相应责任。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/04/23/独角兽于估值泡沫/" rel="next" title="独角兽有泡沫？Absolutely！但绝非估值泡沫">
+                <i class="fa fa-chevron-left"></i> 独角兽有泡沫？Absolutely！但绝非估值泡沫
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/04/28/你不是拿破仑/" rel="prev" title="产品CEO? 别傻了，你不是拿破仑">
+                产品CEO? 别傻了，你不是拿破仑 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="kzlathander" />
+          <p class="site-author-name" itemprop="name">kzlathander</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引见Noriaki-Kano博士和卡诺图"><span class="nav-number">1.</span> <span class="nav-text">引见Noriaki Kano博士和卡诺图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小问题？大问题？"><span class="nav-number">2.</span> <span class="nav-text">小问题？大问题？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#瑕不掩瑜"><span class="nav-number">3.</span> <span class="nav-text">瑕不掩瑜</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kzlathander</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Marc Andreessen曾抛出著名的言论说：“软件正在吞噬着整个世界”，这句话如今在IT界可谓是无人不知，无人不晓。同样是做风投的同行John Vrionis更进一步的断言说：“开源软件正在吞噬着整个世界”。那么何出此言？John是在大放阙词呢？还是有理有据呢？我们的风投公司在过去10年里曾大量的对开源软件(OSS)企业进行投资。最近我们也看到了越来越多的创业者们就他们的开源项目游说投资">
+<meta property="og:type" content="article">
+<meta property="og:title" content="究竟是谁在吞噬着这个世界">
+<meta property="og:url" content="http://yoursite.com/2015/12/13/its-actually-open-source-software-thats-eating-the-world-1/index.html">
+<meta property="og:site_name" content="科技向前冲">
+<meta property="og:description" content="Marc Andreessen曾抛出著名的言论说：“软件正在吞噬着整个世界”，这句话如今在IT界可谓是无人不知，无人不晓。同样是做风投的同行John Vrionis更进一步的断言说：“开源软件正在吞噬着整个世界”。那么何出此言？John是在大放阙词呢？还是有理有据呢？我们的风投公司在过去10年里曾大量的对开源软件(OSS)企业进行投资。最近我们也看到了越来越多的创业者们就他们的开源项目游说投资">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/264714-b52db6c69629bbe3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/264714-9fe3683f76007b9a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/264714-4172e95850f44d5c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-07-16T15:35:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="究竟是谁在吞噬着这个世界">
+<meta name="twitter:description" content="Marc Andreessen曾抛出著名的言论说：“软件正在吞噬着整个世界”，这句话如今在IT界可谓是无人不知，无人不晓。同样是做风投的同行John Vrionis更进一步的断言说：“开源软件正在吞噬着整个世界”。那么何出此言？John是在大放阙词呢？还是有理有据呢？我们的风投公司在过去10年里曾大量的对开源软件(OSS)企业进行投资。最近我们也看到了越来越多的创业者们就他们的开源项目游说投资">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/264714-b52db6c69629bbe3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'kzlathander'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/12/13/its-actually-open-source-software-thats-eating-the-world-1/"/>
+
+
+
+
+
+  <title>究竟是谁在吞噬着这个世界 | 科技向前冲</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">科技向前冲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-startup">
+          <a href="/categories/创业" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fire"></i> <br />
+            
+            创业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pm">
+          <a href="/categories/产品" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-mobile-phone"></i> <br />
+            
+            产品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-oversea">
+          <a href="/categories/Hacker-News" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            海外
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-innovation">
+          <a href="/categories/创新" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            创新
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/12/13/its-actually-open-source-software-thats-eating-the-world-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kzlathander">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技向前冲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">究竟是谁在吞噬着这个世界</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-13T21:48:23+08:00">
+                2015-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品/" itemprop="url" rel="index">
+                    <span itemprop="name">产品</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品/创业/" itemprop="url" rel="index">
+                    <span itemprop="name">创业</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品/创业/风投/" itemprop="url" rel="index">
+                    <span itemprop="name">风投</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://upload-images.jianshu.io/upload_images/264714-b52db6c69629bbe3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="吞噬"></p>
+<blockquote>
+<p>Marc Andreessen曾抛出著名的言论说：“软件正在吞噬着整个世界”，这句话如今在IT界可谓是无人不知，无人不晓。同样是做风投的同行<em>John Vrionis更进一步的断言说：“开源软件正在吞噬着整个世界”。那么何出此言？John是在大放阙词呢？还是有理有据呢？</em><br>我们的风投公司在过去10年里曾大量的对开源软件(OSS)企业进行投资。最近我们也看到了越来越多的创业者们就他们的开源项目游说投资人们进行投资，从而也可以看出它们之间的竞争将会越来越大。我们最近整理了一批数据来尝试分析下近来人们对开源软件行业的兴趣和投资的加速发展，结果让我们也是大吃一惊。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/264714-9fe3683f76007b9a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Investment-pace"></p>
+<p>很显然，开源软件已经越来越流行。在过去五年里投入到开源软件公司的资金接近往前5年的10倍。且这里还不仅仅是风投和创业者们在对OSS进行追捧，采用开源软件的各行各业不同大小的企业的数量也是创了新高。今年的年度“<a href="www.infoworld.com/article/2914643/open-source-software/rise-and-rise-of-open-source.html">开源软件前景调查</a>”对1,300多家企业进行了调查，结果发现其中78%的公司内部有开展开源软件项目；64%的调查对象宣称他们的组织有参加公开的开源项目，比2014年增加了50个百分比。这个增长速度引发了一个问题，那就是，“为什么呢？”。</p>
+<h3 id="历史回眸"><a href="#历史回眸" class="headerlink" title="历史回眸"></a><strong><span style="color: #993300;">历史回眸</span></strong></h3><p>在过去的25年多里，几乎所有企业级软件都是以“自上往下”的方式进行售卖的。费用高昂的销售代表们穿着体面的衣服飞到世界各地，和各大目标客户公司的高层觥筹交错，向他们兜售着我们的专用软件。如果销售代表获得了成功，这些目标公司上层的CIO等就会开始往他们的组织下面推行这些软件。</p>
+<p>10年前，一批创新公司开始冒起来，它们有着颠覆性的产品和与它们的产品相匹配的颠覆性的销售模式。比如SolarWinds，AppDynamics，Splunk ,和New Relic，它们开始提供“共享软件”。用户可以自由的从网站上下载安装包进行安装，几乎可以立刻为公司的高层和IT员工们带来价值。这些企业有着显著的不同，它们不再需要在产品被采用之前就付高昂的费用给那些销售代表。共享软件允许目标公司自由的在公司内部尝试该软件，等觉得确实应该采用的时候才开始付款购买以获得该软件的全部功能。这比起之前的专有的，需要大量的销售代表进行布道的销售方式来得更高效(且更便宜)。开源软件则是在这个方向上更进一步的革命。</p>
+<h3 id="充满破坏力量的生力军"><a href="#充满破坏力量的生力军" class="headerlink" title="充满破坏力量的生力军"></a><strong><span style="color: #993300;">充满破坏力量的生力军</span></strong></h3><p>“开发人员，开发人员，开发人员…“， 还记得<a href="https://www.youtube.com/watch?v=Vhh_GeBPOhs" target="_blank" rel="external">史蒂夫·鲍尔默那次在舞台上竭斯底里的呐喊</a>吗？他当时是对的，但放在今天这种情况下的话，显得更加的无比正确。过去二十年里，一个企业组织里面决定是否购买一个软件的力量已经发生了彻底的转变。</p>
+<p>下图所表示的转变是我在很多企业家大会上都会一再强调的。它描述了企业界的IT部门是如何的发生变化，并阐述了那些顶尖的创业企业是如何通过产品策略的转变和销售计划的改进来迎接这种变化的。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/264714-4172e95850f44d5c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="open-source-software"></p>
+<p>尽管这些企业的CIO和IT部门的副总们依然认为公司采用哪些软件的决定权在他们的手上，但事实上，这些部门下面的开发人员才是开启这个王国的钥匙。</p>
+<p>无论是哪种类型的组织，它们都有着强烈的压力去让软件的开发变得更好，更快，且更便宜。大家要求开发人员以闪电般的速度进行开发，要求开发出来的产品可以最大限度的进行扩展。当IT部门的开发人员在寻求新挑战的解决方案和从同行中寻求建议的时候，开源软件就会被引入到整个IT组织环境上来。在副总和其他高层们还没有回过神的时候，这些软件很快就会在整个组织上铺展开来。这，就让开源软件变成最好的商业模式。</p>
+<h3 id="顶尖的创业公司向新信徒卖圣经"><a href="#顶尖的创业公司向新信徒卖圣经" class="headerlink" title="顶尖的创业公司向新信徒卖圣经"></a><strong><span style="color: #993300;">顶尖的创业公司向新信徒卖圣经</span></strong></h3><p>为一个新的信仰进行布道是一项非常艰辛的任务，更重要的是期间需要投入的费用是非常高昂的。销售专用软件的情况与此非常的类似。相反，往新信教的基督徒们销售圣经却是一件非常容易的事情。OSS与这种情况非常的相似。</p>
+<p>销售人员可以在客户对试用的软件已经相当舒适且信任的时候才进行联系，且他们往往只需要通过电话和邮件和客户进行交互就足够了。这对于生意的长远发展有着积极的意义，因为其大幅度的提升了运营的效率，且在该销售模式中手握更多的筹码。</p>
+<h3 id="开源的力量"><a href="#开源的力量" class="headerlink" title="开源的力量"></a><strong><span style="color: #993300;">开源的力量</span></strong></h3><p>由上可见，OSS不但得益于开发人员在IT部门拥有更多的决定权的这种风潮的改变，它还有着更高效的营销效率。此外，OSS还有很多其他得天独厚的优势。比如，OSS可以以几乎零费用的投入来获得产品/试产匹配度。什么意思呢？如我以前有说过的，只有那些处于痛苦之中的人们才会从那些能解决他们痛点的创业企业进行购买。</p>
+<p>创业公司的创始人在早期首先需要解决的一个问题，就是要对市场进行细分，找出那个地方才是他们需要抢滩登陆的位置。很多创业公司都因为没有能够找到这个着陆点而一败涂地。一个开发专有软件的企业需要不停的猜测才能找到这样的一个细分市场。创始人们必须要猜测哪部分人群是它们的产品的优质用户，他们需要耗费大量的精力出去跟不同的人进行访谈，找出究竟有哪些人是备受这些痛点的折磨，以致愿意冒险从一个名不见经传的创业公司进行产品的购买。这些企业有时能够成功的找到这些用户，但更多的时候，它们却会是铩羽而归。</p>
+<p>OSS的客户发现流程是完全颠倒了过来。开源软件是放在外面任人使用的，一旦有人对该软件感兴趣了，开发该软件的企业就能够立刻获得反馈信号。创始人从这些真实的反馈数据中获益，让他们可以正确的调整工程师的关注点和调配市场营销的资源。这是非常有用且重要的。数据，一些非盲目臆测而来的数据，去让一个公司对本来就有限的资源进行最优的调度。</p>
+<p>开源软件同时也是对一种开发者/用户文化的适配，现代的开发者们并不希望自己的软件需要通过穿着华丽的销售代表来卖到用户的手上。且现在的用户也更倾向于在购买之前先进行试用，他们需要有更多的弹性和速度，他们希望看到其他购买者对该软件的评价。因为任何人都可以对开源软件进行使用和评价，所以它们相对专用软件会来得更加富有弹性。且随着覆盖面广的活跃社区围绕着流行的开源项目建立起来，软件的信用额度就立刻能够体现出来。相比控制在一个单一实体组织手上的专用软件，开源软件的代码质量和代码稳定性的提升速度都来得更快。</p>
+<h3 id="值得风投青睐吗？"><a href="#值得风投青睐吗？" class="headerlink" title="值得风投青睐吗？"></a><strong><span style="color: #993300;">值得风投青睐吗？</span></strong></h3><p>很多风投公司认为投资OSS企业将不会带来巨额的利润，因为他们觉得OSS这种模式会让这些公司的变现能力变得很蹩脚。试想，为什么别人会为一款免费的开源软件付款呢？同时他们也指出了开源项目公司鲜见有进行IPO的情况作为佐证。</p>
+<p>这里有一个重要的事情我们需要清楚的：不是所有的OSS公司都是生来平等的。任何一门好的生意最终都需要展示出它们的经营杠杆。这在公司的收益增长快于投入成本的时候就会体现出来。那些只是提供OSS项目支持服务的企业是没有经营杠杆的。它们的服务的增加和新人手的增加比例呈1:1的关系。它们做的更多的是“人力生意”，有着很薄的毛利和运营利润–以及相应的估值。</p>
+<p>那些可以成为IT产业支柱的OSS企业，将会是那些有运作着一个在销售和市场上都相当成功的项目的企业，这个企业能够有效的分配资源，且这个企业还需要有一个可以提供专用增强的产品或者商业战略。它们会发现客户是非常乐意为那些企业级的功能而掏钱的，这些功能也许是附带有支持服务的安全方面的，管理方面，或者集成方面的增强。同时这些企业也会意识到将这些方面的功能专有化，并不会弱化社区里面对改项目的支持，比如不会弱化社区里面对该项目的性能的支持。</p>
+<h3 id="拭目以待"><a href="#拭目以待" class="headerlink" title="**拭目以待"></a>**<span style="color: #993300;">拭目以待</span></h3><p>**</p>
+<p>我们很快将会看到一批成功的OSS公司进行IPO。企业内部对于采购软件的风向已经发生了改变，开发人员明显手握更多的决定权。世界级的企业家们想到了该如何才能最大限度的发挥一个OSS公司的优势，包括找到产品/市场匹配，运用好社区的贡献，以及打造出一个更加高效的销售和市场的增长引擎。</p>
+<p>这里我并不是说上表所描述的那31家在过去5年筹集了共40亿美元资金的企业都将会获得巨大的成功。事实上它们之间的一些企业至今还没有找到一个制胜的诀窍。但是当中有一部分企业是相当独特的，相当具有破坏力的，且是为了长远的目标而打造的，它们终将会成为下一代企业级软件的支柱。大家且拭目以待吧！</p>
+<p>&nbsp;</p>
+<blockquote>
+<p><em>注：更多文章请关注公众号:techgogogo或个人博客<a href="http://techgogogo.com/" target="_blank" rel="external">http://techgogogo.com</a>。当然，也非常欢迎您直接微信(zhubaitian1)勾搭。本文由天地会珠海分舵编译自<a href="http://venturebeat.com/2015/12/06/its-actually-open-source-software-thats-eating-the-world/" target="_blank" rel="external">VentureBeat</a>。转载请自觉，是否投诉维权看心情。</em><br>&nbsp;</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/05/the-new-atomic-age-we-need/" rel="next" title="彼得·蒂尔：新核能市场将成风投热土">
+                <i class="fa fa-chevron-left"></i> 彼得·蒂尔：新核能市场将成风投热土
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/14/five-things-you-need-to-know-about-hadoop-v-apache-spark/" rel="prev" title="2分钟读懂大数据框架Hadoop和Spark的异同">
+                2分钟读懂大数据框架Hadoop和Spark的异同 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="kzlathander" />
+          <p class="site-author-name" itemprop="name">kzlathander</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#历史回眸"><span class="nav-number">1.</span> <span class="nav-text">历史回眸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#充满破坏力量的生力军"><span class="nav-number">2.</span> <span class="nav-text">充满破坏力量的生力军</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顶尖的创业公司向新信徒卖圣经"><span class="nav-number">3.</span> <span class="nav-text">顶尖的创业公司向新信徒卖圣经</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开源的力量"><span class="nav-number">4.</span> <span class="nav-text">开源的力量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值得风投青睐吗？"><span class="nav-number">5.</span> <span class="nav-text">值得风投青睐吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拭目以待"><span class="nav-number">6.</span> <span class="nav-text">**拭目以待</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kzlathander</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

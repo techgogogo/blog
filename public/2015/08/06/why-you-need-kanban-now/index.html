@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="编者注：本文英文版来自海外著名的产品博客”MindTheProduct“, 中文版由天地会珠海分舵进行编译。 开门见山的说吧：我喜欢看板。但主要原因并非人们常说的那一套：既不是因为它是一个可视化的管理工具，也不是因为它能帮我们更好的对进度进行把控，更不是因为它所谓的自我管理的优秀特性。我喜欢看板的主要原因其实很简单，就是因为它让我在我的产品打造团队中根本不需要引入额外的项目管理的角色。  我曾经">
+<meta property="og:type" content="article">
+<meta property="og:title" content="传统创业 vs. 精益创业:为什么说项目经理已经名存实亡">
+<meta property="og:url" content="http://yoursite.com/2015/08/06/why-you-need-kanban-now/index.html">
+<meta property="og:site_name" content="科技向前冲">
+<meta property="og:description" content="编者注：本文英文版来自海外著名的产品博客”MindTheProduct“, 中文版由天地会珠海分舵进行编译。 开门见山的说吧：我喜欢看板。但主要原因并非人们常说的那一套：既不是因为它是一个可视化的管理工具，也不是因为它能帮我们更好的对进度进行把控，更不是因为它所谓的自我管理的优秀特性。我喜欢看板的主要原因其实很简单，就是因为它让我在我的产品打造团队中根本不需要引入额外的项目管理的角色。  我曾经">
+<meta property="og:image" content="http://cdn02.mindtheproduct.com/wp-content/uploads/2015/07/40912227_ml-1024x439.jpg">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/264714-99b8429d560bd858.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-07-17T02:50:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="传统创业 vs. 精益创业:为什么说项目经理已经名存实亡">
+<meta name="twitter:description" content="编者注：本文英文版来自海外著名的产品博客”MindTheProduct“, 中文版由天地会珠海分舵进行编译。 开门见山的说吧：我喜欢看板。但主要原因并非人们常说的那一套：既不是因为它是一个可视化的管理工具，也不是因为它能帮我们更好的对进度进行把控，更不是因为它所谓的自我管理的优秀特性。我喜欢看板的主要原因其实很简单，就是因为它让我在我的产品打造团队中根本不需要引入额外的项目管理的角色。  我曾经">
+<meta name="twitter:image" content="http://cdn02.mindtheproduct.com/wp-content/uploads/2015/07/40912227_ml-1024x439.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'kzlathander'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/08/06/why-you-need-kanban-now/"/>
+
+
+
+
+
+  <title>传统创业 vs. 精益创业:为什么说项目经理已经名存实亡 | 科技向前冲</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">科技向前冲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-startup">
+          <a href="/categories/创业" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fire"></i> <br />
+            
+            创业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pm">
+          <a href="/categories/产品" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-mobile-phone"></i> <br />
+            
+            产品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-oversea">
+          <a href="/categories/Hacker-News" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            海外
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-innovation">
+          <a href="/categories/创新" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            创新
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/08/06/why-you-need-kanban-now/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kzlathander">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技向前冲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">传统创业 vs. 精益创业:为什么说项目经理已经名存实亡</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-08-06T17:16:41+08:00">
+                2015-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/创业/" itemprop="url" rel="index">
+                    <span itemprop="name">创业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><span class="pinContainer"><img src="http://cdn02.mindtheproduct.com/wp-content/uploads/2015/07/40912227_ml-1024x439.jpg" alt="traditional versus lean management"></span></p>
+<p><span style="color: #999999;"><em>编者注：本文英文版来自海外著名的产品博客”<a href="http://www.mindtheproduct.com/2015/08/traditional-vs-lean-management-using-kanban/" target="_blank" rel="external">MindTheProduct</a>“, 中文版由天地会珠海分舵进行编译。</em></span></p>
+<p>开门见山的说吧：我喜欢看板。但主要原因并非人们常说的那一套：既不是因为它是一个可视化的管理工具，也不是因为它能帮我们更好的对进度进行把控，更不是因为它所谓的自我管理的优秀特性。我喜欢看板的主要原因其实很简单，就是因为它让我在我的产品打造团队中根本不需要引入额外的项目管理的角色。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/264714-99b8429d560bd858.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="看板"></p>
+<p>我曾经担任过项目经理这个角色，深知项目管理是个很复杂的活。在传统的方式中，客户常会问我拿项目进展的甘特图，而事实上是我们根本搞不清楚它们的里程碑是怎么回事；我经常要处理的是项目管理的风险，而事实上我们更需要关心的应该是客户成功(Customer Success)；在项目管理中我们更看重的管理者认证水平，而在精益管理中我们更需要看重的是管理者为产品和公司所带来的增值。</p>
+<p>就拿我们的 <a href="http://www.resultadosdigitais.com.br/" target="_blank" rel="external">Resultados Digitais</a>这个产品为例，通过高效的运用看板，意味着我们根本不需要项目经理这个角色的存在。但这不意味着我们不相信“项目” – 只是为了将其与传统的项目管理意味中的”项目“区分开来，我们将我们的“项目”称作“史诗(Epics)“。</p>
+<p>那么使用看板究竟能给我们带来哪些好处呢？</p>
+<p>&nbsp;</p>
+<h3 id="项目-vs-流程"><a href="#项目-vs-流程" class="headerlink" title="项目 vs. 流程"></a><span style="color: #993300;">项目 vs. 流程</span></h3><hr>
+<p>相对于项目管理，我更喜欢看板的主要原因之一就是，项目管理关注的是项目，而看板关注的是流程，是程序。</p>
+<p>流程作为精益管理巨大的优势之一，翻译到如看板等工具上面就是，它强调的是打造并维护一个可以允许不同的“包(<em><span style="color: #999999;">Pakcage</span></em>)”以相同的质量进行通过的流程。这里关注的改进之处永远都是在流程方面，所以在这个过程中所获得的经验和教训都必须是可以应用到整个流程上面，而不仅仅是当前正在通过该流程的某个特定的项目，某个特定的“包”上面。通过这种方式，你在持续改进方面所付出的努力将会在任何时候都能体现出效果。</p>
+<p>&nbsp;</p>
+<p>看板流程的下面这三个重大组成部分，至少在我看来，已经宣判了项目经理这个角色的死刑。关于看板和Scrum的更多描述，请查看文章《<a href="http://techgogogo.com/2015/08/scrum_plus_kanban/" target="_blank" rel="external">Scrum vs. 看板，还是Scrum + 看板？</a>》。</p>
+<p>&nbsp;</p>
+<h3 id="完成的定义-Definition-of-Done"><a href="#完成的定义-Definition-of-Done" class="headerlink" title="完成的定义(Definition of Done)"></a><span style="color: #993300;">完成的定义(Definition of Done)</span></h3><hr>
+<p>“完成的定义“是每个阶段的目标。这是”内部客户(<em><span style="color: #999999;">比如，下一个阶段</span></em>)“希望前一阶段所交付的内容。这是你在你的看板流程中为每个阶段进行角色设计的一个方法，且，更重要的是，它保证了通过看板流程的所有“包”的质量。“完成的定义”为在项目的进展过程中大家究竟需要瞄准什么样的目标提供了指导方针。它定义了团队在看板流程的每个阶段中所要努力达成的目标，却又不对完成该目标的方法进行限制。</p>
+<p>&nbsp;</p>
+<p>对于打造一个伟大的产品，发现问题并正确的理解该问题是至关重要的。事实上，没有正确的对问题进行认识往往是一个产品所以失败的主要原因之一。所以，作为一个不断迭代循环和改进的过程，我们在每个项目中进行学习，对每个阶段的“完成的定义”进行改进。通过这种方式，每个“包”通过这个流程时所给我们带来的知识，都能应用到所有紧跟着的“包”上面来，以确保同样的错误不会出现两次 – 这又是另外一个精益管理上非常重要的因数。</p>
+<p>&nbsp;</p>
+<h3 id="流程的持续改进"><a href="#流程的持续改进" class="headerlink" title="流程的持续改进"></a><span style="color: #993300;">流程的持续改进</span></h3><hr>
+<p>说起来天下第一，做起来有心无力！针对流程而非流通这个流程的“包”进行突破，这听上去是非常反直觉的，但是在精益管理上面，这对你的产品又是至关重要的。</p>
+<p>举个例子，在发布一个新功能的过程中，你发现大量的用户生成了大量的需要客服支持的凭证，抱怨说他们不知道如何运用这个新功能。那么因为一次用户教育的失败，这就有可能会影响到用户的参与度(engagement)。此时你的技术支持团队应该已经开始着手帮助这些客户解答他们的疑问，同时你的开发团队应该也在动手提供一个针对性的更新。但正重要的是，精益管理会迫使你去找出究竟哪个环节出了问题，然后迫使你对这个流程进行改进，这样才能避免同样的错误不会在其他地方(项目，功能，增强，“包”，等等)再次发生。比如，在内测环节？易用性测试环节？还是在早期的解决方案设计环节？</p>
+<p>持续改进是确保其他项目不会犯同样的错误的关键，所以请记得将其应用到你的流程上面去。</p>
+<p>&nbsp;</p>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a><span style="color: #993300;">流程</span></h3><hr>
+<p>流程，就是你打造你的产品或完成你的项目的方式。流程的设计很大程度表示了你的团队如何开发你的产品，同时它也反映了你的团队及你的公司所宣扬的价值取向。</p>
+<p>世上并没有一个统一的标准来告诉你该如何定义你的看板流程，但根据你的产品的需要，倒是有着不少来自其他地方的值得借鉴的优秀实践。同时，随着你的生意的成长和你的产品的日催成熟，你的看板流程也会相应的跟着改变。我们为我们的产品打造MVP时候所用到的看板流程，和现在我们在用的看板流程已经相去甚远。回首当年，我们那时对产品的的认知还相当有局限性，且我们当时是一个只有10个人的团队(<span style="color: #999999;"><em>相比我们现在，可以说是个小团队了</em></span>)，随着我们对产品的深入学习和认识，团队成员也随之达到了200多号人，所以我们面临的挑战也是不可同日而语的。</p>
+<p>你的流程进行设计和改进应该源于你此前的学习成果，但也需要正确的反映你的公司的价值取向。确保你对你的生意，你的雇员，以及公司的价值取向有正确的认识。通过以提升和加强你希望在你的团队和产品中看到的价值取向的方式来使用你的流程。这同时还会是一个传播你的企业文化的非常强大的工具。</p>
+<p>以上提到的这些好处只是看板所带来的众多好处的冰山一角。看板的使用以及精益管理的原则，对于产品开发以及团队的持续交付来说，都有着极高的价值。所以我们应该从今天开始尝试在你的产品打造过程中应用上看板流程，并且确保不断的在学习的过程中改进你的看板流程。</p>
+<p>同时欢迎大家将你的看板 - 精益管理的应用心得在评论中提出来，以便同行们进行讨论和学习，让我们一起进步。</p>
+<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<p><span style="color: #999999;"><em>注:本文英文版来自Medium，中文版由天地会珠海分舵进行编译。更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。欢迎转发转载，转载时务请注明公众号信息。</em></span></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/06/scrum-plus-kanban/" rel="next" title="Scrum vs. 看板，还是Scrum + 看板？">
+                <i class="fa fa-chevron-left"></i> Scrum vs. 看板，还是Scrum + 看板？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/08/11/uber-secret-weapon/" rel="prev" title="Uber的成功绝非偶然">
+                Uber的成功绝非偶然 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="kzlathander" />
+          <p class="site-author-name" itemprop="name">kzlathander</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目-vs-流程"><span class="nav-number">1.</span> <span class="nav-text">项目 vs. 流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成的定义-Definition-of-Done"><span class="nav-number">2.</span> <span class="nav-text">完成的定义(Definition of Done)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流程的持续改进"><span class="nav-number">3.</span> <span class="nav-text">流程的持续改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流程"><span class="nav-number">4.</span> <span class="nav-text">流程</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kzlathander</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

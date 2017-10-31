@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="_编者注：本文来自TOMASZ TUNGUZ，中文版由天地会珠海分舵编译。_ 一旦你决定在你的产品中需要引入开源的库，或者说你的产品本身就是个开源的软件产品的时候，你就必然要考虑究竟在众多的开源协议里面，哪一套是最适合自己的。 现在行业中流行的开源协议琳琅满目，但是，最流行通用的就是那三个：GPL，Apache，以及MIT。我一直以来都很好奇的一件事情就是，在众多使用/打造开源软件的初创企业当中，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你的初创企业究竟应该用哪种开源协议？">
+<meta property="og:url" content="http://yoursite.com/2015/06/21/初创企业究竟应该用哪种开源协议/index.html">
+<meta property="og:site_name" content="科技向前冲">
+<meta property="og:description" content="_编者注：本文来自TOMASZ TUNGUZ，中文版由天地会珠海分舵编译。_ 一旦你决定在你的产品中需要引入开源的库，或者说你的产品本身就是个开源的软件产品的时候，你就必然要考虑究竟在众多的开源协议里面，哪一套是最适合自己的。 现在行业中流行的开源协议琳琅满目，但是，最流行通用的就是那三个：GPL，Apache，以及MIT。我一直以来都很好奇的一件事情就是，在众多使用/打造开源软件的初创企业当中，">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/264714-80e769229e1f517a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://tomtunguz.com/images/dollars_raised_by_oss_license.png">
+<meta property="og:image" content="http://tomtunguz.com/images/exits_by_oss_license.png">
+<meta property="og:updated_time" content="2017-07-17T07:32:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="你的初创企业究竟应该用哪种开源协议？">
+<meta name="twitter:description" content="_编者注：本文来自TOMASZ TUNGUZ，中文版由天地会珠海分舵编译。_ 一旦你决定在你的产品中需要引入开源的库，或者说你的产品本身就是个开源的软件产品的时候，你就必然要考虑究竟在众多的开源协议里面，哪一套是最适合自己的。 现在行业中流行的开源协议琳琅满目，但是，最流行通用的就是那三个：GPL，Apache，以及MIT。我一直以来都很好奇的一件事情就是，在众多使用/打造开源软件的初创企业当中，">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/264714-80e769229e1f517a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'kzlathander'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/06/21/初创企业究竟应该用哪种开源协议/"/>
+
+
+
+
+
+  <title>你的初创企业究竟应该用哪种开源协议？ | 科技向前冲</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">科技向前冲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-startup">
+          <a href="/categories/创业" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fire"></i> <br />
+            
+            创业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pm">
+          <a href="/categories/产品" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-mobile-phone"></i> <br />
+            
+            产品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-oversea">
+          <a href="/categories/Hacker-News" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            海外
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-innovation">
+          <a href="/categories/创新" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            创新
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/06/21/初创企业究竟应该用哪种开源协议/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kzlathander">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技向前冲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">你的初创企业究竟应该用哪种开源协议？</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-06-21T09:38:07+08:00">
+                2015-06-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品/" itemprop="url" rel="index">
+                    <span itemprop="name">产品</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品/创业/" itemprop="url" rel="index">
+                    <span itemprop="name">创业</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品/创业/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><span style="color: #999999;">_编者注：本文来自<a href="http://tomtunguz.com/images/dollars_raised_by_oss_license.png" target="_blank" rel="external">TOMASZ TUNGUZ</a>，中文版由天地会珠海分舵编译。_</span></p>
+<p>一旦你决定在你的产品中需要引入开源的库，或者说你的产品本身就是个开源的软件产品的时候，你就必然要考虑究竟在众多的开源协议里面，哪一套是最适合自己的。</p>
+<p>现在行业中流行的开源协议琳琅满目，但是，最流行通用的就是那三个：GPL，Apache，以及MIT。我一直以来都很好奇的一件事情就是，在众多使用/打造开源软件的初创企业当中，他们所选择的开源协议究竟有些什么样的规律，而它们又和吸引投资以及投资人功成身退进行提现(exits：这里译作提现，也可以称为退出。如风投在IPO前选择提现退出，寻找下一家初创企业进行投资)方面有没有什么关系。下面我们看看我们是否能从中找到一些蛛丝马迹出来，以便大家在为自己的开源产品选择相关的协议的时候做参考。</p>
+<p>黑鸭软件(Black Duck Software)是一家从事代码扫描检查以确定这些软件使用的是正确的开源授权协议的这么一家公司，它们每年都会将它们调查研究得出的<a href="https://www.blackducksoftware.com/resources/data/top-20-open-source-licenses" target="_blank" rel="external">应用于开源项目中的前20名开源协议</a>给发布出来。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/264714-80e769229e1f517a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>从上表可以看到，42%的开源项目的开发者们更倾向于使用GPL开源协议系列，而MIT是20%，最后Apache占了16%，这就是前三名的数据。但是，从下图你会看到的是，相比使用其他协议的企业，使用Apache开源协议的企业却与其使用率非常不成比例的获得了最大的投资额度，也就是说投资人更青睐于使用Apache协议的那些初创企业。</p>
+<p><img src="http://tomtunguz.com/images/dollars_raised_by_oss_license.png" alt=""></p>
+<p>大家可以看到，Apache开源协议项目只占所有开源项目的16个百分比，但是却获得了50%的风投资金进来以推进它们项目的商业化进程。其实这个数据很大一部分原因是得益于，推动当今炙手可热的Hadoop进行商业化的数据管理软件与服务提供商Cloudera,Hortonworks以及MapR的推进。</p>
+<p>MIT协议就来得有点雷声大雨点小了。20%的开源项目中的开发人员都选择MIT协议来作为它们的代码开源协议，但是商业化项目中MIT协议的项目却只筹集了1％的风投资金。反观GPL协议的项目占据了42%的项目比例，获得了37%的投资金额。</p>
+<p><a href="http://tomtunguz.com/images/exits_by_oss_license.png" target="_blank" rel="external"><span class="pinContainer"><img src="http://tomtunguz.com/images/exits_by_oss_license.png" alt=""></span></a></p>
+<p>而对于到了提现(exits：如文章开始所述，这里译作提现，也可以称为退出。如风投在IPO后选择退出，寻找下一家初创企业进行投资)阶段，包括通过并购的方式和IPO的方式，采用GPL协议的项目还是具有压倒性的优势，创造了超过60亿美元的流动资金。而Apache协议的项目则创造了20亿美元的的流动资金。在过去的话，这也许可以归咎于GPL协议出来的时间比Apache协议出来的时间早了整整10年。(1989 vs. 2000)。事实上也是如此，迄今<a href="http://tomtunguz.com/open-source-software-environment/" target="_blank" rel="external">最大的三宗开源公司并购案</a>中，Sourcefire (24亿), Novell ($21亿), MySQL (10亿)，毫无例外，采用的都是GPL的协议。这里的MySql和Novel都是在Apaceh协议诞生之前就已经存在的了(所以它们不用GPL的话还能用什么？)。</p>
+<p>其实通过将Hadoop进行商业化的以及其他使用Apache开源协议的商业化初创企业的项目，如Cassandra, 很有可能在未来5年的时间内就会在“提现”上面超越采用GPL协议的那些企业。</p>
+<p>就知识产权方面来说，这里各种协议之间其实存在这根本性的差异，本文就不做详述了，相信大家问下谷哥和度娘就很快可以知悉了。总的来说Apache协议相对来说是比较新颖的，采用该协议的企业从数据上来说，会获得更多的风投投资进来。但，也正是因为它比较新，采用该协议的企业也基本上还没有看到有什么实质性的回报。</p>
+<p>&nbsp;</p>
+<hr>
+<p><span style="color: #999999;"><em>提醒：__更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></span></p>
+<p><span style="color: #999999;"><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></span></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/06/21/FitBit和GoPro数据大PK/" rel="next" title="可穿戴设备领域的两大独角兽FitBit和GoPro数据大PK">
+                <i class="fa fa-chevron-left"></i> 可穿戴设备领域的两大独角兽FitBit和GoPro数据大PK
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/06/24/unicorn_high_value_internet_bubble/" rel="prev" title="再谈独角兽的高估值和互联网泡沫">
+                再谈独角兽的高估值和互联网泡沫 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="kzlathander" />
+          <p class="site-author-name" itemprop="name">kzlathander</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kzlathander</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

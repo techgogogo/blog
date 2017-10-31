@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="docker,saas,sandstorm,云," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#13;自由：别把自己封锁在一个封闭的”楚门的世界“里面,运行任何你想要的应用 – 你甚至可以上传你自己的应用，你的地盘你做主！(天地会珠海分舵注:《楚门的世界》这部电影描述的是一个生活在封闭的世界里面的人群，他们闯不出这个世界，甚至不知道外面世界的存在！大家也许还记得《勇敢的心》中代表苏格兰独立战士的梅尔吉布森在行刑前的那句歇斯底里的呐喊：自由….！！！从中可以看到鲜血和生命换来的自由是多么的">
+<meta name="keywords" content="docker,saas,sandstorm,云">
+<meta property="og:type" content="article">
+<meta property="og:title" content="海外优秀资讯抢先看4:私有应用云平台Sandstorm之自由度">
+<meta property="og:url" content="http://yoursite.com/2015/02/03/海外优秀资讯抢先看4/index.html">
+<meta property="og:site_name" content="科技向前冲">
+<meta property="og:description" content="&amp;#13;自由：别把自己封锁在一个封闭的”楚门的世界“里面,运行任何你想要的应用 – 你甚至可以上传你自己的应用，你的地盘你做主！(天地会珠海分舵注:《楚门的世界》这部电影描述的是一个生活在封闭的世界里面的人群，他们闯不出这个世界，甚至不知道外面世界的存在！大家也许还记得《勇敢的心》中代表苏格兰独立战士的梅尔吉布森在行刑前的那句歇斯底里的呐喊：自由….！！！从中可以看到鲜血和生命换来的自由是多么的">
+<meta property="og:image" content="http://img.blog.csdn.net/20150201224055970?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz/KYJTqcL56vuJuQArNAk7nsLW8hpxia6kjor2IEvib9RAQTEzzEPa4UngfjpT1GKIIKCnb7ib0IViaWEV7VFFiaAkkjg/640?tp=webp">
+<meta property="og:updated_time" content="2017-07-17T07:26:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="海外优秀资讯抢先看4:私有应用云平台Sandstorm之自由度">
+<meta name="twitter:description" content="&amp;#13;自由：别把自己封锁在一个封闭的”楚门的世界“里面,运行任何你想要的应用 – 你甚至可以上传你自己的应用，你的地盘你做主！(天地会珠海分舵注:《楚门的世界》这部电影描述的是一个生活在封闭的世界里面的人群，他们闯不出这个世界，甚至不知道外面世界的存在！大家也许还记得《勇敢的心》中代表苏格兰独立战士的梅尔吉布森在行刑前的那句歇斯底里的呐喊：自由….！！！从中可以看到鲜血和生命换来的自由是多么的">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20150201224055970?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'kzlathander'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/02/03/海外优秀资讯抢先看4/"/>
+
+
+
+
+
+  <title>海外优秀资讯抢先看4:私有应用云平台Sandstorm之自由度 | 科技向前冲</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">科技向前冲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-startup">
+          <a href="/categories/创业" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fire"></i> <br />
+            
+            创业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pm">
+          <a href="/categories/产品" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-mobile-phone"></i> <br />
+            
+            产品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-oversea">
+          <a href="/categories/Hacker-News" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            海外
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-innovation">
+          <a href="/categories/创新" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            创新
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/02/03/海外优秀资讯抢先看4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kzlathander">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技向前冲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">海外优秀资讯抢先看4:私有应用云平台Sandstorm之自由度</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-02-03T13:28:00+08:00">
+                2015-02-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hacker-News/" itemprop="url" rel="index">
+                    <span itemprop="name">Hacker News</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div id="article_content" class="article_content">&#13;<br><br><img src="http://img.blog.csdn.net/20150201224055970?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><br><span style="font-size: 14px;"><strong>自由：别把自己封锁在一个封闭的”楚门的世界“里面,运行任何你想要的应用 – 你甚至可以上传你自己的应用，你的地盘你做主！</strong><span style="color: rgb(255, 0, 0);"><strong>(天地会珠海分舵注:</strong>《楚门的世界》这部电影描述的是一个生活在封闭的世界里面的人群，他们闯不出这个世界，甚至不知道外面世界的存在！大家也许还记得《勇敢的心》中代表苏格兰独立战士的梅尔吉布森在行刑前的那句歇斯底里的呐喊：自由….！！！从中可以看到鲜血和生命换来的自由是多么的珍贵，同理，可见Sandstorm在本文中倡导的自由是多么的值得大家玩味！)</span></span><br><br>By separating app developers from hosts, Sandstorm leaves you in control.<br><br><span style="color: rgb(51, 102, 255);">Sandstorm通过把应用开发人员从主机中隔离开来以让你为所欲为</span><span style="color: rgb(255, 0, 0);">(天地会珠海分舵注：应用是开发人员的，开源的，或者是你自己的，而主机Sandstorm服务器是你的。所以你喜欢怎么玩你的小机机你就怎么玩吧，反正两只手都是长在你身上的，你的地盘你做主)</span><span style="color: rgb(86, 43, 96);">。</span><br><br><strong>Freedom to Choose:</strong> Run any app you want. You are not limited to what’s in the app store. Any developer can build a Sandstorm package, and you can upload any package to your server. You can even run Open Source and Indie apps from developers who don’t have the funding to run their own servers.<br><br><span style="color: rgb(51, 102, 255);"><strong>选择自由</strong>：跑你想跑的应用。你不再局限于应用商店上所有的东西。任何一个开发人员都可以打包一个Sandstorm应用，而对应的作为用户的你也可以上传任何你想要的应用包到你的服务器上面去。你甚至可以运行那些因为没有足够资源去建立以及维护自己的服务器的开发人员提供的开源项目和独立应用。</span><br><br><strong>Freedom to Customize:</strong> When you are running your own copy of an app on Sandstorm, there’s nothing stopping you from customizing it to your needs, because your changes only affect you. Especially with open source apps, if you don’t like the way a feature works, or wish you had a feature that’s not there, you can fix it. Not a developer? Perhaps a friend can help, or at worst you can pay someone for a day of work. Compare this to big centralized web services, where you are at the mercy of the operator, who will probably ignore your requests.<br><br><span style="color: rgb(51, 102, 255);"><strong>定制自由</strong>：当你在Sandstorm上面运行你自己的应用的一份拷贝的时候，我们没有任何理由不让你去定制你自己想要的应用的运行方式，因为你的定制改变影响的仅仅是你自己而已。特别是当你运行的是开源应用的时候，如果你不喜欢它现在的工作方式，或者你希望增加一个现在还不存在的功能，你就可以对他进行相应的修改定制。什么？你不是一个开发人员！？没关系！也许你的朋友可以帮忙进行修改，</span><span style="color: rgb(255, 0, 0);">甚至你可以付钱给天地会珠海分舵进行修改(支付宝xxx)</span><span style="color: rgb(51, 102, 255);">。这些自由度相比在那些大型的中心化的网络服务中，在那里你的定制请求很大程度上取决于那些网络服务操作人员的心情还坏，怜悯你的话就接受你的定制请求，否则的话你的请求就如泥牛入海般大江东去一去不复返也！</span><span style="color: rgb(255, 0, 0);">(天地会珠海分舵注：这让本人想到以前同事兼好友Michael Lu的一句话：“这好比你的小鸡鸡抓在别人的手上，只能听天由命了！“)</span><br><br><strong>Freedom to Integrate:</strong> Big centralized web providers tend to build walled gardens that lock you in. Their apps tend only to integrate with other apps from the same company. This isn’t because they are evil – usually it’s because they are lazy. With Sandstorm, all your apps live under one roof and behind one login system, which makes it much easier for them to talk to each other securely. And if an app allows<em>any</em> other app to integrate with it, then it must allow <em>all</em> apps that speak the same protocol to do so, so developers can’t shut each other out.<br><br><span style="color: rgb(51, 102, 255);"><strong>集成自由</strong>：大型的中心化网络服务提供商倾向于打造一个楚门的世界让你在里面不知天高地厚的游荡。他们提供的应用倾向于仅仅跟生活在同样的楚门世界同样的公司里面的其他应用进行集成而已。但是这也并不是因为这些提供商是邪恶该死的js–而更多可能是因为他们就是个懒骨头。当有了Sandstorm之后，所有你的应用都活动在同一个屋檐下且运行在同一扇登录安全门的背后，由此它就必须允许所有应用使用相同的协议进行通信，这样开发人员就不能各自把对方排除在外而另搞一套。</span><br><br><table cellspacing="0" cellpadding="0" class="  " style="color: rgb(54, 46, 43); font-family: Arial; font-size: 14px; line-height: 26px; border-collapse: collapse;"><tbody><tr><td valign="top" style="border-style: solid; border-color: rgb(0, 0, 0); width: 152px; height: 13px; padding: 4px; background-color: rgb(190, 192, 191);"><br><br><span style="color: rgb(0, 0, 0); font-stretch: normal; font-size: 10px; font-family: 'Heiti SC Light'; letter-spacing: 0px;"><strong>作者</strong></span><span style="color: rgb(0, 0, 0); font-stretch: normal; font-size: 10px; font-family: Helvetica; letter-spacing: 0px;"><strong>/</strong></span><span style="color: rgb(0, 0, 0); font-stretch: normal; font-size: 10px; font-family: 'Heiti SC Light'; letter-spacing: 0px;"><strong>译者</strong></span><br></td><td valign="top" style="border-style: solid; border-color: rgb(0, 0, 0); width: 151px; height: 13px; padding: 4px; background-color: rgb(190, 192, 191);"><br><br><span style="color: rgb(0, 0, 0); font-stretch: normal; font-size: 10px; font-family: 'Heiti SC Light'; letter-spacing: 0px;"><strong>微信公众号</strong></span><br></td><td valign="top" style="border-style: solid; border-color: rgb(0, 0, 0); width: 152px; height: 13px; padding: 4px; background-color: rgb(190, 192, 191);"><br><br><span style="color: rgb(0, 0, 0); font-stretch: normal; font-size: 10px; font-family: Helvetica; letter-spacing: 0px;"><strong>CSDN</strong></span><br></td></tr><tr><td valign="top" style="border-style: solid; border-color: rgb(0, 0, 0); width: 152px; height: 36px; padding: 4px; background-color: rgb(227, 228, 228);"><br><br><span style="color: rgb(0, 0, 0); font-stretch: normal; font-size: 10px; font-family: 'Heiti SC Light'; letter-spacing: 0px;"><strong>天地会珠海分舵</strong></span><br></td><td valign="top" style="border-style: solid; border-color: rgb(0, 0, 0); width: 151px; height: 36px; padding: 4px;"><br><br><span style="color: rgb(0, 0, 0); font-stretch: normal; font-size: 10px; font-family: 'Heiti SC Light'; letter-spacing: 0px;">服务号</span><span style="color: rgb(0, 0, 0); font-stretch: normal; font-size: 10px; font-family: Helvetica; letter-spacing: 0px;">:TechGoGoGo</span><br><br><span style="color: rgb(0, 0, 0); font-stretch: normal; font-size: 10px; font-family: 'Heiti SC Light'; letter-spacing: 0px;">扫描码</span><span style="color: rgb(0, 0, 0); font-stretch: normal; font-size: 10px; font-family: Helvetica; letter-spacing: 0px;">:</span><br><br><img src="http://mmbiz.qpic.cn/mmbiz/KYJTqcL56vuJuQArNAk7nsLW8hpxia6kjor2IEvib9RAQTEzzEPa4UngfjpT1GKIIKCnb7ib0IViaWEV7VFFiaAkkjg/640?tp=webp" alt=""><br><br></td><td valign="top" style="border-style: solid; border-color: rgb(0, 0, 0); width: 152px; height: 36px; padding: 4px;"><br><br><span style="color: rgb(0, 0, 0); font-stretch: normal; font-size: 10px; font-family: Helvetica; letter-spacing: 0px;"><u><a href="http://blog.csdn.net/zhubaitian" target="_blank" rel="external">http://blog.csdn.net/zhubaitian</a></u></span><br></td></tr></tbody></table></div>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/docker/" rel="tag"># docker</a>
+          
+            <a href="/tags/saas/" rel="tag"># saas</a>
+          
+            <a href="/tags/sandstorm/" rel="tag"># sandstorm</a>
+          
+            <a href="/tags/云/" rel="tag"># 云</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/02/03/海外优秀资讯抢先看3/" rel="next" title="海外优秀资讯抢先看3:私有应用云平台Sandstorm之安全性">
+                <i class="fa fa-chevron-left"></i> 海外优秀资讯抢先看3:私有应用云平台Sandstorm之安全性
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/02/03/海外优秀资讯抢先看5/" rel="prev" title="海外优秀资讯抢先看5:私有应用云平台Sandstorm服务对象之个人用户">
+                海外优秀资讯抢先看5:私有应用云平台Sandstorm服务对象之个人用户 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="kzlathander" />
+          <p class="site-author-name" itemprop="name">kzlathander</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kzlathander</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

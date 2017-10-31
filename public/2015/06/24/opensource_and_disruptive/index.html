@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="编者注：本文来自TOMASZ TUNGUZ，中文版由天地会珠海分舵编译。 软件开源运动始于20世纪九十年代末，从那时开始，开源软件就开始肩负起改革软件产业的使命。迄今为止，很多打造基础设施的软件初创企业都在它们的市场战略中，引入了开源软件的思维模式，从而主导了大量的市场。  这些软件公司引入开源软件思维模式作为软件发布战略，被证明是一个破坏性(天地会珠海分舵注：这里的破坏性和破坏性创新所表示的意思">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开源运动的破坏性效应">
+<meta property="og:url" content="http://yoursite.com/2015/06/24/opensource_and_disruptive/index.html">
+<meta property="og:site_name" content="科技向前冲">
+<meta property="og:description" content="编者注：本文来自TOMASZ TUNGUZ，中文版由天地会珠海分舵编译。 软件开源运动始于20世纪九十年代末，从那时开始，开源软件就开始肩负起改革软件产业的使命。迄今为止，很多打造基础设施的软件初创企业都在它们的市场战略中，引入了开源软件的思维模式，从而主导了大量的市场。  这些软件公司引入开源软件思维模式作为软件发布战略，被证明是一个破坏性(天地会珠海分舵注：这里的破坏性和破坏性创新所表示的意思">
+<meta property="og:image" content="http://tomtunguz.com/images/oss_round_count.png">
+<meta property="og:image" content="http://tomtunguz.com/images/oss_most_raised.png">
+<meta property="og:image" content="http://tomtunguz.com/images/oss_top_10_acquisitions.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-0.png">
+<meta property="og:updated_time" content="2017-07-17T03:25:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="开源运动的破坏性效应">
+<meta name="twitter:description" content="编者注：本文来自TOMASZ TUNGUZ，中文版由天地会珠海分舵编译。 软件开源运动始于20世纪九十年代末，从那时开始，开源软件就开始肩负起改革软件产业的使命。迄今为止，很多打造基础设施的软件初创企业都在它们的市场战略中，引入了开源软件的思维模式，从而主导了大量的市场。  这些软件公司引入开源软件思维模式作为软件发布战略，被证明是一个破坏性(天地会珠海分舵注：这里的破坏性和破坏性创新所表示的意思">
+<meta name="twitter:image" content="http://tomtunguz.com/images/oss_round_count.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'kzlathander'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/06/24/opensource_and_disruptive/"/>
+
+
+
+
+
+  <title>开源运动的破坏性效应 | 科技向前冲</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">科技向前冲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-startup">
+          <a href="/categories/创业" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fire"></i> <br />
+            
+            创业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pm">
+          <a href="/categories/产品" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-mobile-phone"></i> <br />
+            
+            产品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-oversea">
+          <a href="/categories/Hacker-News" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            海外
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-innovation">
+          <a href="/categories/创新" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            创新
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/06/24/opensource_and_disruptive/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kzlathander">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技向前冲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">开源运动的破坏性效应</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-06-24T09:12:41+08:00">
+                2015-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/创业/" itemprop="url" rel="index">
+                    <span itemprop="name">创业</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/创业/创新/" itemprop="url" rel="index">
+                    <span itemprop="name">创新</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><span style="color: #999999;"><em>编者注：本文来自<a href="http://tomtunguz.com/open-source-software-environment/" target="_blank" rel="external">TOMASZ TUNGUZ</a>，中文版由天地会珠海分舵编译。</em></span></p>
+<p>软件开源运动始于20世纪九十年代末，从那时开始，开源软件就开始肩负起改革软件产业的使命。迄今为止，很多打造基础设施的软件初创企业都在它们的市场战略中，引入了开源软件的思维模式，从而主导了大量的市场。</p>
+<p><img src="http://tomtunguz.com/images/oss_round_count.png" alt=""></p>
+<p>这些软件公司引入开源软件思维模式作为软件发布战略，被证明是一个破坏性(<em><span style="color: #999999;">天地会珠海分舵注：这里的破坏性和破坏性创新所表示的意思一样</span></em>)的发布战略。它允许潜在用户或者买家可以免费试用甚至使用你的软件，软后进行评估，从而对你的软件的工作原理有透切的认识(因为你的软件是开源的)。开源软件所走的市场策略刚好是开发人员所擅长所熟知的领域 – 代码开源。</p>
+<p>一旦你的开源软件吸引了大批的用户，你的初创企业就会开始从不同的渠道获得收益并开始盈利，这些渠道多种多样不一而足。比如，你可以通过提供服务和支持来进行盈利，你也可以在开源软件的基础上，根据大公司的需要，为它们开发闭源的高级功能来进行盈利。这里一个新鲜滚热辣的新型盈利模式就是<a href="http://techcrunch.com/2014/02/13/please-dont-tell-me-you-want-to-be-the-next-red-hat/" target="_blank" rel="external">SaaS开源模式</a>。</p>
+<p>自开源软件运动诞生伊始，开源项目的融资金额就开始直线飙升。这既有开源软件本身的破坏性特质的原因，也有买家和用户对开源软件的偏爱的原因。这种上升趋势现在看来并没有下滑或者减速的任何苗头，就2014一年，就有37个不同的开源项目(企业)获得了风投的青睐。</p>
+<p><a href="http://tomtunguz.com/images/oss_most_raised.png" target="_blank" rel="external"><span class="pinContainer"><img src="http://tomtunguz.com/images/oss_most_raised.png" alt=""></span></a></p>
+<p>其中一些开源企业获得了超过1亿美元的巨大的融资金额。上图显示了募资金额前十名的企业的情况。可以看到，其中通过将Hadoop(Cloudera, Hortonworks,MapR)进行商业化的文件系统企业占据了3个席位；数据库类型的企业占据了2个席位(MongoDB和Datastax)；其中Mulesoft提供基于云的企业集成服务; Kaltura则提供的是视频租赁服务。从中大家可以看到，开源软件在软件行业的各个领域都扮演了重要的角色。</p>
+<p><a href="http://tomtunguz.com/images/oss_top_10_acquisitions.png" target="_blank" rel="external"><span class="pinContainer"><img src="http://tomtunguz.com/images/oss_top_10_acquisitions.png" alt=""></span></a></p>
+<p>VC所以对这些开源项目和企业如此青睐，主要是源于当企业做大后，VC退出(exits，如并购和IPO等)所带来的巨额的利益所驱动。上图显示了开源企业并购的前10名。Novell和MySQL都砍货了至少9亿美元的市值，而它们分别代表了软件行业的三个不同领域：安全领域，操作系统领域，数据库领域。</p>
+<p><img src="/images/pasted-0.png" alt="upload successful"><br>另外，说到软件开源，有两家已经上市的开源软件企业我们是不得不提的，那就是RedHat和Hortonworks。它们都是市值10亿美元以上的“独角兽“，其中Redhat的市值达到了144亿美元，比Splunnk和ServiceNow都要高，和WorkDay的市值差不多。但是，从表中可以看到，两者的毛利却有着天壤之别。RedHat有着比大部分SaaS企业都高的85%的毛利，而Hortonworks上一年公布的毛利却是负数的，因为，为了占领更多的市场，它们以亏本的低价格来为客户提供专业的服务。随着从事开源软件的企业越来越多，开源的生意将会催生出彻底不同的商业模式，以及由此带来的迥异的盈利情况。</p>
+<p>我可以非常负责任的告诉你，我们很快就会看到越来越多的开源企业的崛起。软件开源运动已经发展了快15年了，给我们带来的机遇却是前所未有的。同时，现在相应的开发人员也在与日俱增。不同领域的软件企业都开始推出软件开源的战略来占领市场，而基础设施和软件的创新步伐也一直在加速。</p>
+<hr>
+<p><span style="color: #999999;"><em>提醒：__更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></span></p>
+<p><span style="color: #999999;"><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></span></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/06/24/unicorn_high_value_internet_bubble/" rel="next" title="再谈独角兽的高估值和互联网泡沫">
+                <i class="fa fa-chevron-left"></i> 再谈独角兽的高估值和互联网泡沫
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/06/26/创始人面对投资人做Pitch十二禁/" rel="prev" title="创始人面对投资人做Pitch十二禁">
+                创始人面对投资人做Pitch十二禁 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="kzlathander" />
+          <p class="site-author-name" itemprop="name">kzlathander</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kzlathander</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

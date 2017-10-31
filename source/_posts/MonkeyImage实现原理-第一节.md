@@ -1,0 +1,17 @@
+title: 《MonkeyRunner原理剖析》第九章－MonkeyImage实现原理 - 第一节 - 关键类作用及关系
+id: 233
+categories:
+  - 技术
+date: 2015-01-25 00:29:47
+tags:
+---
+
+MonkeyRunner框架暴露了几个类的大量的API出去给用户编写脚本时候使用，其中最主要的三个就是: MonkeyDevice目标设备操作类，HierarchyViewer窗口界面对象操作类以及MonkeyImage这个截屏处理类。<!--more-->了解了这3个类以及跟他们相关的关键类的实现原理，基本上可以说MonkeyRunner框架的实现原理就算搞清楚了。因为一个UI自动化测试框架的关键功能无非就是这三样: 操作目标设备，如注射点击事件等；获取控件信息，如获取需要点击的控件的中心坐标等；结果比较。其实这3个类也就是我们往下章节分析的重点。
+
+<span class="s1"> 操作目标设备和获取控件信息的重要性我们很容易理解，但是截屏处理为什么也这么重要呢？这是因为MonkeyRunner没有集成如Junit等单元测试框架，它也并不完全是一个如UiAutomator,Robotium或者Appium等的面向控件的自动化测试框架，所以它的执行结果比较的功能主要就是通过比较截屏和预期结果是否是一致的来判断我们的测试用例是否应该通过的。</span>
+
+<span class="s1"> 所以本章我们先去分析的就是MonkeyImage这个类。在MonkeyRunner框架中，主要用到的库除了自身monkeyrunner这个库之外，还会经常用到chimpchat和ddmlib这两个库，这个我们在上一章已经见识过了。下面我们就先看下MonkeyImage相关类的类图，然后做简要的描述，之后会在本章独立的章节对关键的类进行相应的分析和阐述。</span>
+
+[![MonkeyImage关键类关系图水印](http://techgogogo.com/wp-content/uploads/2015/01/MonkeyImage关键类关系图水印-150x150.jpg)](http://techgogogo.com/wp-content/uploads/2015/01/MonkeyImage关键类关系图水印.jpg)
+
+**<span class="s1"> 图9-1-1 MonkeyImage关键类关系图</span>**

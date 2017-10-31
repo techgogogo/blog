@@ -1,0 +1,113 @@
+title: 最新HTML BroadcastChannel API引荐
+tags:
+  - API
+  - facebook
+  - HTML
+  - 广播
+id: 448
+categories:
+  - Hacker News
+date: 2015-03-07 15:30:00
+---
+
+<div id="article_content" class="article_content">&#13;
+        <div class="markdown_views">
+
+![这里写图片描述](http://img.blog.csdn.net/20150307152721145)
+
+# HTML BroadcastChannel API
+
+* * *
+
+当前浏览器中只有Firefox38唯一能支持BroadcastChannel API(在编写本文的时间点)，而Firefox38官方宣称要到2015年5月份才会发布正式版本。这套新的API将会打开一个新的充满可能性的世界，解决我们已有的从postMessage API所继承过来的众多限制。
+
+BroadcastChannel API作为WHATWG living HTML标准的一部分可以在[这里](https://html.spec.whatwg.org/multipage/comms.html#broadcasting-to-other-browsing-contexts)进行详细信息查看。
+
+# 什么是BroadcastChannel API?
+
+* * *
+
+BroadcastChannel API 允许同一原始域和用户代理下的所有窗口,iFrames等进行交互。也就是说，如果用户打开了同一个网站的的两个标签窗口，如果网站内容发生了变化，那么两个窗口会同时得到更新通知。
+
+还是不明觉厉？就拿Facebook作为例子吧，假如你现在已经打开了Facebook的一个窗口，但是你此时还没有登录，此时你又打开另外一个窗口进行登录，那么你就可以通知其他窗口/标签页去告诉它们一个用户已经登录了并请求它们进行相应的页面更新。
+
+本质上说BroadcastChannel API 允许我们在我们不使用sockets和timers的情况下同样可以打造出一个能够自我感知状态变化的应用，这对于一个发布/订阅形式的系统效果尤佳。
+
+# BroadcastChannel API 实战进行时
+
+## 创建一个新的 BroadcastChannel
+
+* * *
+
+创建一个新的BroadcastChannel API 是一个易如反掌的事情。你需要做的仅仅是把通道名称作为一个参数传给BroadcastChannel的构造函数然后把它的引用保存到一个变量上面而已。
+
+    <span class="hljs-keyword">let</span> cast = <span class="hljs-keyword">new</span> BroadcastChannel(<span class="hljs-string">'mychannel'</span>);`</pre>
+
+    ## 发送一个消息通知
+
+    * * *
+
+    发送一个消息也是一个非常简单的事情，你只需要引用赋有了BroadcastChannel实例的变量(在本示例中就是上面的cast变量)然后调用其postMessage方法就可以了。
+
+    如果你对其他基于发布/订阅的系统很熟悉的话，如果你把postMessage这个成员方法称呼成event emitter也许会更合情合理。
+
+    postMessage方法做的漂亮的地方是你可以用它来发送任何东西。你可以发送一个对象，一个字串，随你便。只要订阅者可以意识到你要发送的是什么事件就行了，好好享受吧。
+
+    <pre class="prettyprint">`myObj = {someKey: <span class="hljs-string">'Some value'</span>, anotherKey: <span class="hljs-string">'Another value'</span>};
+    cast.postMessage(myObj);`</pre>
+
+    不像一些更加小鲜肉级别的发布/订阅系统，“主题“是没有原生的实现支持的。意思就是说你并没有一个通道可以把“主题“广播到所有监听的订阅者手上。
+
+    但是，通过编写一些创造性的代码你还是可以模仿这种实现的，你可以使用对象来把“主题“作为对象的一个键，把消息内容作为另外一个键”data”来进行发送。
+
+    ## 消息监听
+
+    * * *
+
+    “接收者“更通俗的叫法也许应该叫做”订阅者”。一个接收者会对如我们前面为一个特别通道所定义的BroadcastChannel通道引用变量所发射的事件进行消息监听。
+
+    <pre class="prettyprint">`cast.onmessage = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(e)</span> {</span> 
+        console.log(e); <span class="hljs-comment">// This should print out the contents of the object we sent above</span>
+    }`</pre>
+
+    ## 关闭连接
+
+    * * *
+
+    假定你非常在意Javascript的性能且很介意资源消耗情况(特别是在使用手机的情况下)。 幸运的是在BroadcastChannel里面拥有一个内嵌的方法来让你关闭这些连接。
+
+    <pre class="prettyprint">`cast.<span class="hljs-keyword">close</span>(); <span class="hljs-regexp">//</span> Close <span class="hljs-keyword">our</span> connection <span class="hljs-keyword">and</span> let the garbage collection free up the memory that was used
+
+## 浏览器支持
+
+* * *
+
+如前所述，当前只有Firefox版本38会支持BroadcastChannel API。假定其他浏览器将很有可能也会紧紧追随的话，毕竟，这套API是非常有用的。那么对我们编写这方面的普通应用和游戏应用，我们将会如鱼得水(紧密的浏览器支持的出现)
+
+要注意的是，从一个使用者的角度来看的话你(当前)是基本上好不到相关的技术支持的。但，这里有个[浏览器插件](https://gist.github.com/inexorabletash/52f437d1451d12145264)可以让你现在就使用上BroadcastChannel API，然而，毕竟现在还没有浏览器真正实现该功能的支持，我们只有翘首以待了。
+
+原文：[http://ilikekillnerds.com/2015/03/all-about-the-html-broadcastchannel-api/](http://ilikekillnerds.com/2015/03/all-about-the-html-broadcastchannel-api/)
+
+* * *
+
+作者：天地会珠海分舵  
+
+微信公众号：TechGoGoGo  
+
+微博：[http://weibo.com/techgogogo](http://weibo.com/techgogogo)  
+
+CSDN：[http://blog.csdn.net/zhubaitian](http://blog.csdn.net/zhubaitian)
+</div>&#13;
+        <script type="text/javascript"><![CDATA[
+            $(function () {
+                $('pre.prettyprint code').each(function () {
+                    var lines = $(this).text().split('n').length;
+                    var $numbering = $('<ul/>').addClass('pre-numbering').hide();
+                    $(this).addClass('has-numbering').parent().append($numbering);
+                    for (i = 1; i <= lines; i++) {
+                        $numbering.append($('<li/>').text(i));
+                    };
+                    $numbering.fadeIn(1700);
+                });
+            });
+        ]]></script></div>

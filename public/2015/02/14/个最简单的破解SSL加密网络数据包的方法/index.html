@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ssl,wireshark,抓包,破解,黑客," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#13;### # 1. 简介相信能访问到这篇文章的同行基本上都会用过流行的网络抓包工具WireShark，用它来抓取相应的网络数据包来进行问题分析或者其他你懂的之类的事情。一般来说，我们用WireShark来抓取包进行分析是没有多大问题的。但这里有个问题是，如果你碰到的是用SSL/TLS等加密手段加密过的网络数据的时候，往往我们只能束手无策。在过去的话，如果我们拥有的该传输会话的私钥的话我们还">
+<meta name="keywords" content="ssl,wireshark,抓包,破解,黑客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="发现新大陆：一个最简单的破解SSL加密网络数据包的方法">
+<meta property="og:url" content="http://yoursite.com/2015/02/14/个最简单的破解SSL加密网络数据包的方法/index.html">
+<meta property="og:site_name" content="科技向前冲">
+<meta property="og:description" content="&amp;#13;### # 1. 简介相信能访问到这篇文章的同行基本上都会用过流行的网络抓包工具WireShark，用它来抓取相应的网络数据包来进行问题分析或者其他你懂的之类的事情。一般来说，我们用WireShark来抓取包进行分析是没有多大问题的。但这里有个问题是，如果你碰到的是用SSL/TLS等加密手段加密过的网络数据的时候，往往我们只能束手无策。在过去的话，如果我们拥有的该传输会话的私钥的话我们还">
+<meta property="og:image" content="http://img.blog.csdn.net/20150213173433128?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20150213173654857?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20150213180032366?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20150213180224359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20150213180910084?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20150213181118335?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20150213181016650?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20150213181626776?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20150213181850720?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-07-17T07:17:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="发现新大陆：一个最简单的破解SSL加密网络数据包的方法">
+<meta name="twitter:description" content="&amp;#13;### # 1. 简介相信能访问到这篇文章的同行基本上都会用过流行的网络抓包工具WireShark，用它来抓取相应的网络数据包来进行问题分析或者其他你懂的之类的事情。一般来说，我们用WireShark来抓取包进行分析是没有多大问题的。但这里有个问题是，如果你碰到的是用SSL/TLS等加密手段加密过的网络数据的时候，往往我们只能束手无策。在过去的话，如果我们拥有的该传输会话的私钥的话我们还">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20150213173433128?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'kzlathander'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/02/14/个最简单的破解SSL加密网络数据包的方法/"/>
+
+
+
+
+
+  <title>发现新大陆：一个最简单的破解SSL加密网络数据包的方法 | 科技向前冲</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">科技向前冲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-startup">
+          <a href="/categories/创业" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fire"></i> <br />
+            
+            创业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pm">
+          <a href="/categories/产品" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-mobile-phone"></i> <br />
+            
+            产品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-oversea">
+          <a href="/categories/Hacker-News" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            海外
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-innovation">
+          <a href="/categories/创新" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            创新
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/02/14/个最简单的破解SSL加密网络数据包的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kzlathander">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技向前冲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">发现新大陆：一个最简单的破解SSL加密网络数据包的方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-02-14T10:13:00+08:00">
+                2015-02-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hacker-News/" itemprop="url" rel="index">
+                    <span itemprop="name">Hacker News</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div id="article_content" class="article_content">&#13;<br><br>### <img src="http://img.blog.csdn.net/20150213173433128?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><br># 1. 简介<br><br>相信能访问到这篇文章的同行基本上都会用过流行的网络抓包工具WireShark，用它来抓取相应的网络数据包来进行问题分析或者其他你懂的之类的事情。<br><br><img src="http://img.blog.csdn.net/20150213173654857?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><br><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;">一般来说，我们用WireShark来抓取包进行分析是没有多大问题的。但这里有个问题是，如果你碰到的是用SSL/TLS等加密手段加密过的网络数据的时候，往往我们只能束手无策。在过去的话，如果我们拥有的该传输会话的私钥的话我们还是可以将它提供给WireShark来让其对这些加密数据包进行解密的，但这已经是想当年还用RSA进行网络数据加密的年代的事情了。当今大家都已经逐渐拥抱</span><a href="http://en.wikipedia.org/wiki/Forward_secrecy" target="_blank" rel="external">前向加密技术PFS</a><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"> 的时代了，所以该方法就不再适用了。因为前向加密技术的目的就是让每个数据交互都使用的是不同的私钥，所以你像以前RSA时代一样想只用一个私钥就能把整个session会话的网络数据包都破解出来的话是不可能的了。所以这将是一个挺恼火的事情。</span><br><br># 2. Session Key日记记录来救火！<br><br><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;">大家先别火起，这里我来告诉你另外一个简单的方法来解决这个问题！其实Firefox和Chrome浏览器都支持用日记文件的方式记录下用来加密TLS数据包对称会话秘钥的。这样你就可以在WireShark中指定该文件来快速完成你的破解目的了。请继续往下看具体的步骤。</span><br><br># 3. Browsers配置<br><br>首先你需要配置一个环境变量。<br><br>## 3.1 在Windows下的配置：<br><br>怎么去到环境变量配置页面相信不需要我多说了，毕竟国内还是Windows的天下。<br><img src="http://img.blog.csdn.net/20150213180032366?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><br><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;">在上图的位置增加一个新的叫做<span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;">“SSLKEYLOGFILE”的环境变量并指定其路径到你想要保存你的会话私钥的地方。</span></span><br></span><br><br><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><img src="http://img.blog.csdn.net/20150213180224359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br></span><br><br><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"></span></span><br><br>## 3.2 在Linux或者MAC OS X上的配置:<br><div style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: Poly, Georgia, serif; font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><div id="highlighter_410266" class="syntaxhighlighter  plain" style="box-sizing: border-box; width: 620.953125px; margin: 1em 0px !important; position: relative !important; overflow-x: auto !important; overflow-y: hidden !important; font-size: 1em !important; background-color: rgb(15, 25, 42) !important;"><table border="0" cellpadding="0" cellspacing="0" class=" " style="border-collapse: collapse; border-spacing: 0px; width: 620px; border: 0px !important; box-sizing: content-box !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; table-layout: auto !important; background: none !important;"><tbody style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><tr style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><td class="gutter" style="font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; border: 0px !important; box-sizing: content-box !important; padding: 0px !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; color: rgb(175, 175, 175) !important; background: none !important;"><div class="line number1 index0 alt2" style="box-sizing: content-box !important; border-radius: 0px !important; border-width: 0px 3px 0px 0px !important; border-right-style: solid !important; border-right-color: rgb(67, 90, 95) !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px 0.5em 0px 1em !important; position: static !important; right: auto !important; text-align: right !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; white-space: pre !important; background-image: none !important; background-attachment: initial !important; background-size: initial !important; background-origin: initial !important; background-clip: initial !important; background-position: initial !important; background-repeat: initial !important;">1</div></td><td class="code" style="width: 577px; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; border: 0px !important; box-sizing: content-box !important; padding: 0px !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><div class="container" style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: relative !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><div class="line number1 index0 alt2" style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px 1em !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; white-space: pre !important; background-image: none !important; background-attachment: initial !important; background-size: initial !important; background-origin: initial !important; background-clip: initial !important; background-position: initial !important; background-repeat: initial !important;"><code>$ export SSLKEYLOGFILE=~/path/to/sslkeylog.log</code></div></div></td></tr></tbody></table></div></div>
+
+<p>当然，如果你想在你的系统每次启动的时候都指定该日记路径的话，你可以在你的Linux下执行下面的动作：</p>
+<div style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: Poly, Georgia, serif; font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><div id="highlighter_221443" class="syntaxhighlighter  plain" style="box-sizing: border-box; width: 620.953125px; margin: 1em 0px !important; position: relative !important; overflow-x: auto !important; overflow-y: hidden !important; font-size: 1em !important; background-color: rgb(15, 25, 42) !important;"><table border="0" cellpadding="0" cellspacing="0" class=" " style="border-collapse: collapse; border-spacing: 0px; width: 620px; border: 0px !important; box-sizing: content-box !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; table-layout: auto !important; background: none !important;"><tbody style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><tr style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><td class="gutter" style="font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; border: 0px !important; box-sizing: content-box !important; padding: 0px !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; color: rgb(175, 175, 175) !important; background: none !important;"><div class="line number1 index0 alt2" style="box-sizing: content-box !important; border-radius: 0px !important; border-width: 0px 3px 0px 0px !important; border-right-style: solid !important; border-right-color: rgb(67, 90, 95) !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px 0.5em 0px 1em !important; position: static !important; right: auto !important; text-align: right !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; white-space: pre !important; background-image: none !important; background-attachment: initial !important; background-size: initial !important; background-origin: initial !important; background-clip: initial !important; background-position: initial !important; background-repeat: initial !important;">1</div></td><td class="code" style="width: 577px; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; border: 0px !important; box-sizing: content-box !important; padding: 0px !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><div class="container" style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: relative !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><div class="line number1 index0 alt2" style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px 1em !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; white-space: pre !important; background-image: none !important; background-attachment: initial !important; background-size: initial !important; background-origin: initial !important; background-clip: initial !important; background-position: initial !important; background-repeat: initial !important;"><code>~/.bashrc</code></div></div></td></tr></tbody></table></div></div>
+
+<p>或者在你的MAC OS X上执行以下命令：</p>
+<div style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: Poly, Georgia, serif; font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><div id="highlighter_595789" class="syntaxhighlighter  plain" style="box-sizing: border-box; width: 620.953125px; margin: 1em 0px !important; position: relative !important; overflow-x: auto !important; overflow-y: hidden !important; font-size: 1em !important; background-color: rgb(15, 25, 42) !important;"><table border="0" cellpadding="0" cellspacing="0" class=" " style="border-collapse: collapse; border-spacing: 0px; width: 620px; border: 0px !important; box-sizing: content-box !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; table-layout: auto !important; background: none !important;"><tbody style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><tr style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><td class="gutter" style="font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; border: 0px !important; box-sizing: content-box !important; padding: 0px !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; color: rgb(175, 175, 175) !important; background: none !important;"><div class="line number1 index0 alt2" style="box-sizing: content-box !important; border-radius: 0px !important; border-width: 0px 3px 0px 0px !important; border-right-style: solid !important; border-right-color: rgb(67, 90, 95) !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px 0.5em 0px 1em !important; position: static !important; right: auto !important; text-align: right !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; white-space: pre !important; background-image: none !important; background-attachment: initial !important; background-size: initial !important; background-origin: initial !important; background-clip: initial !important; background-position: initial !important; background-repeat: initial !important;">1</div></td><td class="code" style="width: 577px; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; border: 0px !important; box-sizing: content-box !important; padding: 0px !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><div class="container" style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: relative !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><div class="line number1 index0 alt2" style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px 1em !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; white-space: pre !important; background-image: none !important; background-attachment: initial !important; background-size: initial !important; background-origin: initial !important; background-clip: initial !important; background-position: initial !important; background-repeat: initial !important;"><code>~/.MacOSX/environment</code></div></div></td></tr></tbody></table></div></div>
+
+<p>这样我们下次启动Firefox或者Chrome的开发者模式的时候，TLS秘钥就会自动写入到该指定文件下面了。</p>
+<h1 id="4-Wireshark配置"><a href="#4-Wireshark配置" class="headerlink" title="4. Wireshark配置"></a>4. Wireshark配置</h1><p>为了支持这个功能，你当前的WireShark版本必须是1.6或者更新。我们仅仅要做的就是先进入偏好设置页面：<br><img src="http://img.blog.csdn.net/20150213180910084?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><br></span></p>
+<p><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;">展开协议选项:</span></p>
+<p><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><img src="http://img.blog.csdn.net/20150213181118335?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br></span></p>
+<p><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;">找到SSL选项然后如下图所示打开上面设置好的会话秘钥保存文件：</span><br></span><br><img src="http://img.blog.csdn.net/20150213181016650?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"></span></span></p>
+<h1 id="5-结果"><a href="#5-结果" class="headerlink" title="5. 结果"></a>5. 结果</h1><p>下图就是我们通常见到的WireShark抓到TLS数据包后的显示结果：</p>
+<p><img src="http://img.blog.csdn.net/20150213181626776?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p><span style="color: rgb(51, 51, 51); font-family: Poly, Georgia, serif; font-size: 19.2000007629395px; line-height: 28.8000011444092px;">This is what it looks like when you switch to the “Decrypted SSL Data” tab.  Note that we can now see the request information in plain-text!  Success!大家可以看到WireShark下面会有一个“已解密的SSL Data”的标签，点击之后你就可以如下图所示的看到已经解密的TLS数据包的相信信息了：</span></p>
+<p><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><img src="http://img.blog.csdn.net/20150213181850720?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br></span></p>
+<p><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"></span></span></p>
+<h1 id="6-小结"><a href="#6-小结" class="headerlink" title="6. 小结"></a>6. 小结</h1><p>通过本文我真心希望你能从中学到一些东西，该方法让我们能够如此直截了当的去把TLS数据包给破解出来。这种方式的另外一个值得一提的好处是，给会话过程中的两台机器根本不需要安装任何Wireshark工具，因为你会担心安装上去会搞得问题是做多错多都不知道哪里出问题了。你只需要做的是把他们上面的该会话秘钥文件指定到一个网络共享文件夹然后用另外一个已经机器上安装WireShark并如前所示指定该秘钥文件进行抓包就了事了。</p>
+<p>最后多谢大家查看本文。如想每天都能看到最新的技术等资讯文章，敬请关注本人下面提供的微信公众号:techgogogo。谢谢！</p>
+<p>————-完——————</p>
+<p>英文原文引用：<a href="https://jimshaver.net/2015/02/11/decrypting-tls-browser-traffic-with-wireshark-the-easy-way/" target="_blank" rel="external">https://jimshaver.net/2015/02/11/decrypting-tls-browser-traffic-with-wireshark-the-easy-way/</a></p>
+<table border="1" cellspacing="0" cellpadding="0"><tbody><tr><td valign="top" style="background: rgb(250, 191, 143);"><br><br><strong><span style="color: rgb(54, 46, 43);">作</span><span style="color: rgb(54, 46, 43);">/译者</span></strong><br></td><td valign="top" style="background: rgb(250, 191, 143);"><br><br><strong><span style="color: rgb(54, 46, 43);">微信知识共享公众号</span></strong><br></td><td valign="top" style="background: rgb(250, 191, 143);"><br><br><strong><span style="color: rgb(54, 46, 43);">CSDN</span></strong><br></td></tr><tr><td valign="top" style="background: rgb(227, 228, 228);"><br><br><span style="color: rgb(54, 46, 43);">天地会珠海分舵</span><br></td><td valign="top"><br><br><span style="color: rgb(54, 46, 43);">TechGoGoGo</span><br></td><td valign="top"><br><br><span style="color: rgb(54, 46, 43);"><a href="http://blog.csdn.net/zhubaitian" target="_blank" rel="external">http://blog.csdn.net/zhubaitian</a></span><br></td></tr><tr><td valign="top" style="background: rgb(251, 212, 180);"><br><br><span style="color: rgb(54, 46, 43);">优秀资源推荐</span><br></td><td valign="top" style="background: rgb(251, 212, 180);"><br><br><span style="color: rgb(54, 46, 43);">地址</span><br></td><td valign="top" style="background: rgb(251, 212, 180);"><br><br><span style="color: rgb(54, 46, 43);">点评</span><br></td></tr><tr><td valign="top" style="background: rgb(227, 228, 228);"><br><br><span style="color: rgb(54, 46, 43);">DoctorQ</span><span style="color: rgb(54, 46, 43);">博客</span><br></td><td valign="top"><br><br><span style="color: rgb(54, 46, 43);"><a href="http://testerhome.com/doctorq/topics" target="_blank" rel="external"><span style="color: rgb(106, 57, 6);">http://testerhome.com/doctorq/topics</span></a></span><br></td><td valign="top"><br><br><span style="color: rgb(54, 46, 43);">安卓自动化领域才俊</span><span style="color: rgb(54, 46, 43);">           </span><br></td></tr><tr><td valign="top" style="background: rgb(227, 228, 228);"><br><br><span style="color: rgb(54, 46, 43);">金阳光测试</span><br></td><td valign="top"><br><br><span style="color: rgb(54, 46, 43);">官网：</span><span style="color: rgb(54, 46, 43);"><a href="http://www.goldensunshine.cc/" target="_blank" rel="external">www.goldensunshine.cc</a></span><br></td><td valign="top"><br><br><span style="color: rgb(54, 46, 43);">更多请百度搜：“金阳光”</span><br></td></tr></tbody></table>
+
+<p></p></div><p></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ssl/" rel="tag"># ssl</a>
+          
+            <a href="/tags/wireshark/" rel="tag"># wireshark</a>
+          
+            <a href="/tags/抓包/" rel="tag"># 抓包</a>
+          
+            <a href="/tags/破解/" rel="tag"># 破解</a>
+          
+            <a href="/tags/黑客/" rel="tag"># 黑客</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/02/12/GitHub上语言的发展趋势/" rel="next" title="且看如何以精致的方式展现，解析和分析GitHub上语言的发展趋势">
+                <i class="fa fa-chevron-left"></i> 且看如何以精致的方式展现，解析和分析GitHub上语言的发展趋势
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/02/14/Ronco创投原则和趋势/" rel="prev" title="Ronco创投原则和趋势 - 硅谷创业教父Paul Graham文摘">
+                Ronco创投原则和趋势 - 硅谷创业教父Paul Graham文摘 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="kzlathander" />
+          <p class="site-author-name" itemprop="name">kzlathander</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Wireshark配置"><span class="nav-number">1.</span> <span class="nav-text">4. Wireshark配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-结果"><span class="nav-number">2.</span> <span class="nav-text">5. 结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-小结"><span class="nav-number">3.</span> <span class="nav-text">6. 小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kzlathander</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

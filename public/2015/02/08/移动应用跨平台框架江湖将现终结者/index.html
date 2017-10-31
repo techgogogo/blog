@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="facebook,HTML5,Phonegap,React Native," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#13;# React Native使用初探February 06 2015Facebook让所有React Conf的参与人员都可以初尝React Native的源码—一个编写原生移动应用的方法。该方法运用了React.js的所有强大的功能来将其应用到原生应用。你可以通过使用其内嵌的基本元素来编写基于Javascript的组件，这些组件都是拥有着iOS和Android控件的支撑的。首先，我知道">
+<meta name="keywords" content="facebook,HTML5,Phonegap,React Native">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动应用跨平台框架江湖将现终结者？速来参拜来自Facebook的React Native">
+<meta property="og:url" content="http://yoursite.com/2015/02/08/移动应用跨平台框架江湖将现终结者/index.html">
+<meta property="og:site_name" content="科技向前冲">
+<meta property="og:description" content="&amp;#13;# React Native使用初探February 06 2015Facebook让所有React Conf的参与人员都可以初尝React Native的源码—一个编写原生移动应用的方法。该方法运用了React.js的所有强大的功能来将其应用到原生应用。你可以通过使用其内嵌的基本元素来编写基于Javascript的组件，这些组件都是拥有着iOS和Android控件的支撑的。首先，我知道">
+<meta property="og:image" content="http://img.blog.csdn.net/20150207192155391?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20150207194726708?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20150208004154020">
+<meta property="og:updated_time" content="2017-07-17T07:22:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动应用跨平台框架江湖将现终结者？速来参拜来自Facebook的React Native">
+<meta name="twitter:description" content="&amp;#13;# React Native使用初探February 06 2015Facebook让所有React Conf的参与人员都可以初尝React Native的源码—一个编写原生移动应用的方法。该方法运用了React.js的所有强大的功能来将其应用到原生应用。你可以通过使用其内嵌的基本元素来编写基于Javascript的组件，这些组件都是拥有着iOS和Android控件的支撑的。首先，我知道">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20150207192155391?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'kzlathander'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/02/08/移动应用跨平台框架江湖将现终结者/"/>
+
+
+
+
+
+  <title>移动应用跨平台框架江湖将现终结者？速来参拜来自Facebook的React Native | 科技向前冲</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">科技向前冲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-startup">
+          <a href="/categories/创业" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fire"></i> <br />
+            
+            创业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pm">
+          <a href="/categories/产品" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-mobile-phone"></i> <br />
+            
+            产品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-oversea">
+          <a href="/categories/Hacker-News" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            海外
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-innovation">
+          <a href="/categories/创新" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            创新
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/02/08/移动应用跨平台框架江湖将现终结者/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kzlathander">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技向前冲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">移动应用跨平台框架江湖将现终结者？速来参拜来自Facebook的React Native</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-02-08T14:09:00+08:00">
+                2015-02-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hacker-News/" itemprop="url" rel="index">
+                    <span itemprop="name">Hacker News</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div id="article_content" class="article_content">&#13;<br><br><img src="http://img.blog.csdn.net/20150207192155391?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><br># React Native使用初探<br><div class="date" data-reactid=".ak5mvhrugw.1.1.1.1:3.2" style="box-sizing: border-box; color: silver; font-size: 0.9em; font-family: palatino, serif; font-style: italic; line-height: 30px; background-color: rgb(255, 255, 252);">February 06 2015</div><div data-reactid=".ak5mvhrugw.1.1.1.1:3.3" style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: palatino, serif; font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);"><br><br>Facebook让所有<a href="http://conf.reactjs.com/" target="_blank" rel="external">React Conf</a>的参与人员都可以初尝<a href="https://www.youtube.com/watch?v=KVZ-P-ZI6W4" target="_blank" rel="external">React Native</a>的源码—一个编写原生移动应用的方法。该方法运用了React.js的所有强大的功能来将其应用到原生应用。你可以通过使用其内嵌的基本元素来编写基于Javascript的组件，这些组件都是拥有着iOS和Android控件的支撑的。<br><br>首先，我知道Facebook现在还没有完全将其开源是个很挫的事情啦，但他们现在正在将该项目往开源的方向推进了。他们现在正在把跟Facebook环境相关的代码给移除掉并且正在准备建立一套接受开发人员对该开源项目进行贡献和参与的流程。我认为他们在努力往开源这个方向推进是个很好的事情，说明他们真的很在意React社区了。相信这个项目很快就能完全开源了。<br><br>其实本人并不认为开源的步骤慢点是个根本性的错误了。如果你认为是的话我将很乐意跟你进行探讨，但请允许我把该讨论放在另外一个议题里面吧。<br><br>因为如果你被该讨论打断思路的话，在这里你可能会错过我们今天对如何通过React Native编写原生移动应用的潮流已经发生改变的讨论。这种改变最大的地方就是它使用起来更像是在编写一个网路应用。<br><br>本人已经算是开发iOS应用多年的老手了，故此我有着很多原生应用开发的经验。在跟React Native勾搭上后，我只能用以下的表情来表达我的心情:<br><br><img src="http://img.blog.csdn.net/20150207194726708?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><br></div>
+
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">相信我们都听过各种由Javascript驱动的跨平台原生应用开发框架，比如<a href="http://www.appcelerator.com/" target="_blank" rel="external">Titanium</a>, <a href="http://phonegap.com/" target="_blank" rel="external">PhoneGap</a>, 以及其他各种各样的允许不同层面与原生环境进行转化的项目。所有这些框架看起来都是比较挫的：无论你现在是想把一个网络应用包装在一个WebView里面，或者是想要硬套HTML&amp;CSS这套很难用来构建移动应用的技术。对于后者，你几乎无时无刻不在直面原生对象，这在性能方面来说注定就是一个失败的尝试。React Native就不一样，它的布局方面其实是运行在一个独立的线程里面的，所以UI主线程就能如往常一样的尽可能的空闲出来进行界面动画等的呈现处理(它同时也提供了<a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">flexbox</a> 来简化布局，这可并不是所有框架都能提供出来的)。</span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">这里你仅仅需要浅尝就能领略到React Native所隐藏的无限潜力。它工作起来会让你感觉你是在做网络开发一样的舒畅。而事实上你确是在开发着一个真实的原生应用，事实上是根本分不出来这里面的区别的。在UI层面上，这事实上是根本没有区别的，使用到的都是像正常一样眩眼滑动的原生的UIViews。</span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">这其实都是软件工程的功劳。同时这就完全进一步的证明了一个事实就是React.js是构建一个跨平台应用的正确方式。我可以使用该方式来像编写一个网络应用一样来编写一个原生应用。我们完全可以从今开始把DOM作为一个实现的细节，就好像UIViews一样。</span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">我不否认我是很喜欢网络编程的，但如果我们一步步的埋头慢慢的认真检查每一个错误，我们就很容易把一些重大的问题跟忽略掉。网络编程的方式来编写应用从根本上说就是个很古怪的事情：HTML加上CSS所造成的混乱会对各种框架制造路障而不是让它们变得更好。也许React Native会最终是一个指引你回到正确的道路上面来的正确方式。我期盼着看到它是如何让网络编程方式变成一个更好的移动应用编程方式。我们不要把它想象成一个和网络编程背道而驰的东西，而要把它想象成是一个从网络编程进入到另外一个方向的原型。</span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">到了这里你是否已经感觉眼花缭乱无所适从了？没事，我将会通过示例告诉你React Native是如何工作的！当然你可以在<a href="https://www.youtube.com/watch?v=KVZ-P-ZI6W4" target="_blank" rel="external">这里</a>和<a href="https://www.youtube.com/watch?v=7rDsRXj9-cU" target="_blank" rel="external">这里</a>通过视频学到更多的这方面的知识了。</span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">React Native使用的是iOS上的JavaScriptCore来运行Javascript(Android和其他平台将会在将来进行支持)。重要的一点是它将Javascript放在一个独立的线程上运行(其他框架如Titanium也是这样做的)。你使用Javascript来编写一个控件跟使用React.js其实没有太大的区别，除了你应该使用的是如View和Text而非div和a之外。你将会获得使用React生成UI组件的所有的优点(保守的说，这是非常牛X的!!!)。请谨记，JavaScript不仅仅是一门语言，它还是一个平台。存在着大量的优秀的”JS转换”工具供你使用。</span></span></p>
+<p><span style="font-family: palatino, serif;"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);"><span style="color: rgb(51, 51, 51);">React Native将你在另外一个线程通过Javascript编写的UI以最小数量的数据发送给UI主线程来把它桥接转换成原生的组件。比如把一个View转换成UIView。最赞的地方是你不需要担心你的UI主线程的更新来现实最新的改动；你只要声明你将需要UI基于某种状态进行桥接转换就行了，React使用的是一个独特的算法把最小量的必须的改动发送到该桥接来反映UI的变化(</span><span style="color: rgb(255, 0, 0);">天地会珠海分舵注：如果你清楚增量存储的概念的话将会很容易理解这句话</span><span style="color: rgb(51, 51, 51);">)。</span></span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">编写原生UI从未如此的简单，况且这将不会有如播放动画卡顿等诸如此类的问题的出现，因为JS是在一个独立于UI主线程的线程中运行的。动画播放将会比吃了泻药还要顺畅！</span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"></span></p>
+<h2 id="基于React-Native的一个OpenGL应用"><a href="#基于React-Native的一个OpenGL应用" class="headerlink" title="基于React Native的一个OpenGL应用"></a>基于React Native的一个OpenGL应用</h2><p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">我的第一个React Native应用其实并不是一个传统的应用：我编写的是一个波前对象模型演示应用。我个人一直对游戏开发比较感兴趣，但是我对编写原生UI却很反感。React Native刚好给了我一个使用编写网页UI的方式来编写原生UI的方案。</span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">我保证你将会看到大量的使用原生导航和动画之类的传统应用演示。我认为通过非常简便的把React Native置身于OpenGL控件上面来完成相应的工作是一项很酷的事情。</span></span></p>
+<p><span style="font-family: palatino, serif;"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);"><span style="color: rgb(51, 51, 51);">去把React Native集成在你的项目里面其实是个很简单的事情，你只需要在你的控制器种创建一个RCTRootView，然后告诉它你的JS是摆在哪里，并把它添加到窗口上面就完成了。在我的尝试中，我是首先创建了一个OpenGL的控件，然后把RCTRootView作为一个子控件添加到该控件上面。该集成的过程是完全一个无痛人流的过程，哦，不好意思，是一个完全毫无痛苦的过程。(</span><span style="color: rgb(255, 0, 0);">天地会珠海分舵注：近来被电视和路边广告轰炸的晕了，到处都是无痛人流之类的广告，看到无痛两个字就立刻神经反射的联系到无痛人流来了</span><span style="color: rgb(51, 51, 51);">)</span></span></span></p>
+<p><img src="http://img.blog.csdn.net/20150208004154020" alt=""></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">你可以按下Cmd+R来立刻刷新你的UI来现实你修改的任何更新。这里仅仅RCTRootView会进行更新，所以我可以很容易的对ui进行修改然后刷新ui来获得最近的修改，而并不需要重新加载OpenGL层。</span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">以下是一个控件示例，一个用来列出可用文件列表并在其中一项被点击后加载一个网格的ObjList控件。这里将会用到一个和其他任何原生应用一样的原生的用来仅仅在控件内部进行滚动显示的ListView控件，但在这里进行使用确实一个极其简单的事情。</span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"></span></p>
+<pre name="code" class="javascript" style="font-size: 12.222222328186px;">var ObjList = React.createClass({
+  // a few methods clipped....
+
+  selectModel: function(file) {
+    controller.loadMesh(file);
+  },
+
+  renderRow: function(file) {
+    return View(
+      null,
+      TouchableHighlight(
+        { onPress: () =&gt; this.selectModel(file),
+          underlayColor: 'rgba(0, 0, 0, .6)' },
+        Text({ style: { height: 30, color: 'white' }}, file)
+      )
+    );
+  },
+
+  render: function() {
+    var source = this.getDataSource(this.props.files);
+
+    return ListView({
+      style: { flex: 1 },
+      renderRow: this.renderRow,
+      dataSource: source
+    });
+  }
+});</pre>
+
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">在我的App控件里面我有一个handlSearch方法来相应文本输入的改变。这里我对控件的状态做一些改变，一边让应用和ObjList控件接受到最新的状态改变来将最新的文件列表给显示出来。</span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"></span></p>
+<pre name="code" class="javascript" style="font-size: 12.222222328186px;">handleSearch: function(e) {
+  var text = e.nativeEvent.text;
+  var files = allFiles.filter(x =&gt; x.indexOf(text.toLowerCase()) !== -1);
+  this.setState({ files: files });
+}</pre>
+
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">请注意ObjList控件里面的controller.loadMesh()这个调用。这其实是一个Objective-C的一个方法，这里我已经把它做了一个导出标识了，这样桥接就会找到它并使它在JS中变成可用。跟桥接进行协同工作其实是一个非常简单的事情，且将会变得越来越简单。以下就是loadMesh的实现代码:</span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);"></span></span></p>
+<pre name="code" class="javascript" style="font-size: 12.222222328186px;">- (void)loadMesh:(NSString *)path {
+    RCT_EXPORT();
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        teapotNode_.material.diffuse = [self randomColor];
+        teapotNode_.wavefrontMeshA = [REMeshCache meshNamed:path];
+        [self reset];
+    });
+}</pre>
+
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">RCT_EXPORT()将该方法标识成使一个导出方法(事实上在其他地方实现的对该类进行实例化的工作会有点多)。这些方法将会在一个独立的线程中被调用，但是我这里需要的使在主线程对该mesh进行加载(因为这将会把数据加载到OpenGL当中)，所以这里我网队列中排队了一块运行在主线程中的代码。</span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">以下的视频将会给大家一个更完整的演示：<a href="https://www.youtube.com/embed/OPFf53fdUmQ" target="_blank" rel="external">https://www.youtube.com/embed/OPFf53fdUmQ</a></span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">在声明的过程中来构建我们的UI控件并对简单的改变状态所产生的事件进行相应的能力是非常的强大的，React.js一定证明了这一点。到此为止，我们突然间就到了需要对原生应用进行同样处理的时候了。”一次学习，多平台编写“，犹如React开发人员所倡导的。同时请查看：<a href="https://medium.com/@ericflo/facebook-just-taught-us-all-how-to-build-websites-51f1e7e996f2" target="_blank" rel="external">Facebook来教我我们如何编写网站</a>。</span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">－－－－－－－－－－－－－－完－－－－－－－－－－－－－－－－－－</span></span></p>
+<table border="1" cellspacing="0" cellpadding="0" style="color: rgb(54, 46, 43); font-family: Arial; font-size: 14px; line-height: 26px;"><tbody><tr><td valign="top" style="background: rgb(250, 191, 143);"><br><br><strong>转载请尊重原创/译</strong><br></td><td valign="top" style="background: rgb(250, 191, 143);"><br><br><strong>微信公众号</strong><br></td><td valign="top" style="background: rgb(250, 191, 143);"><br><br><strong>CSDN</strong><br></td></tr><tr><td valign="top" style="background: rgb(227, 228, 228);"><br><br><strong>天地会珠海分舵</strong><br></td><td valign="top"><br><br>服务号:TechGoGoGo<br></td><td valign="top"><br><br><u><a href="http://blog.csdn.net/zhubaitian" target="_blank" rel="external">http://blog.csdn.net/zhubaitian</a></u><br></td></tr><tr><td valign="top" style="background: rgb(251, 212, 180);"><br><br><strong>优秀资源推荐</strong><br></td><td valign="top" style="background: rgb(251, 212, 180);"><br><br><strong>地址</strong><br></td><td valign="top" style="background: rgb(251, 212, 180);"><br><br><strong>点评</strong><br></td></tr><tr><td valign="top" style="background: rgb(227, 228, 228);"><br><br>DoctorQ博客<br></td><td valign="top"><br><br><a href="http://testerhome.com/doctorq/topics" target="_blank" rel="external">http://testerhome.com/doctorq/topics</a><br><br></td><td valign="top"><br><br>安卓自动化领域才俊，技术分享先驱，<br></td></tr></tbody></table>
+
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">英文版原文：<a href="http://jlongster.com/First-Impressions-using-React-Native" target="_blank" rel="external">http://jlongster.com/First-Impressions-using-React-Native</a></span></span></p>
+<div><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><br></span></div></div>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/facebook/" rel="tag"># facebook</a>
+          
+            <a href="/tags/HTML5/" rel="tag"># HTML5</a>
+          
+            <a href="/tags/Phonegap/" rel="tag"># Phonegap</a>
+          
+            <a href="/tags/React-Native/" rel="tag"># React Native</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/02/07/Youtube终弃Flash/" rel="next" title="了却布斯身后事,Youtube终弃Flash。新年爆竹辞魔鬼，奈何新任把命催。">
+                <i class="fa fa-chevron-left"></i> 了却布斯身后事,Youtube终弃Flash。新年爆竹辞魔鬼，奈何新任把命催。
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/02/09/Silver/" rel="prev" title="学习Swift写iOS?那写安卓和WinPhone呢？请看一石三鸟终极解决方案 - Silver！">
+                学习Swift写iOS?那写安卓和WinPhone呢？请看一石三鸟终极解决方案 - Silver！ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="kzlathander" />
+          <p class="site-author-name" itemprop="name">kzlathander</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于React-Native的一个OpenGL应用"><span class="nav-number">1.</span> <span class="nav-text">基于React Native的一个OpenGL应用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kzlathander</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

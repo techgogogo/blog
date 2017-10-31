@@ -1,0 +1,173 @@
+title: Ronco创投原则和趋势 - 硅谷创业教父Paul Graham文摘
+tags:
+  - 创投
+  - 天使投资
+  - 硅谷
+  - 风投
+id: 518
+categories:
+  - Hacker News
+date: 2015-02-14 14:44:00
+---
+
+<div id="article_content" class="article_content">&#13;
+
+# <span style="font-family: verdana;"><span style="font-size:12px;color:#ff0000;">（天地会珠海分舵注:虽然已经尽力翻译，还是担心会和大师的原意有偏差，所以这里保留英文原文给大家作参考）</span></span>
+
+# <span style="font-family: verdana; color: rgb(153, 51, 0);">Ronco创投原则</span>
+
+<span style="font-family: verdana; font-size: 12px;">_No one, VC or angel, has invested in more of the top startups than Ron Conway. He knows what happened in every deal in the Valley, half the time because he arranged it._</span>
+
+<span style="font-family: verdana;"><span style="color:#3366ff;">谈到硅谷中谁投资了最多顶尖的初创公司，我相信无论是在创投界还是天使投资届，都无有出Ron Conway其右的。他非常清楚在硅谷进行的每一宗交易，因为这些交易往往都是经他手来安排的。</span></span>
+<span style="font-size: 12px; font-family: verdana;">
+</span>
+
+<span style="font-family: verdana; font-size: 12px;">_And yet he's a super nice guy. In fact, nice is not the word. Ronco is good. I know of zero instances in which he has behaved badly. It's hard even to imagine._</span>
+
+<span style="font-family: verdana;"><span style="color:#3366ff;">事实上Ron Conway是个好人。事实上，我这里不应该用好人这个词，应该说Ron Conway是个善良的人！到现在为止我还没有听过有任何关于Row Conway有做过什么坏事的消息，其实我现在就算仅仅去想像他会做坏事都会让我觉得自己在犯罪。</span></span>
+<span style="font-size: 12px; font-family: verdana;">
+</span>
+
+<span style="font-family: verdana; font-size: 12px;">_When I first came to Silicon Valley I thought "How lucky that someone so powerful is so benevolent." But gradually I realized it wasn't luck. It was by being benevolent that Ronco became so powerful. All the deals he gets to invest in come to him through referrals. Google did. Facebook did. Twitter was a referral from Evan Williams himself. And the reason so many people refer deals to him is that he's proven himself to be a good guy._</span>
+
+<span style="font-family: verdana;"><span style="color:#3366ff;">当我刚出道来到硅谷闯江湖的时候我当时就在想“Ronco这样一个如此仁慈善良的人能在硅谷这龙蛇混杂的大江湖中获得如此高的成就和权力靠的肯定是运气无疑了！“。但慢慢的我发觉我错了，其实不是运气成就了善良的Ronco，而正是他自己善良的秉性成就了Ronco自己。所有他进行的投资其实都不用自己去找的，而都是因为别人知道他的善良，不会伤害到创业者的利益而主动找上门来推荐给他的，Google是这样，FaceBook是这样，而Twitter的投资更是来自与创始人之一的Evan Williams自身的推荐。所以有这么多人向Royco推荐这么多的顶尖初创公司进行投资完全是因为他已经用自己的行为向事件证明了自己是一个善良的人！</span></span>
+<span style="font-size: 12px; font-family: verdana;">
+</span>
+
+<span style="font-family: verdana; font-size: 12px;">_Good does not mean being a pushover. I would not want to face an angry Ronco. But if Ron's angry at you, it's because you did something wrong. Ron is so old school he's Old Testament. He will smite you in his just wrath, but there's no malice in it._</span>
+
+<span style="font-family: verdana;"><span style="color:#3366ff;">但是要注意的是，善良并不代表懦弱。我绝对不会去挑战一个狂怒中的Ronco的。但是话有说回来，如果Ronco对你发脾气，那绝对是因为你事情做错了。Ronco可以说是个保守派，当你事情做的不对的时候他会很愤怒，但是绝对是对事不对人，而非恶意的对你个人进行人身攻击。</span></span>
+<span style="font-size: 12px; font-family: verdana;">
+</span>
+
+<span style="font-family: verdana; font-size: 12px;">_In almost every domain there are advantages to seeming good. It makes people trust you. But actually being good is an expensive way to seem good. To an amoral person it might seem to be overkill._</span>
+
+<span style="font-family: verdana;"><span style="color:#3366ff;">无论你身处哪个领域，让大家觉得你是个好人都会带给你不少的好处。起码这样大家觉得你是个值得信赖的人。但是如果仅仅去装成一个好人的话其代价是非常巨大的，特别是对于那种没有道德底线的人来说。相对而言，内心本身就是善良的话是无需去痛苦的伪装的。</span></span>
+<span style="font-size: 12px; font-family: verdana;">
+</span>
+
+<span style="font-family: verdana; font-size: 12px;">_In some fields it might be, but apparently not in the startup world. Though plenty of investors are jerks, there is a clear trend among them: the most successful investors are also the most upstanding. <span style="color: rgb(153, 153, 153);">[[<span style="color: rgb(153, 153, 153);">1</span>](http://www.paulgraham.com/ronco.html#f1n)]</span>_</span>
+
+<span style="color:#3366ff;">也许在有些行业你可以为装成一个好人来获得一时的成就，但是这在投行是行不通的。虽然我不否认当今也有大量的混蛋投资人存在，但现在有一个很明显的趋势就是：最成功的投资人往往都是最善良正直的。<span style="font-family: verdana; font-size: 11.9999990463257px;">[</span>[1](http://www.paulgraham.com/ronco.html#f1n)<span style="font-family: verdana; font-size: 11.9999990463257px;">]</span></span>
+
+<span style="font-family: verdana; font-size: 12px;">
+</span>
+
+<span style="font-family: verdana; font-size: 12px;">_It was not always this way. I would not feel confident saying that about investors twenty years ago._</span>
+
+<span style="font-family: verdana;"><span style="color:#3366ff;">回首当年其实事实并非如此。如果是在20年前的话我绝对没有信心说出上面的话。</span></span>
+<span style="font-size: 12px; font-family: verdana;">
+</span>
+
+<span style="font-family: verdana; font-size: 12px;">_What changed? The startup world became more transparent and more unpredictable. Both make it harder to seem good without actually being good._</span>
+
+<span style="font-family: verdana;"><span style="color:#3366ff;">那为什么有这种趋势的出现呢？那是因为现在初创投资的世界已经变得越来越透明，但却越来越难以琢磨把控了。也正是这两个原因让一个秉性本来就是坏的人很难再去把自己用善良的外衣伪装起来了。</span></span>
+<span style="font-size: 12px; font-family: verdana;">
+_It's obvious why transparency has that effect. When an investor maltreats a founder now, it gets out. Maybe not all the way to the press, but other founders hear about it, and that means that investor starts to lose deals. <span style="color: rgb(153, 153, 153);">[[<span style="color: rgb(153, 153, 153);">2</span>](http://www.paulgraham.com/ronco.html#f2n)]</span>
+_
+</span>
+
+<span style="font-family: verdana;"><span style="color:#3366ff;">透明度带给这种效果是显而易见的。当一个投资人对待创业者不友善的话，其坏名声就会立刻被大家所知晓。也许不是通过新闻发布会的方式被广而告之，但是其他同一个圈子的创业者很容易就会知道这个消息，这就意味着该投资人很难再获得下一宗投资交易了。</span><span style="color: rgb(153, 153, 153); font-size: 11.9999990463257px;">[</span>[<span style="color: rgb(153, 153, 153);">2</span>](http://www.paulgraham.com/ronco.html#f2n)<span style="color: rgb(153, 153, 153); font-size: 11.9999990463257px;">]</span></span>
+
+<span style="font-family: verdana; font-size: 12px;">_The effect of unpredictability is more subtle. It increases the work of being inconsistent. If you're going to be two-faced, you have to know who you should be nice to and who you can get away with being nasty to. In the startup world, things change so rapidly that you can't tell. The random college kid you talk to today might in a couple years be the CEO of the hottest startup in the Valley. If you can't tell who to be nice to, you have to be nice to everyone. And probably the only people who can manage that are the people who are genuinely good._</span>
+
+<span style="font-family: verdana; font-size: 12px;"><span style="color:#3366ff;">相对而言，初创投资难以把控的不确定性所带来的效果是比较微妙的。它是通过让坏名声的投资人员对待不同初创者的不一致性而逐渐体现其效果的。如果你是一个虚伪的两面派，那么你就需要去知道你该去拍谁的马屁而让自己避免错误对待了一个将来会给自己带来巨大利益的创业者而后悔。在创投这个圈子中，太多的事情变化得太快太难以捉摸。你在学校不小心碰上的一个乳臭未干的大学生说不定几年后会成为硅谷最热门的初创公司的CEO。那么如果一个虚伪的投资人搞不清楚应该拍谁的马屁的话，他就必须逢人比阿谀逢迎，如果这都不会让人看出来是伪善的话，那么这个人就真是天才中的天才了。</span></span>
+
+<span style="font-family: verdana; font-size: 12px;">
+</span>
+
+<span style="font-family: verdana; font-size: 12px;">_In a sufficiently connected and unpredictable world, you can't seem good without being good._</span>
+
+<span style="font-family: verdana;"><span style="color:#3366ff;">所以说，在一个紧密联系信息透明而又充满不确定性的圈子里，一个用心险恶的人是很难伪装成一个善良的人而不被识破的。</span></span>
+<span style="font-size: 12px; font-family: verdana;">
+</span>
+
+<span style="font-family: verdana; font-size: 12px;">_As often happens, Ron discovered how to be the investor of the future by accident. He didn't foresee the future of startup investing, realize it would pay to be upstanding, and force himself to behave that way. It would feel unnatural to him to behave any other way. He was already [living in the future](http://www.paulgraham.com/startupideas.html)._</span>
+
+<span style="font-family: verdana; font-size: 12px;"><span style="color:#3366ff;">Roy在无意中发现了如何成为一个未来成功投资人的公式，不过这种事情也时有发生了。重要的是他其实并不是因为预测了创投行业的未来的趋势，曾经意识到善良正直才是投资人的未来才强迫自己变得善良起来的。因为善良正直是他自己与生俱来的秉性，根本无需伪装。反而是如果它违反了它自己善良正直的本性会是一个很不自然的事情了。所以可以说他已经是一个<span style="font-size: 11.9999990463257px;"> </span>[活在未来](http://www.paulgraham.com/startupideas.html)的人了。</span></span>
+<span style="font-size: 12px; font-family: verdana;">
+</span>
+
+<span style="font-family: verdana; font-size: 12px;">_Fortunately that future is not limited to the startup world. The startup world is more transparent and unpredictable than most, but almost everywhere the trend is in that direction._</span>
+
+<span style="font-family: verdana;"><span style="color:#3366ff;">值得高兴的是这种趋势不仅限于在投行这个圈子中存在。只是投行圈子比起其他圈子更加透明和充满不确定性而已，但几乎所有其他地方都可以看到这种趋势的存在。</span></span>
+<span style="font-size: 12px; font-family: verdana;">
+</span>
+
+<span style="font-family: verdana; font-size: 12px;">**_Notes_**</span>
+
+<span style="font-family: verdana; font-size: 12px;">**<span style="color:#3366ff;">注解</span>**</span>
+<span style="font-size: 12px; font-family: verdana;">
+</span>
+
+<span style="font-family: verdana; font-size: 12px;">_[<a target="_blank" name="f1n" class=" " id="f1n">1</a>] I'm not saying that if you sort investors by benevolence you've also sorted them by returns, but rather that if you do a scatterplot with benevolence on the x axis and returns on the y, you'd see a clear upward trend._</span>
+
+<span style="font-family: verdana; font-size: 12px;"><span style="color:#3366ff;"><span style="font-size: 11.9999990463257px;">[</span><a target="_blank" name="f1n" class="   " style="font-size: 11.9999990463257px; background-color: rgb(255, 255, 255);" id="f1n">1</a><span style="font-size: 11.9999990463257px;">] 我的意思并不是说你把善良正直的人筛选出来你就同时可以把你的回报给筛选出来，只是说如果你以在一个散点图中以善良正直为x轴坐标，以回报为y坐标，你就会很明显的看到该趋势。</span>
+</span></span>
+<span style="font-size: 12px; font-family: verdana;">
+</span>
+
+<span style="font-family: verdana; font-size: 12px;">_[<a target="_blank" name="f2n" class=" " id="f2n">2</a>] Y Combinator in particular, because it aggregates data from so many startups, has a pretty comprehensive view of investor behavior._</span>
+
+<span style="font-family: verdana; font-size: 12px;"><span style="color:#3366ff;"><span style="font-size: 11.9999990463257px;">[</span><a target="_blank" name="f2n" class="   " style="font-size: 11.9999990463257px; background-color: rgb(255, 255, 255);" id="f2n">2</a><span style="font-size: 11.9999990463257px;">] 就以Y Combinator孵化公司为例，因为其拥有着大量初创公司的信息，所以就掌握着投资人行为的一个非常综合的信息</span>
+</span></span>
+<span style="font-size: 12px; font-family: verdana;">
+</span>
+
+<span style="font-family: verdana; font-size: 12px;">_**Thanks** to Sam Altman and Jessica Livingston for reading drafts of this._</span>
+
+<span style="font-family: verdana;"><span style="color:#3366ff;">**感谢**Sam Altman和Jesica Livingston帮忙审阅本文的初稿。</span></span>
+
+<span style="font-family: verdana;">
+</span>
+
+<span style="font-family: verdana;">－－－－－－－－－完－－－－－－－－－－－－－</span>
+
+<span style="font-family: verdana;">Paul Graham的博客原文：[http://www.paulgraham.com/ronco.html](http://www.paulgraham.com/ronco.html)
+</span>
+<table border="1" cellspacing="0" cellpadding="0" style="color: rgb(54, 46, 43); font-family: Arial; font-size: 14px; line-height: 26px;"><tbody><tr><td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; background: rgb(250, 191, 143);">
+
+**作/译者**
+</td><td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; background: rgb(250, 191, 143);">
+
+**微信知识共享公众号**
+</td><td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; background: rgb(250, 191, 143);">
+
+**CSDN**
+</td></tr><tr><td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; background: rgb(227, 228, 228);">
+
+天地会珠海分舵
+</td><td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+
+TechGoGoGo
+</td><td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+
+http://blog.csdn.net/zhubaitian
+</td></tr><tr><td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; background: rgb(251, 212, 180);">
+
+优秀资源推荐
+</td><td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; background: rgb(251, 212, 180);">
+
+地址
+</td><td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; background: rgb(251, 212, 180);">
+
+点评
+</td></tr><tr><td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; background: rgb(227, 228, 228);">
+
+DoctorQ博客
+</td><td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+
+[http://testerhome.com/doctorq/topics](http://testerhome.com/doctorq/topics)
+</td><td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+
+安卓自动化领域才俊           
+</td></tr><tr><td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; background: rgb(227, 228, 228);">
+
+金阳光测试
+</td><td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+
+官网：[www.goldensunshine.cc](http://www.goldensunshine.cc/)
+</td><td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+
+更多请百度搜：“金阳光”
+</td></tr></tbody></table></div>

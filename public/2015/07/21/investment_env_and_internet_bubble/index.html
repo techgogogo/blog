@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="编者注：本文来自TOMASZ TUNGUZ，中文版由天地会珠海分舵进行编译。  根据NVCA披露的最新数据，在2015年第二季度，VC总共进行了167亿美元的投资，大约是2000年互联网泡沫时候同期的66%，且这个势头看上去还会继续。而这些投资的很大一部分是由共同基金和对冲基金这些非传统的投资机构所贡献的，占了所有投资金额的40个百分比。尽管当前某些方面跟互联网泡沫时期很相似，但还是有不少地方是大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="融资环境数据解析我们当前距离互联网泡沫究竟有多近">
+<meta property="og:url" content="http://yoursite.com/2015/07/21/investment_env_and_internet_bubble/index.html">
+<meta property="og:site_name" content="科技向前冲">
+<meta property="og:description" content="编者注：本文来自TOMASZ TUNGUZ，中文版由天地会珠海分舵进行编译。  根据NVCA披露的最新数据，在2015年第二季度，VC总共进行了167亿美元的投资，大约是2000年互联网泡沫时候同期的66%，且这个势头看上去还会继续。而这些投资的很大一部分是由共同基金和对冲基金这些非传统的投资机构所贡献的，占了所有投资金额的40个百分比。尽管当前某些方面跟互联网泡沫时期很相似，但还是有不少地方是大">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/264714-c561033fed2e199b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/264714-bcf396ed06ef8808.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/264714-214a3ab1e5cee45a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/264714-f6e5aece69f803b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/264714-22d87e876e4cc918.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/264714-ad3cbec6260c6e62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/264714-df19b3ef52614c34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-07-17T02:58:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="融资环境数据解析我们当前距离互联网泡沫究竟有多近">
+<meta name="twitter:description" content="编者注：本文来自TOMASZ TUNGUZ，中文版由天地会珠海分舵进行编译。  根据NVCA披露的最新数据，在2015年第二季度，VC总共进行了167亿美元的投资，大约是2000年互联网泡沫时候同期的66%，且这个势头看上去还会继续。而这些投资的很大一部分是由共同基金和对冲基金这些非传统的投资机构所贡献的，占了所有投资金额的40个百分比。尽管当前某些方面跟互联网泡沫时期很相似，但还是有不少地方是大">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/264714-c561033fed2e199b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'kzlathander'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/07/21/investment_env_and_internet_bubble/"/>
+
+
+
+
+
+  <title>融资环境数据解析我们当前距离互联网泡沫究竟有多近 | 科技向前冲</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">科技向前冲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-startup">
+          <a href="/categories/创业" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fire"></i> <br />
+            
+            创业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pm">
+          <a href="/categories/产品" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-mobile-phone"></i> <br />
+            
+            产品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-oversea">
+          <a href="/categories/Hacker-News" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            海外
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-innovation">
+          <a href="/categories/创新" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            创新
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/21/investment_env_and_internet_bubble/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kzlathander">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技向前冲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">融资环境数据解析我们当前距离互联网泡沫究竟有多近</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-21T07:48:48+08:00">
+                2015-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/创业/" itemprop="url" rel="index">
+                    <span itemprop="name">创业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><span style="color: #999999;"><em>编者注：本文<a href="http://tomtunguz.com/how-close-to-2000/" target="_blank" rel="external">来自TOMASZ TUNGUZ</a>，中文版由天地会珠海分舵进行编译。</em></span></p>
+<p><a href="http://upload-images.jianshu.io/upload_images/264714-c561033fed2e199b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="external"><img src="http://upload-images.jianshu.io/upload_images/264714-c561033fed2e199b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="vc_investment-2015-07-15"></a></p>
+<p>根据<a href="http://nvca.org/pressreleases/venture-capital-dollars-invested-exceeds-10-billion-for-fifth-consecutive-quarter-according-to-the-moneytree-report/" target="_blank" rel="external">NVCA披露的最新数据</a>，在2015年第二季度，VC总共进行了167亿美元的投资，大约是2000年互联网泡沫时候同期的66%，且这个势头看上去还会继续。而这些投资的很大一部分是由共同基金和对冲基金这些非传统的投资机构所贡献的，占了所有投资金额的40个百分比。尽管当前某些方面跟互联网泡沫时期很相似，但还是有不少地方是大相径庭的。</p>
+<p><a href="http://upload-images.jianshu.io/upload_images/264714-bcf396ed06ef8808.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="external"><img src="http://upload-images.jianshu.io/upload_images/264714-bcf396ed06ef8808.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="top10q_investment"></a></p>
+<p>令人惊讶的是，在历来单季风投资金投入最高的前十名榜单中，从2014年第二、第四季度到2015年第一、第二季度这四个季度，以及互联网泡沫时期的1999年第四季度到2000年第四季度这连续四个季度，竟然同时榜上有名。</p>
+<p><a href="http://upload-images.jianshu.io/upload_images/264714-214a3ab1e5cee45a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="external"><img src="http://upload-images.jianshu.io/upload_images/264714-214a3ab1e5cee45a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="vc_investment_count-2015-07-15"></a></p>
+<p>但是，单季投资项目数量却只有2000年的一半。参照上图，这就意味着现今获得大轮投资的初创企业相对变少了。同时也意味着在很多不同行业存在着“赢家吃掉大部分(winner-take-most)“或类似的情况。行业细分领域执牛耳者都在学习并应用着朱元璋的“广积粮，高筑墙”策略，都在大量的囤积着战争储备资金，大肆深挖着它们的护城河，防止后来者进入到它们的领域当中去。</p>
+<p><a href="http://upload-images.jianshu.io/upload_images/264714-f6e5aece69f803b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="external"><img src="http://upload-images.jianshu.io/upload_images/264714-f6e5aece69f803b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2015-07-15-dpd"></a></p>
+<p>可以确定的是，上图展示的2015年第二季度每个项目平均投资额为1470万美元，超过了2000年同期的1310万美元。换个说法就是，平均每个初创企业获得的投资金额达到了前所未有的高度。</p>
+<p><a href="http://upload-images.jianshu.io/upload_images/264714-22d87e876e4cc918.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="external"><img src="http://upload-images.jianshu.io/upload_images/264714-22d87e876e4cc918.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="avg_investment_size_stage_2015-07-15"></a></p>
+<p>通过分析上面不同时期的数据，在考虑了通胀因数的情况下，当前A轮和B轮的平均投资规模分别是1000万美元2000万美元，两者皆创了历史新高。晚轮的规模也是高居不下，但还没有超过2000年时期，尽管最近12到18个月期间共有大概10家左右的初创企业融了十亿美元以上的资金。</p>
+<p><a href="http://upload-images.jianshu.io/upload_images/264714-ad3cbec6260c6e62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="external"><img src="http://upload-images.jianshu.io/upload_images/264714-ad3cbec6260c6e62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="count_by_stage-2015-07-15"></a></p>
+<p>随着平均投资额的增加，估值也是水涨船高，投资者也越来越早采取行动。不象互联网泡沫时期，现在的B轮和C轮就投资项目数量上看来还算平稳，但A轮的投资项目数量却比2005年翻了一倍。种子轮的数量虽然没有看到有实质性的太大波动，但不排除跟NVCA收集数据的方式有关系。</p>
+<p><a href="http://upload-images.jianshu.io/upload_images/264714-df19b3ef52614c34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="external"><img src="http://upload-images.jianshu.io/upload_images/264714-df19b3ef52614c34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="dpi_sector-2015-07-16"></a></p>
+<p>当从不同的投资领域的角度来审视这些数据的时候，我们可以看到消费品和服务领域以及金融服务领域的初创企业获得的融资金额是最大的。金融服务领域企业在第二季度平均融资金额应到达三千万美元，上图只是因为手绘的关系没有看到最后那细细的延长线而已。消费品和服务领域的初创企业也达到了两千万美元的额度。</p>
+<p>当前投资者投资初创企业的的资金的规模越来越接近互联网泡沫时期的水平，根据上面的这些数据显示，尽管这两个时期有不少相似之处，但同时也存在很多重要的差别之处。现在的投资者们相对以往，对A轮的追逐变得越加狂热，这可能是因为大家都想在估值不断上升之前出手进行投资的原因吧。同时大家投资的目标也更集中，投资者们都在对每个领域有限的那几个可能的胜出者进行追逐。</p>
+<hr>
+<p><span style="color: #999999;"><em>注:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。欢迎转发转载，转载时务请注明公众号信息。</em></span></p>
+<p>&nbsp;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/07/19/伊隆·马斯克告诉你应该如何说好一个故事/" rel="next" title="特斯拉CEO 伊隆·马斯克告诉你应该如何说好一个故事">
+                <i class="fa fa-chevron-left"></i> 特斯拉CEO 伊隆·马斯克告诉你应该如何说好一个故事
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/07/22/CEO_and_Creator/" rel="prev" title="创始人是否真的非要兼任CEO不可?">
+                创始人是否真的非要兼任CEO不可? <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="kzlathander" />
+          <p class="site-author-name" itemprop="name">kzlathander</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kzlathander</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

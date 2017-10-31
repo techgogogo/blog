@@ -1,0 +1,48 @@
+title: Android adb端口转发调试助手Packet Sender
+tags:
+  - ADB
+  - 端口转发
+id: 514
+categories:
+  - Hacker News
+  - 测试自动化
+date: 2015-02-15 12:20:00
+---
+
+<div id="article_content" class="article_content">&#13;
+
+![](http://img.blog.csdn.net/20150215121847696?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+<span style="white-space: pre;">	</span>相信大家做过安卓开发或者安卓自动化测试开发的都离不开adb这个Android Debug Bridge这个工具，该工具有个很重要的功能就是端口转发。比如你在目标安卓机器端建立了一个服务来处理获取当前界面元素，监听的是设备本机网络上的端口5555，那么在pc客户端你就可以执行"adb forward tcp:5555 tcp:5555"来把发送到pc本地的5555端口的数据直接转发到目标安卓机器的服务监听端口上，非常的方便。(这里主要关注的是pc端和安卓机器端通过adb connect ip命令来通过tcp连接起来的情况)。
+
+<span style="white-space: pre;">	</span>但问题来了，一般你的目标安卓机器上面的服务去实现监听功能的时候都会去根据pc端发送过来的命令来做不同的处理，那么我们往往就需要去调试我们对这些命令发送接收处理等是否ok，比如客户端发送了个shutdown命令过来，那么你的服务器端是否能正确进行解析和handle呢？甚至有时我们的应用出现bug了，我们需要快速的找到一个方法去发送一个命令过去去检查究竟是客户端还是服务端产生了问题，这个时候如果有一个工具能够让我们快速实现这一点就perfect了。
+
+<span style="white-space: pre;">	</span>解决方案来了，今天闲逛国外it网站的时候发现了一个开源工具Packet Sender，该工具可以让我们制定tcp甚至udp端口把相应的命令发送到制定的ip地址上面，同时还支持接收服务端发送回来的回应等，让我们很方便的进行分析。
+
+<span style="white-space: pre;">	</span>该工具支持多种平台，如windows，linux，mac，android，甚至命令行。通过下面截图大家会有一个基本的感官认识：
+
+<span style="white-space: pre;">	</span>Windows平台：
+
+![](http://img.blog.csdn.net/20150215120636822?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+<span style="white-space: pre;">	</span>ubuntu平台：
+
+![](http://img.blog.csdn.net/20150215120710235?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+<span style="white-space: pre;">	</span>mac平台：
+
+![](http://img.blog.csdn.net/20150215120734854?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+<span style="white-space: pre;">	</span>android平台：
+
+![](http://img.blog.csdn.net/20150215120814634?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+<span style="white-space: pre;">	</span>命令行：
+
+![](http://img.blog.csdn.net/20150215121005610?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+<span style="white-space: pre;">	</span>工具的使用方式非常直观的简单，所以这里就不费唇舌去打扰大家耳根清静了。更多的信息请访问官方网页：[http://packetsender.com/](http://packetsender.com/)
+
+<span style="white-space: pre;">	</span>这里希望带给大家的这个工具能让大家做开发的时候更加得心应手事半功倍，所谓工欲善其事，必先利其器！
+
+</div>

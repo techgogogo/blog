@@ -1,0 +1,68 @@
+title: 全球IP将告罄，美国已摇号限购
+id: 1417
+categories:
+  - 技术
+  - 资讯
+date: 2015-07-04 09:33:18
+tags:
+---
+
+## <span style="color: #993300;">IPv4地址即将耗尽</span>
+
+* * *
+
+&nbsp;
+
+记得十年前我就跟大家说过[IPv4地址即将耗尽的事情](http://arstechnica.com/gadgets/2007/03/ipv6/)吧？虽然，这个过程花了点时间，但是，今天这个时刻还是到来了：随亚洲，欧洲，拉丁美洲在最近这一年多来已经慢慢将残剩的IPv4地址给分配殆尽之后，现在负责给美国，加拿大，北大西洋地区，和加勒比群岛区域的[ARIN也宣称新IP申请将需要排队等候](http://arstechnica.com/business/2015/05/get-ready-to-wait-in-line-for-more-ipv4-addresses/)。那么现在就只剩下非洲那边还能按需申请IPv4地址了。
+
+ARIN是美国Internet号码注册中心，负责北美、南美、加勒比以及非洲撒哈拉部分的IP分配，已经开始启动“IPv4未满足需求策略“。在此之前，在ARIN所覆盖区域的范围内的组织还能按需申请新的IPv4地址，但是昨天(2015年07月02日)开始，ARIN不再能够满足这些合理的申请需求了。这留给了那些来ARIN申请新IPv4地址的ISP们3个选择：
+
+*   可以选择一些更小的地址块(ARIN当前还有限量供应的512和256地址块)
+*   可以选择加入等待名单，等待满足需求的地址块将来变得可用再作分配
+*   可以选择从一些IP地址过剩的组织手上进行购买
+“如果你选择的是更小的地址块的话，你在此后的90天内就不能再进行申请，“ ARIN的首席执行官ARIN跟Ars说。“当前我们还有将近500个小地址块，但是每个月会有300到400个申请请求进来，［所以］这剩余的地址根本就不能维持2到4个星期。”
+
+难道这里就ISP就不可以玩些战略手段吗？比如ISP不可以在加入等待名单之后继续进行一次数量更少点的地址块的申请吗？“等待名单里面等候的IP地址本来就是ARIN回收回来的很少量的地址，” Curran说道。“从等待名单中获取更多的地址其实并不能算是个好的策略，尝试找出该如何使用上IPv6才是大家应该考虑的战略方向了。“
+
+“ ISP们应该要尽快适应这种市场的转变。如果你还是需要IPv4的地址的话，悉听尊便，“ Curran继续说道。“但是我不敢保证这个市场还能维持多久。试想下，70亿的人们在用着智能手机和家庭网络接入，工作网络，再加上谷歌，YouTube，Facebook，Bing又消耗了一大批的地址...所以就算在一个工作完美的市场上面，只能分配出40亿个左右地址的IPv4也很快就玩不转的了。“
+
+同时我们也跟IPv4地址代理商Avennue4的副总Janine Goodman就近期的一些走向进行了意见的交流。
+
+“IPv6的年代迟早会到来的，这是未来的方向，“她说道。”但是还得花点时间。很多组织还没有准备好明天就往IPv6进行转变；这个过程肯定还需要几年的时间。市场的转移将会在负责的情况下进行IPv4到IPv6的迁移，而不是对人们造成一种恐慌。“
+
+&nbsp;
+
+## <span style="color: #993300;">IPv6闪亮登场</span>
+
+* * *
+
+IETF组织其实早在上世纪90年代初就看到了IPv4地址将会耗尽的情况，所以他们很早就开始考虑用一个新的网络协议来解决这个问题了。老的IP地址是版本4，而他们想到这种新的IP地址就是版本6了。IPv6将IP地址的长度增加到不少于128位 -- 这就好比将10位的电话号码增加到40位一样。结果就是，就实际用途上来说，总共有效的可分配IPv6地址可以说是无限的。
+
+但是问题来了，老的那一套操作系统只能处理IPv4的32位地址。而这个问题其实在上几年也基本解决了的，今天基本上所有的操作系统都能够处理128位的IPv6地址 -- [尽快还是有些应用不能正确的对IPv6进行处理](http://arstechnica.com/apple/2015/06/apple-to-ios-devs-ipv6-only-cell-service-is-coming-soon-get-your-apps-ready/)。
+
+这里的主要问题就是，很多组织和地方的网络根本就没有[启动IPv6的支持](http://arstechnica.com/business/2011/02/ask-ars-how-should-my-organization-approach-the-ipv6-transition/)，尽管启动IPv6的支持并不是如大家想像的那么困难，在一些大型网络里面也并不见得就是非常错综复杂的事情。
+
+要达成这个转变，网络服务提供商，路由，防火墙，负载均衡，以及DNS服务器应该都加进IPv6的支持以及进行重新配置。然后一些支持企业商业运作的软件也需要继续进行相应的配置。无论如何，将IPv6应用上的一个新计划是必不可少的了，期间还要注意的就是IPv6和IPv4的DHCP工作方式是不一样的。
+
+谷歌分析报告宣称，在2009到2001年间，它们的用户中使用了IPv6连接的数量仅占了总用户数的百分之零点几，到2012年才达到了1%，到了一年前，到了3.5%。而今天则达到6.5%(工作日)和7.5%(周末)。
+
+如果大家去看下[谷歌针对每个国家的IPv6使用状态分析](http://www.google.com/intl/en/ipv6/statistics.html#tab=per-country-ipv6-adoption)的话，会发现一些非常有意思的事情。在2013年早期，美国和比利时是IPv6最主要的两个玩家，IPv6的普及率分别达到2.17%和0.04%。今天，比利时则成为世界上普及IPv6最广的国家，达到了35%，而美国则紧随瑞士排到第三位(两者都是接近21%)。根据[阿卡麦公司提供的数据](https://www.stateoftheinternet.com/trends-visualizations-ipv6-adoption-ipv4-exhaustion-global-heat-map-network-country-growth-data.html)，当今世上有7个国家的IPv6普及率是达到10%以上的：比利时，瑞斯，美国，秘鲁，德国，卢森堡，以及葡萄牙。希腊很快就会成为第八个。有16个国家的IPv6普及率是到了5%以上的，而1%以上的则有32个国家。
+
+令人惊讶的是，毗邻的国家的普及率却存在着呈数量级别的差距。比如美国是21%，而邻居加拿大却只有0.5%的IPv6用户。比利时是35%，而隔壁的荷兰却只有3%。爱尔兰是2.4%，而应该却只有0.2%。
+<div class="centered-figure-container"><figure class="image center large full-width">![](http://cdn.arstechnica.net/wp-content/uploads/2015/07/googleipv6worldjuly20125-640x415.jpg)
+<figcaption class="caption">
+<div class="caption-text"></div>
+</figcaption></figure></div>
+上图中的白色区域代表是没有普及上IPv6的地区；其次是绿色区域，绿色越深代表IPv6越普及；而红色则代表的是一个糟糕的情况，这些区域不但是基本没有普及IPv6，而且它们的IPv6的访问速度比起IPv4要慢；橙色代表正在大力发展IPv6的地区，而那里的IPv6连接速度还是比IPv4要慢。当然，也会有些地方的IPv6比IPv4还快的，比如比利时和俄罗斯。
+
+所以，看来IPv4一统江湖的的状况将不会维持太久，通过动态IP分配的方式来解决IP地址不够用的方案也不是最终的解决办法。我们很清楚的知道，让一个国家的百分之十的网民采用IPv6还是可以实现的。一旦有一部分人带头开始采用，那么，根据[梅特卡夫定律](https://en.wikipedia.org/wiki/Metcalfe)，将来就只会越来越多人使用。
+
+&nbsp;
+
+* * *
+
+&nbsp;
+
+_<span style="color: #999999;">编者注：[本文来自arstechnica](http://arstechnica.com/information-technology/2015/07/us-exhausts-new-ipv4-addresses-waitlist-begins/), 中文版由天地会珠海分舵编译。</span>_
+
+_<span style="color: #999999;">更多文章请关注公众号:**techgogogo**或官网[www.techgogogo.com](http://techgogogo.com/)。当然，也非常欢迎您直接微信(**zhubaitian1**)勾搭。</span>_

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="编者注：本文出自美国著名的红点创投Tom Tunguz 之手，被海外多家著名科技媒体和风投媒体所转载，中文版由天地会珠海分舵编译。大家怎么计算你自己的初创企业的用户流失率呢？以每月丢失了多少个用户算？那抓不住重点，因为有大客户和小客户之分。以向上销售率算？那有失偏颇，因为有可能你单个用户就给你带来大量销售额，而给你虚假繁荣的假想，看不到用户的大量流失这个事实。下面我们看看作者无意中窥破的Ser">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一个市值110亿美元的独角兽是如何计算用户流失率的">
+<meta property="og:url" content="http://yoursite.com/2015/06/12/how_unicorn_count_churn/index.html">
+<meta property="og:site_name" content="科技向前冲">
+<meta property="og:description" content="编者注：本文出自美国著名的红点创投Tom Tunguz 之手，被海外多家著名科技媒体和风投媒体所转载，中文版由天地会珠海分舵编译。大家怎么计算你自己的初创企业的用户流失率呢？以每月丢失了多少个用户算？那抓不住重点，因为有大客户和小客户之分。以向上销售率算？那有失偏颇，因为有可能你单个用户就给你带来大量销售额，而给你虚假繁荣的假想，看不到用户的大量流失这个事实。下面我们看看作者无意中窥破的Ser">
+<meta property="og:image" content="http://tomtunguz.com/images/huge_pipe_leak.jpg">
+<meta property="og:image" content="http://tomtunguz.com/images/churn_five.png">
+<meta property="og:image" content="http://tomtunguz.com/images/negative_churn_five.png">
+<meta property="og:updated_time" content="2017-07-17T04:02:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一个市值110亿美元的独角兽是如何计算用户流失率的">
+<meta name="twitter:description" content="编者注：本文出自美国著名的红点创投Tom Tunguz 之手，被海外多家著名科技媒体和风投媒体所转载，中文版由天地会珠海分舵编译。大家怎么计算你自己的初创企业的用户流失率呢？以每月丢失了多少个用户算？那抓不住重点，因为有大客户和小客户之分。以向上销售率算？那有失偏颇，因为有可能你单个用户就给你带来大量销售额，而给你虚假繁荣的假想，看不到用户的大量流失这个事实。下面我们看看作者无意中窥破的Ser">
+<meta name="twitter:image" content="http://tomtunguz.com/images/huge_pipe_leak.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'kzlathander'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/06/12/how_unicorn_count_churn/"/>
+
+
+
+
+
+  <title>一个市值110亿美元的独角兽是如何计算用户流失率的 | 科技向前冲</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">科技向前冲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-startup">
+          <a href="/categories/创业" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fire"></i> <br />
+            
+            创业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pm">
+          <a href="/categories/产品" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-mobile-phone"></i> <br />
+            
+            产品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-oversea">
+          <a href="/categories/Hacker-News" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            海外
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-innovation">
+          <a href="/categories/创新" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            创新
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/06/12/how_unicorn_count_churn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kzlathander">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技向前冲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">一个市值110亿美元的独角兽是如何计算用户流失率的</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-06-12T08:03:30+08:00">
+                2015-06-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/创业/" itemprop="url" rel="index">
+                    <span itemprop="name">创业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://tomtunguz.com/images/huge_pipe_leak.jpg" alt=""></p>
+<blockquote>
+<p>编者注：<a href="http://tomtunguz.com/service-now-churn/" target="_blank" rel="external">本文</a>出自美国著名的红点创投<em>Tom Tunguz</em> 之手，被海外多家著名科技媒体和风投媒体所转载，中文版由天地会珠海分舵编译。大家怎么计算你自己的初创企业的用户流失率呢？以每月丢失了多少个用户算？那抓不住重点，因为有大客户和小客户之分。以向上销售率算？那有失偏颇，因为有可能你单个用户就给你带来大量销售额，而给你虚假繁荣的假想，看不到用户的大量流失这个事实。下面我们看看作者无意中窥破的ServiceNow的用户流失率的计算秘密…<br>之前在为全球第三大的SaaS公司ServiceNow准备他们的注册上市声明(S-1)的时候，我碰巧在他们叫做“影响我司效益之关键因数”的最近<a href="http://services.corporate-ir.net/SEC/Document.Service?id=P3VybD1hSFIwY0RvdkwyRndhUzUwWlc1cmQybDZZWEprTG1OdmJTOWtiM2R1Ykc5aFpDNXdhSEEvWVdOMGFXOXVQVkJFUmlacGNHRm5aVDB4TURFd056QTNNU1p6ZFdKemFXUTlOVGM9JnR5cGU9MiZmbj1TRVJWSUNFTk9XSU5DLnBkZg==" target="_blank" rel="external">年度报告</a>中，留意到了该公司用来计算用户流失率的两个方式。其中一个稍微比较常见，但是另外一个却是对SaaS公司非常有效的简单而又别开生面的计算方式的补充。下面我先把报告里面对这两种方式的描述给提供出来：</p>
+</blockquote>
+<ul>
+<li><p><strong>向上销售率：</strong>从已购买我们服务的顾客身上赚取更多的销售额对于我司的成长起着至关重要的作用，我们将之称为“向上销售率(Upsell rate)“。我们是这样计算我们的向上销售率的：在通过向上销售产生的年度合约价值(annualized contract value，也叫做ACV)的基础上扣除掉逃离用户造成的损失，再除以该时期内所有用户签订的ACV (<span style="color: #999999;"><em>天地会珠海分舵注：也就是说，向上销售率 = (向上销售ACV  - 逃离用户损失ACV)/共签约ACV。举例说明，假如你是个叫做酷视的视频内容提供商，你上一年有100个付费用户，每个用户购买了1000元/年的“普通用户”License。今年你通过向上销售方式，告诉这些用户说“普通用户”账号只能看日本动作片或者日本爱情片，而我们现在提供的“高级用户”账号可以观看日本”爱情动作片”，还可以提供有限次数的苍老师的O2O服务的哦，只是价钱要再加500元了。如此这般的勾引了20个用户升级了他们的License到“高级用户”账号。而同时，又有10个爱国者听说还没有国产爱情动作片可以看，就没有再继续续费，逃离了。所以这里你的向上销售率就可以这样计算：向上销售率 ＝ ((500 x 20 - 1000 x 10)/ (1000 x 90 + 500 x 20) ＝ 0％。也就是说，你向上销售赚来的钱其实刚好够你填补用户丢失所导致的损失的这个坑。</em></span>)。我司在2014，2013，2012的最后一天所计算出来的向上销售率分别是36%，31%和30%。我们的向上销售主要来自我们客户购买更多的License以及用户订阅的其他付费服务。<br>&nbsp;</p>
+</li>
+<li><p><strong>续约率: </strong>我们计算续约率的方式是用100%减去我们的用户逃离率。我们的用户逃离率指代的是，逃离用户所导致的ACV损失，除以该时期所有续约的用户的ACV以及逃离用户所损失的ACV之和…所以我们这几年对应的续约率就是97%，96%以及97%。<br>以上的向上销售率其实就是通过所谓的“<a href="http://tomtunguz.com/negative-churn/" target="_blank" rel="external">逆向用户逃离率</a>(Negative Churn)“方式所计算出来，这个方法在众多SaaS初创企业中被广泛使用。</p>
+</li>
+</ul>
+<p>“逆向用户流失率”这个概念其实很难去定义，所以我们先去通过描述它对初创企业所造成的影响来搞清楚它是怎么回事吧。下图表示的是对一个假想的SaaS公司在2014年的收入增长情况的描述。这个初创企业每个月都会有100个新客户，每个用户会缴纳1美金/月的费用来使用公司提供的产品及服务。正所谓有得必有失，这个公司每个月当然也会有用户流失，这里我们假定是每个月5%的流失率，所以这样子计算的话，在一月份进来的100个新用户，到了年末12月份的话，剩下的人就大概只有一半左右了。这个大家在图中可以很清楚的看出来。</p>
+<p><a href="http://tomtunguz.com/images/churn_five.png" target="_blank" rel="external"><img src="http://tomtunguz.com/images/churn_five.png" alt=""></a></p>
+<p>&nbsp;</p>
+<p>与之相对应，我们看一下下图显示的另外一家有着5%“逆向用户流失率”的公司。什么意思呢？说的是该公司一样是每月有5%的用户流失率，但是剩余的95%的保留用户在每月正常缴费的情况下还会额外花10%的金钱来购买其他服务(向上销售的功劳)，所以总共的收入就变成了105%。所以看上去用户是每个月都有流失，但是公司并没有停止增长，相反还是有着5%的增长率。</p>
+<p><img src="http://tomtunguz.com/images/negative_churn_five.png" alt=""></p>
+<p>&nbsp;</p>
+<p>但是这种方式也有一些缺点，如果单独使用它来判断一个公司的健康状况的话，也许会导致误判。</p>
+<p>比如，如果有些用户一个人就购买了你公司大量的服务， 你的向上销售率就会显得很高，甚至可能会达到100%。但是如果同时每个月有10%的用户丢失率的话，就算你这个向上销售率达到100%，你的初创企业肯定是存在问题的。</p>
+<p>所以除了使用这种方式外，初创企业还往往会对用户逃离个数进行统计，以便看清楚上面说的仅仅因为某一个人大量购买而导致向上销售率高涨的这种虚假繁荣的假象。</p>
+<p>但是一个个计算用户的逃离个数也有问题，因为如果你的初创企业的用户非常多元化，拥有着很多重量级用户，也拥有着一些就算丢失掉也无关痛痒的小用户的话，那么一部分的这些小用户的逃离可能就会让人觉得你的初创企业的用户逃离率太高了。</p>
+<p>所以ServiceNow所提出来的这种续约率的计算方法，是对用户逃离个数这种计算方法的很好的替代品。这种方式不会让少数的几个用户的大量消费来掩盖了用户逃离的事实，同时能够很好的反映出你的生意的健康状况。</p>
+<p>所以，如前所述，当我们要计算我们的续约率的时候，请使用以下方程式：</p>
+<blockquote>
+<p>续约率 = 100% - 逃离客户ACV/(逃离客户ACV + 总共续约用户ACV)<br>&nbsp;</p>
+</blockquote>
+<p>大家可以尝试将这个续约率带入到你的SaaS初创公司里面，相信必然会让你更清晰的认清楚你的用户的情况，给你带来意想不到的惊喜。</p>
+<p>&nbsp;</p>
+<hr>
+<p><em><strong>编者注</strong>:。更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></p>
+<p><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/06/10/一个苹果商标引发的冤案分析/" rel="next" title="一个苹果商标引发的冤案分析">
+                <i class="fa fa-chevron-left"></i> 一个苹果商标引发的冤案分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/06/14/business_war_and_counter_strike/" rel="prev" title="哈佛商业评论： 从商战到反恐，如何建立指挥系统内外的“网络”">
+                哈佛商业评论： 从商战到反恐，如何建立指挥系统内外的“网络” <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="kzlathander" />
+          <p class="site-author-name" itemprop="name">kzlathander</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kzlathander</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

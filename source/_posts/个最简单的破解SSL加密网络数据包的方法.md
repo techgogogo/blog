@@ -1,0 +1,146 @@
+title: 发现新大陆：一个最简单的破解SSL加密网络数据包的方法
+tags:
+  - ssl
+  - wireshark
+  - 抓包
+  - 破解
+  - 黑客
+id: 520
+categories:
+  - Hacker News
+date: 2015-02-14 10:13:00
+---
+
+<div id="article_content" class="article_content">&#13;
+
+### ![](http://img.blog.csdn.net/20150213173433128?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+# 1\. 简介
+
+相信能访问到这篇文章的同行基本上都会用过流行的网络抓包工具WireShark，用它来抓取相应的网络数据包来进行问题分析或者其他你懂的之类的事情。
+
+![](http://img.blog.csdn.net/20150213173654857?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+<span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;">一般来说，我们用WireShark来抓取包进行分析是没有多大问题的。但这里有个问题是，如果你碰到的是用SSL/TLS等加密手段加密过的网络数据的时候，往往我们只能束手无策。在过去的话，如果我们拥有的该传输会话的私钥的话我们还是可以将它提供给WireShark来让其对这些加密数据包进行解密的，但这已经是想当年还用RSA进行网络数据加密的年代的事情了。当今大家都已经逐渐拥抱</span>[前向加密技术PFS](http://en.wikipedia.org/wiki/Forward_secrecy)<span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"> 的时代了，所以该方法就不再适用了。因为前向加密技术的目的就是让每个数据交互都使用的是不同的私钥，所以你像以前RSA时代一样想只用一个私钥就能把整个session会话的网络数据包都破解出来的话是不可能的了。所以这将是一个挺恼火的事情。</span>
+
+# 2\. Session Key日记记录来救火！
+
+<span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;">大家先别火起，这里我来告诉你另外一个简单的方法来解决这个问题！其实Firefox和Chrome浏览器都支持用日记文件的方式记录下用来加密TLS数据包对称会话秘钥的。这样你就可以在WireShark中指定该文件来快速完成你的破解目的了。请继续往下看具体的步骤。</span>
+
+# 3\. Browsers配置
+
+首先你需要配置一个环境变量。
+
+## 3.1 在Windows下的配置：
+
+怎么去到环境变量配置页面相信不需要我多说了，毕竟国内还是Windows的天下。
+![](http://img.blog.csdn.net/20150213180032366?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+<span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;">在上图的位置增加一个新的叫做<span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;">“SSLKEYLOGFILE”的环境变量并指定其路径到你想要保存你的会话私钥的地方。</span></span>
+</span>
+
+<span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;">![](http://img.blog.csdn.net/20150213180224359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+</span>
+
+<span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"></span></span>
+
+## 3.2 在Linux或者MAC OS X上的配置:
+<div style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: Poly, Georgia, serif; font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><div id="highlighter_410266" class="syntaxhighlighter  plain" style="box-sizing: border-box; width: 620.953125px; margin: 1em 0px !important; position: relative !important; overflow-x: auto !important; overflow-y: hidden !important; font-size: 1em !important; background-color: rgb(15, 25, 42) !important;"><table border="0" cellpadding="0" cellspacing="0" class=" " style="border-collapse: collapse; border-spacing: 0px; width: 620px; border: 0px !important; box-sizing: content-box !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; table-layout: auto !important; background: none !important;"><tbody style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><tr style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><td class="gutter" style="font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; border: 0px !important; box-sizing: content-box !important; padding: 0px !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; color: rgb(175, 175, 175) !important; background: none !important;"><div class="line number1 index0 alt2" style="box-sizing: content-box !important; border-radius: 0px !important; border-width: 0px 3px 0px 0px !important; border-right-style: solid !important; border-right-color: rgb(67, 90, 95) !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px 0.5em 0px 1em !important; position: static !important; right: auto !important; text-align: right !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; white-space: pre !important; background-image: none !important; background-attachment: initial !important; background-size: initial !important; background-origin: initial !important; background-clip: initial !important; background-position: initial !important; background-repeat: initial !important;">1</div></td><td class="code" style="width: 577px; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; border: 0px !important; box-sizing: content-box !important; padding: 0px !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><div class="container" style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: relative !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><div class="line number1 index0 alt2" style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px 1em !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; white-space: pre !important; background-image: none !important; background-attachment: initial !important; background-size: initial !important; background-origin: initial !important; background-clip: initial !important; background-position: initial !important; background-repeat: initial !important;">`$ export SSLKEYLOGFILE=~/path/to/sslkeylog.log`</div></div></td></tr></tbody></table></div></div>
+
+当然，如果你想在你的系统每次启动的时候都指定该日记路径的话，你可以在你的Linux下执行下面的动作：
+<div style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: Poly, Georgia, serif; font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><div id="highlighter_221443" class="syntaxhighlighter  plain" style="box-sizing: border-box; width: 620.953125px; margin: 1em 0px !important; position: relative !important; overflow-x: auto !important; overflow-y: hidden !important; font-size: 1em !important; background-color: rgb(15, 25, 42) !important;"><table border="0" cellpadding="0" cellspacing="0" class=" " style="border-collapse: collapse; border-spacing: 0px; width: 620px; border: 0px !important; box-sizing: content-box !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; table-layout: auto !important; background: none !important;"><tbody style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><tr style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><td class="gutter" style="font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; border: 0px !important; box-sizing: content-box !important; padding: 0px !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; color: rgb(175, 175, 175) !important; background: none !important;"><div class="line number1 index0 alt2" style="box-sizing: content-box !important; border-radius: 0px !important; border-width: 0px 3px 0px 0px !important; border-right-style: solid !important; border-right-color: rgb(67, 90, 95) !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px 0.5em 0px 1em !important; position: static !important; right: auto !important; text-align: right !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; white-space: pre !important; background-image: none !important; background-attachment: initial !important; background-size: initial !important; background-origin: initial !important; background-clip: initial !important; background-position: initial !important; background-repeat: initial !important;">1</div></td><td class="code" style="width: 577px; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; border: 0px !important; box-sizing: content-box !important; padding: 0px !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><div class="container" style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: relative !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><div class="line number1 index0 alt2" style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px 1em !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; white-space: pre !important; background-image: none !important; background-attachment: initial !important; background-size: initial !important; background-origin: initial !important; background-clip: initial !important; background-position: initial !important; background-repeat: initial !important;">`~/.bashrc`</div></div></td></tr></tbody></table></div></div>
+
+或者在你的MAC OS X上执行以下命令：
+<div style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: Poly, Georgia, serif; font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><div id="highlighter_595789" class="syntaxhighlighter  plain" style="box-sizing: border-box; width: 620.953125px; margin: 1em 0px !important; position: relative !important; overflow-x: auto !important; overflow-y: hidden !important; font-size: 1em !important; background-color: rgb(15, 25, 42) !important;"><table border="0" cellpadding="0" cellspacing="0" class=" " style="border-collapse: collapse; border-spacing: 0px; width: 620px; border: 0px !important; box-sizing: content-box !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; table-layout: auto !important; background: none !important;"><tbody style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><tr style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><td class="gutter" style="font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; border: 0px !important; box-sizing: content-box !important; padding: 0px !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; color: rgb(175, 175, 175) !important; background: none !important;"><div class="line number1 index0 alt2" style="box-sizing: content-box !important; border-radius: 0px !important; border-width: 0px 3px 0px 0px !important; border-right-style: solid !important; border-right-color: rgb(67, 90, 95) !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px 0.5em 0px 1em !important; position: static !important; right: auto !important; text-align: right !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; white-space: pre !important; background-image: none !important; background-attachment: initial !important; background-size: initial !important; background-origin: initial !important; background-clip: initial !important; background-position: initial !important; background-repeat: initial !important;">1</div></td><td class="code" style="width: 577px; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; font-size: 1em !important; border: 0px !important; box-sizing: content-box !important; padding: 0px !important; border-radius: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><div class="container" style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: relative !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background: none !important;"><div class="line number1 index0 alt2" style="box-sizing: content-box !important; border-radius: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px 1em !important; position: static !important; right: auto !important; top: auto !important; vertical-align: baseline !important; width: auto !important; font-size: 1em !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; white-space: pre !important; background-image: none !important; background-attachment: initial !important; background-size: initial !important; background-origin: initial !important; background-clip: initial !important; background-position: initial !important; background-repeat: initial !important;">`~/.MacOSX/environment`</div></div></td></tr></tbody></table></div></div>
+
+这样我们下次启动Firefox或者Chrome的开发者模式的时候，TLS秘钥就会自动写入到该指定文件下面了。
+
+# 4\. Wireshark配置
+
+为了支持这个功能，你当前的WireShark版本必须是1.6或者更新。我们仅仅要做的就是先进入偏好设置页面：
+![](http://img.blog.csdn.net/20150213180910084?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+<span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;">
+</span>
+
+<span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;">展开协议选项:</span>
+
+<span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;">![](http://img.blog.csdn.net/20150213181118335?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+</span>
+
+<span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;">找到SSL选项然后如下图所示打开上面设置好的会话秘钥保存文件：</span>
+</span>
+![](http://img.blog.csdn.net/20150213181016650?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+<span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"></span></span>
+
+# 5\. 结果
+
+下图就是我们通常见到的WireShark抓到TLS数据包后的显示结果：
+
+![](http://img.blog.csdn.net/20150213181626776?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+<span style="color: rgb(51, 51, 51); font-family: Poly, Georgia, serif; font-size: 19.2000007629395px; line-height: 28.8000011444092px;">This is what it looks like when you switch to the “Decrypted SSL Data” tab.  Note that we can now see the request information in plain-text!  Success!大家可以看到WireShark下面会有一个“已解密的SSL Data”的标签，点击之后你就可以如下图所示的看到已经解密的TLS数据包的相信信息了：</span>
+
+<span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;">![](http://img.blog.csdn.net/20150213181850720?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+</span>
+
+<span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"><span style="font-size: 19.2000007629395px; line-height: 28.8000011444092px;"></span></span>
+
+# 6\. 小结
+
+通过本文我真心希望你能从中学到一些东西，该方法让我们能够如此直截了当的去把TLS数据包给破解出来。这种方式的另外一个值得一提的好处是，给会话过程中的两台机器根本不需要安装任何Wireshark工具，因为你会担心安装上去会搞得问题是做多错多都不知道哪里出问题了。你只需要做的是把他们上面的该会话秘钥文件指定到一个网络共享文件夹然后用另外一个已经机器上安装WireShark并如前所示指定该秘钥文件进行抓包就了事了。
+
+最后多谢大家查看本文。如想每天都能看到最新的技术等资讯文章，敬请关注本人下面提供的微信公众号:techgogogo。谢谢！
+
+-------------完------------------
+
+英文原文引用：[https://jimshaver.net/2015/02/11/decrypting-tls-browser-traffic-with-wireshark-the-easy-way/](https://jimshaver.net/2015/02/11/decrypting-tls-browser-traffic-with-wireshark-the-easy-way/)
+<table border="1" cellspacing="0" cellpadding="0"><tbody><tr><td valign="top" style="background: rgb(250, 191, 143);">
+
+**<span style="color: rgb(54, 46, 43);">作</span><span style="color: rgb(54, 46, 43);">/译者</span>**
+</td><td valign="top" style="background: rgb(250, 191, 143);">
+
+**<span style="color: rgb(54, 46, 43);">微信知识共享公众号</span>**
+</td><td valign="top" style="background: rgb(250, 191, 143);">
+
+**<span style="color: rgb(54, 46, 43);">CSDN</span>**
+</td></tr><tr><td valign="top" style="background: rgb(227, 228, 228);">
+
+<span style="color: rgb(54, 46, 43);">天地会珠海分舵</span>
+</td><td valign="top">
+
+<span style="color: rgb(54, 46, 43);">TechGoGoGo</span>
+</td><td valign="top">
+
+<span style="color: rgb(54, 46, 43);">http://blog.csdn.net/zhubaitian</span>
+</td></tr><tr><td valign="top" style="background: rgb(251, 212, 180);">
+
+<span style="color: rgb(54, 46, 43);">优秀资源推荐</span>
+</td><td valign="top" style="background: rgb(251, 212, 180);">
+
+<span style="color: rgb(54, 46, 43);">地址</span>
+</td><td valign="top" style="background: rgb(251, 212, 180);">
+
+<span style="color: rgb(54, 46, 43);">点评</span>
+</td></tr><tr><td valign="top" style="background: rgb(227, 228, 228);">
+
+<span style="color: rgb(54, 46, 43);">DoctorQ</span><span style="color: rgb(54, 46, 43);">博客</span>
+</td><td valign="top">
+
+<span style="color: rgb(54, 46, 43);">[<span style="color: rgb(106, 57, 6);">http://testerhome.com/doctorq/topics</span>](http://testerhome.com/doctorq/topics)</span>
+</td><td valign="top">
+
+<span style="color: rgb(54, 46, 43);">安卓自动化领域才俊</span><span style="color: rgb(54, 46, 43);">           </span>
+</td></tr><tr><td valign="top" style="background: rgb(227, 228, 228);">
+
+<span style="color: rgb(54, 46, 43);">金阳光测试</span>
+</td><td valign="top">
+
+<span style="color: rgb(54, 46, 43);">官网：</span><span style="color: rgb(54, 46, 43);">[www.goldensunshine.cc](http://www.goldensunshine.cc/)</span>
+</td><td valign="top">
+
+<span style="color: rgb(54, 46, 43);">更多请百度搜：“金阳光”</span>
+</td></tr></tbody></table>
+
+</div>

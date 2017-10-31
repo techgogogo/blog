@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="编者注: 本文来自Uber的技术总监Pedram Keyani的一篇博文，中文版由天地会珠海分舵进行编译。全文以Facebook为例子作为切入点，描述了在互联网和软件公司中，编程马拉松是如何起到了塑造公司文化并催生创新的作用的。  编程马拉松打造公司文化 对于我个人来说，我是非常热衷于编程马拉松的。这就是为什么过去在Facebook的7年时间里我组织举办了将近40场编程马拉松的原因。一开始的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="且看编程马拉松如何打造公司文化和引发创新">
+<meta property="og:url" content="http://yoursite.com/2015/04/14/编程马拉松/index.html">
+<meta property="og:site_name" content="科技向前冲">
+<meta property="og:description" content="编者注: 本文来自Uber的技术总监Pedram Keyani的一篇博文，中文版由天地会珠海分舵进行编译。全文以Facebook为例子作为切入点，描述了在互联网和软件公司中，编程马拉松是如何起到了塑造公司文化并催生创新的作用的。  编程马拉松打造公司文化 对于我个人来说，我是非常热衷于编程马拉松的。这就是为什么过去在Facebook的7年时间里我组织举办了将近40场编程马拉松的原因。一开始的">
+<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/800/1*1QH5lHMRIc7iUjtz2oNrew.jpeg">
+<meta property="og:updated_time" content="2017-07-17T04:40:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="且看编程马拉松如何打造公司文化和引发创新">
+<meta name="twitter:description" content="编者注: 本文来自Uber的技术总监Pedram Keyani的一篇博文，中文版由天地会珠海分舵进行编译。全文以Facebook为例子作为切入点，描述了在互联网和软件公司中，编程马拉松是如何起到了塑造公司文化并催生创新的作用的。  编程马拉松打造公司文化 对于我个人来说，我是非常热衷于编程马拉松的。这就是为什么过去在Facebook的7年时间里我组织举办了将近40场编程马拉松的原因。一开始的">
+<meta name="twitter:image" content="https://d262ilb51hltx0.cloudfront.net/max/800/1*1QH5lHMRIc7iUjtz2oNrew.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'kzlathander'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/04/14/编程马拉松/"/>
+
+
+
+
+
+  <title>且看编程马拉松如何打造公司文化和引发创新 | 科技向前冲</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">科技向前冲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-startup">
+          <a href="/categories/创业" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fire"></i> <br />
+            
+            创业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pm">
+          <a href="/categories/产品" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-mobile-phone"></i> <br />
+            
+            产品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-oversea">
+          <a href="/categories/Hacker-News" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            海外
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-innovation">
+          <a href="/categories/创新" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            创新
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/04/14/编程马拉松/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kzlathander">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技向前冲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">且看编程马拉松如何打造公司文化和引发创新</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-04-14T16:30:32+08:00">
+                2015-04-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品/" itemprop="url" rel="index">
+                    <span itemprop="name">产品</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品/创业/" itemprop="url" rel="index">
+                    <span itemprop="name">创业</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品/创业/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><figure id="c648" class="graf--figure graf--first"></figure></p>
+<p><div class="aspectRatioPlaceholder is-locked"><img src="https://d262ilb51hltx0.cloudfront.net/max/800/1*1QH5lHMRIc7iUjtz2oNrew.jpeg" alt=""></div><br></p>
+<blockquote>
+<p>编者注: 本文来自Uber的技术总监Pedram Keyani的一篇<a href="https://medium.com/@pedramkeyani/hacking-company-culture-1daa3be1d769" target="_blank" rel="external">博文</a>，中文版由天地会珠海分舵进行编译。全文以Facebook为例子作为切入点，描述了在互联网和软件公司中，编程马拉松是如何起到了塑造公司文化并催生创新的作用的。</p>
+</blockquote>
+<h1 id="编程马拉松打造公司文化"><a href="#编程马拉松打造公司文化" class="headerlink" title="编程马拉松打造公司文化"></a>编程马拉松打造公司文化</h1><hr>
+<p>对于我个人来说，我是非常热衷于编程马拉松的。这就是为什么过去在Facebook的7年时间里我组织举办了将近40场编程马拉松的原因。一开始的时候，我之所以这样做主要是因为我喜欢在工作之余和其他同僚一起抛开所有条条框，无拘无俗的，天马行空的为代码挥洒汗水。但随着时间的转移，这些编程马拉松从原来的业余爱好逐渐演变成Facebook的一个重要的公司文化。让我们的编程马拉松紧跟Facebook的勇猛前进步伐是个很困难的事情，所以我们经常需要付诸认真的思考和实践以确保我们没有和Facebook脱节。同时，正是在不断的去捕获，增强，和扩大那些让编程马拉松变得如此特别的神奇力量的过程中，我突然意识到编程马拉松自身其实已经在我们共同成长的过程中不知不觉的得到很大的巩固，甚至起到了营造我们公司文化的作用。</p>
+<h1 id="时间约束催生创新"><a href="#时间约束催生创新" class="headerlink" title="时间约束催生创新"></a>时间约束催生创新</h1><hr>
+<p>一个很遗憾的事情是，现实中往往很多创意都会胎死腹中。因为那些孕育它们的人一旦意识到需要将这些创意变成现实的话竟然需要的如此大量的步骤的时候，它们就会打退堂鼓。这其实也挺容易理解，是吧？一个没有实现时间限制的创意其实就有如我们桌面很不显眼的那个角落上已经发霉的“明天再做的任务“列表，众所周知，其实这个“明天”是永远不会到来了。这就反过来衬托出编程马拉松背后所存在的吸引力和驱动力了 -  刻不容缓！编程马拉松从开始到原型的演示所需要的时间是非常紧迫的，正是这种客观事实让大家会用不同于上面描述的另外一种心态进行认真对待 - 你没有时间去前怕狼后怕虎的瞻前顾后。你没法对自己说在今后有时间再来完善这些点子，你只能驱使自己和团队在有限的时间内完成该最简的产品，无论该最简产品是可行的(MVP)还是不可行的。在有限的几个小时的时间内完成相应的任务其实是一个很好的可行性验证实践，究竟要做的这个东西是否真的可行。</p>
+<p>这种深受时间约束的简单验证会带给你难以置信的效果，因为它将会迫使你去权衡功能的利弊并做出合理的折中考虑，同时也会刺激你的脑神经让你的创新意识最大化以使得所实现的东西可以真正工作起来。<strong>约束乃催生创新的非凡的倍增器！</strong></p>
+<p>### </p>
+<h1 id="自组织扩展"><a href="#自组织扩展" class="headerlink" title="自组织扩展"></a>自组织扩展</h1><hr>
+<p>在开展编程马拉松之前我经常会先建立起一个维基页面或者一个共享文档来让大家将他们的想法以及各自团队所需成员的技能发布在上面，比如会有如下这些项：需要后台工程师，移动工程师，产品设计师，等等，下一步，附带该页面连接的编程马拉松正式开始的邮件就会发出去，这样大家就可以在该页面上面列出他们的想法和需求了。这样做的一个额外的好处是，就算成员中有人自己并没有什么点子也依然能够提供帮助并加入相应的团队以为推动相应的点子变成现实而作贡献。通过组建小团队并快速实时的一起对点子进行思想碰撞，一起进行设计，一起解决问题的这种行动其实有点像学跳爵士舞，因为它也是鼓励参与人员快速的进行调整和即兴的发挥。这种狂热的节奏让整个团队的力量大大超过了他们各自加起来的力量的总和，并会在今后公司任务的协作上体现出来。当你投身于编程马拉松之中时，你会真正的领会到，这是一个多么美妙的事情。</p>
+<p><strong>编程马拉松在公司范围内摒弃所有从上到下的条条框框，有机地鼓励公司文化的营建和团队成员之间的合作。</strong>这一点非常的关键，因为文化并不是一些你可以简单通过条文规定下来的东西。团队成员会开始碰头互动并进行思想碰撞，就会加强大家对事情的优先级进行排序的重要性的意识，进而就会提醒老员工和新员工该如何才能更高效的进行合作。</p>
+<p>### </p>
+<h1 id="信任和认同感会让你速度倍增"><a href="#信任和认同感会让你速度倍增" class="headerlink" title="信任和认同感会让你速度倍增"></a>信任和认同感会让你速度倍增</h1><hr>
+<p>有机的自组织会让来自公司各个部门的同事有机会一起协作并建立起良好的互动关系，而这些在通常的企业运作过程中是不大可能出现的。随着这些跨功能团队成员的深入协作，人们就会开始互相认识并建立起相互之间的友谊，并加深对公司不同的团队和职能所承担的任务的更清晰的认识和了解。一个成员之间互不认识的团队，其效率往往比不上一个成员之间知己知彼互相信任和认同的团队。在引进编程马拉松之前，一个前端工程师也许会认为“噢，尝试跟系统操作员一起在这个项目上公司将会是一个很痛苦的事情。” 在经受过编程马拉松的洗礼之后，该工程师更可能这样说 “看来我要找找系统操作员Rachel才行，商讨下我们该如何快速的搞定这个问题。”  在编程马拉松这个好时段建立好成员间的良好关系会让成员们更好的在公司碰到困难时帮助公司渡过难关，因为人往往会对一起共事的同事有一种互相连系的感觉，并且他们会对这种关系产生一种信任依赖，所以更容易的在困难时互相帮助并共进退。</p>
+<p>### </p>
+<h1 id="同风险，共成功"><a href="#同风险，共成功" class="headerlink" title="同风险，共成功"></a>同风险，共成功</h1><hr>
+<p>乐于挑战风险的人往往也勇于承担失败。编程马拉松可以说是失败的孵化器和加速器。<strong>通过将失败正常化，我们鼓励大家要勇于接受挑战</strong>。编程马拉松会帮助你教育你的团队清楚认识到失败其实是个好事，这其实是创意的另一个的呈现方式。爱迪生发明个电灯泡还经历过无数的失败呢？如果他没有勇气接受失败的话，哪来的电泡给大家用呢？当人们为充满激情的事情而忙活的时候(对比通过KPI进行衡量的任务)，他们往往会大胆的在一个新的和有意思的领域闯出一片新天地。在这些无拘无束的探索中，甚至会催生出一些改变整个公司进程的创意(我就曾经碰到过这种情况，这种感觉真是棒极了)。但大部分在编程马拉松产生的创意其实不会引发出一个杀手级别的新功能的诞生或者一个新技术的突破 - 这其实是100%没有关系的了，因为编程马拉松的主要作用是去对那些大胆向前迈进和大无畏不停拥抱失败的想法进行支持。同时，当那些罕见且令人回味无穷的“啊哈“(编者注：就是失败时人们经常发出的声音)一旦出现的时候，这无疑又让你少去走很多其他的弯路了 - 而这同时也会让你的团队培养出一个不怕失败敢于接受挑战的可贵文化。无论怎么说，编程马拉松的历程其实就是对你和你的团队很好的一个嘉奖(况且，编程马拉松成员的嘉奖往往包括定做的T恤发放了。^v^)</p>
+<h1 id="代码胜于雄辩"><a href="#代码胜于雄辩" class="headerlink" title="代码胜于雄辩"></a>代码胜于雄辩</h1><hr>
+<p>在我们的日常生活中，争吵往往都是由声音最大的一方或者死不认输的人获胜的。幸运的是，在一个关系到编写代码的公司中，没有什么比可行的代码更有说服力的了。编程马拉松让大家在此时此地一起角力来将点子变成现实。编程马拉松敦促人们将那些过去还只是假设的点子进行实现，以验证该点子究竟是可行还是不可行。因为编程马拉松是一场扁平的，临时的，以及人员流动性强的活动，大家一起共建一个可靠的环境来排除万难将一个点子付诸实现。以Facebook网络聊天这个功能为例，开始时候有一大堆质疑的声音和压力来反对将Facebook网络聊天这个功能实现到Facebook上面去。谢天谢地的是，其中一个小团队期间举办了一个编程马拉松并通过实践证明了反对者的担忧是多余的，是错误的。当我们今天往回看的时候，我们会看到当时他们反对的功能在今天已经成为无数人进行网络交流时一个必不可少的Facebook的功能点了。</p>
+<p>### </p>
+<h1 id="娱乐性与好奇心并重"><a href="#娱乐性与好奇心并重" class="headerlink" title="娱乐性与好奇心并重"></a>娱乐性与好奇心并重</h1><hr>
+<p>并不是每个点子都必须 - 或者说应该 - 关注在巨大的改变上面的。事实上，如果总是过于强调高强度的重大改变的话，你往往会对那些显而易见的创意视而不见，让它们在你眼皮底下偷偷溜走了。给大家营造一个良好的环境来一起围绕着点子进行开心的互动会唤醒我们小孩时最活跃的那颗好奇心。</p>
+<p>现在我已经离开Facebook来到了Uber，在Uber这段时间我们已经组织过2次“正式的”和无数次“非正式”的编程马拉松，以及大量的“工作假期日(workcations。编者注：指的就是假期时间用编程来打发度假的时间，你知道程序猿这种物种有多奇特的了…)。</p>
+<p>在Facebook我们举行编程马拉松来让Facebook连接整个世界。而现在在Uber,我们通过编程马拉松来“驾驭”整个世界。这里真诚的邀请你们登上Uber这架新型快车并一起“驾驭”世界。</p>
+<hr>
+<p><strong>版权</strong>:本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 若非授权，转发时切勿删除以下联系信息，否则追究相应责任。本文首发<a href="http://www.huxiu.com/article/112676/1.html" target="_blank" rel="external">虎嗅</a>。</p>
+<p><strong>提醒</strong>:更多相关文章将请关注微信公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/04/14/Uber下一个要颠覆的行业/" rel="next" title="还有谁！！！？谁是Uber下一个要颠覆的行业？">
+                <i class="fa fa-chevron-left"></i> 还有谁！！！？谁是Uber下一个要颠覆的行业？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/04/15/苹果你深深的伤害了我/" rel="prev" title="苹果你深深的伤害了我，还不让我说">
+                苹果你深深的伤害了我，还不让我说 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="kzlathander" />
+          <p class="site-author-name" itemprop="name">kzlathander</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#编程马拉松打造公司文化"><span class="nav-number">1.</span> <span class="nav-text">编程马拉松打造公司文化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#时间约束催生创新"><span class="nav-number">2.</span> <span class="nav-text">时间约束催生创新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自组织扩展"><span class="nav-number">3.</span> <span class="nav-text">自组织扩展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信任和认同感会让你速度倍增"><span class="nav-number">4.</span> <span class="nav-text">信任和认同感会让你速度倍增</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#同风险，共成功"><span class="nav-number">5.</span> <span class="nav-text">同风险，共成功</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码胜于雄辩"><span class="nav-number">6.</span> <span class="nav-text">代码胜于雄辩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#娱乐性与好奇心并重"><span class="nav-number">7.</span> <span class="nav-text">娱乐性与好奇心并重</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kzlathander</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

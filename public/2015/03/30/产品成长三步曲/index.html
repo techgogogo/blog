@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="互联网产品成长三步曲  你先会想要使用它，然后你会需要它，最后大家会变得离不开它 - 就像一个融入到人们日常生活中的到处可见的实用工具一样。  当前Facebook开发者大会F8正在如火如荼的进行中，规模非常庞大。但我现在想的却是该公司在起步时的情况。Facebook应该是第一个(根据网络所能查到的信息)打造了一个增长型团队的公司。并没有什么参数数据表明该团队会足够高效的获得可持续发展的用户增长。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="产品成长三步曲 - 来测试下你的产品处在哪一步？">
+<meta property="og:url" content="http://yoursite.com/2015/03/30/产品成长三步曲/index.html">
+<meta property="og:site_name" content="科技向前冲">
+<meta property="og:description" content="互联网产品成长三步曲  你先会想要使用它，然后你会需要它，最后大家会变得离不开它 - 就像一个融入到人们日常生活中的到处可见的实用工具一样。  当前Facebook开发者大会F8正在如火如荼的进行中，规模非常庞大。但我现在想的却是该公司在起步时的情况。Facebook应该是第一个(根据网络所能查到的信息)打造了一个增长型团队的公司。并没有什么参数数据表明该团队会足够高效的获得可持续发展的用户增长。">
+<meta property="og:image" content="http://img.blog.csdn.net/20150330002914159">
+<meta property="og:image" content="http://img.blog.csdn.net/20150330004909960">
+<meta property="og:updated_time" content="2017-07-17T06:51:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="产品成长三步曲 - 来测试下你的产品处在哪一步？">
+<meta name="twitter:description" content="互联网产品成长三步曲  你先会想要使用它，然后你会需要它，最后大家会变得离不开它 - 就像一个融入到人们日常生活中的到处可见的实用工具一样。  当前Facebook开发者大会F8正在如火如荼的进行中，规模非常庞大。但我现在想的却是该公司在起步时的情况。Facebook应该是第一个(根据网络所能查到的信息)打造了一个增长型团队的公司。并没有什么参数数据表明该团队会足够高效的获得可持续发展的用户增长。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20150330002914159">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'kzlathander'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/03/30/产品成长三步曲/"/>
+
+
+
+
+
+  <title>产品成长三步曲 - 来测试下你的产品处在哪一步？ | 科技向前冲</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">科技向前冲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-startup">
+          <a href="/categories/创业" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fire"></i> <br />
+            
+            创业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pm">
+          <a href="/categories/产品" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-mobile-phone"></i> <br />
+            
+            产品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-oversea">
+          <a href="/categories/Hacker-News" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            海外
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-innovation">
+          <a href="/categories/创新" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            创新
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/03/30/产品成长三步曲/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kzlathander">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技向前冲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">产品成长三步曲 - 来测试下你的产品处在哪一步？</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-03-30T02:08:31+08:00">
+                2015-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品/" itemprop="url" rel="index">
+                    <span itemprop="name">产品</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品/创业/" itemprop="url" rel="index">
+                    <span itemprop="name">创业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="互联网产品成长三步曲"><a href="#互联网产品成长三步曲" class="headerlink" title="互联网产品成长三步曲"></a>互联网产品成长三步曲</h1><hr>
+<blockquote>
+<p>你先会想要使用它，然后你会需要它，最后大家会变得离不开它 - 就像一个融入到人们日常生活中的到处可见的实用工具一样。</p>
+</blockquote>
+<p>当前Facebook开发者大会F8正在如火如荼的进行中，规模非常庞大。但我现在想的却是该公司在起步时的情况。Facebook应该是第一个(根据网络所能查到的信息)打造了一个增长型团队的公司。并没有什么参数数据表明该团队会足够高效的获得可持续发展的用户增长。人们往往忘却的是，在关注用户增长之前，Facebook已经达到了Marc Andreessen所说的“产品市场匹配“了，所谓产品市场匹配说的就是：</p>
+<blockquote>
+<p>“处于一个良好的市场中并带来一个满足该市场的产品“。</p>
+</blockquote>
+<p>其实世上每篇有关用户增长的文章都应该附上下面的这句免责声明：</p>
+<blockquote>
+<p>如果没有达到产品市场匹配的话，你产品的消费者是不可能获得增长的。</p>
+</blockquote>
+<p>传统的价值主张关注解决一个“问题“或者“需要完成的任务“，但这种泛泛而谈是远远不够的。你需要对一个活生生的你认为这个世界需要的产品进行分析。你将会关注，测试，和分析并最后综合考察别人是如何打造一个优秀的产品和难忘的用户体验的。人们往往会忘记产品体验是来自用户的情感需要这个事实。</p>
+<p>你的用户其实在消费的是一种体验。那么你是如何验证这种体验，如何提出问题并综合考虑相关信息的呢？</p>
+<p>我本人非常荣幸曾经参与过打造Facebook应用和游戏，其他手游，以及消费型移动应用，并且切身体会和观察过它们的用户的增长。根据这些经验，我发明了一套框架来描述互联网产品的体验以及其所需要经历的不同阶段。</p>
+<p><strong>总的来说就是三个阶段：互联网产品从用户的“想要“开始，然后到“需要“。而最后一个阶段往往很多产品都达不到的，这就是 - 该产品进化成一个融入到人们日常生活以及其他产品中的实用工具了。</strong></p>
+<p><a href="http://img.blog.csdn.net/20150330002914159" target="_blank" rel="external"><img src="http://img.blog.csdn.net/20150330002914159" alt="产品成长三步曲"></a></p>
+<blockquote>
+<p><strong>想要</strong> — 解决一个独特的且让人感觉很新颖的核心价值主张</p>
+<p><strong>需要</strong> — 人们感觉离不开它且不停的回来向你索取更多</p>
+<p><strong>无所不在的工具</strong> — 它成为其他产品的一个功能<br>那些正在飞速增长的互联网产品必然已经经历过以上的三个阶段了，同时那些还在路上的产品必然就会落在这三个阶段的其中之一上面。Facebook其实就是已经经历过这些阶段且有着快速的用户增长的很好的示例。</p>
+</blockquote>
+<p><a href="http://img.blog.csdn.net/20150330004909960" target="_blank" rel="external"><img src="http://img.blog.csdn.net/20150330004909960" alt="facebook"></a></p>
+<p>Mark Zuckerberg在Facebook初期的一个视频很好的解析了让Facebook最终进化成一个融入人们生活和作为其他产品的实用工具的想法。</p>
+<blockquote>
+<p><strong>想要</strong></p>
+<p>早期Facebook在2004年2月份开始上线，且在几个星期内三分之二的学校的学生都在上面进行注册。</p>
+</blockquote>
+<p>Facebook允许大学学生查看它们学校的”面书“而成为一个用户“想要“的产品。它们出现在学生面前的时候学校已经存在了稳定的花名册信息，而去查看同学的信息这个需求却是一直存在但没有被满足的。Facebook将这种需求变成现实的一个服务来让大家可以方便的浏览其他人的档案，并允许用户在上面添加一些学校花名册之外的有限名额的其他朋友进来。</p>
+<blockquote>
+<p><strong>需要</strong></p>
+<p>我认为Facebook其实就是个在线的大学花名册。</p>
+<p>做一些另类的且很酷的东西是亟须关注的任务，但没有必要在此之外做更多其他事情了。</p>
+</blockquote>
+<p>从该早期视频的这段话看来，其实创建Facebook的那班人起初并没有雄心壮志把眼光看到学校之外。Facebook通过高度关注提供一个给大学学生使用的产品而成为学生们的必需品。一个让Facebook加速穿越这个阶段的关键功能是在2005年的12月份加进去的，那就是允许用户在Facebook上给他们的朋友的照片进行加标签的功能。有了该功能后，大学的学生立刻对Facebook着了魔。</p>
+<blockquote>
+<p><strong>无所不在的工具</strong></p>
+<p>有些级别的服务我们本可以提供但因身在哈佛而又不能提供给所有学生用户。也有一些级别的服务是我们作为一个大学网络向其他类型的产品转变所不能提供的。</p>
+</blockquote>
+<p>2006年9月，距离Facebook在哈佛首次发布大概2年半的时间，Facebook将该产品对所有人进行开放。这就是Facebook成为一个“无所不在的工具“的开始。事实上，两年之后，在Facebook工作的同僚们都把Facebook叫做“社交工具“。</p>
+<p>一旦一个互联网产品成为一个工具之后，你往往会在其他产品的身上看到它的身影。因为该产品所鼓励的行为方式已经成为了一种文化，所以这些产品在人们的日常生活中已经是根深蒂固的了。</p>
+<p>Facebook进一步的工具化之路应该归功于其往平台化的方向发展的决定及其执行力，这个转变让开发人员可以很方便的把Facebook集成到他们开发的应用上去。Facebook并没有坐等其他产品去拷贝它的功能：它让Facebook和其他产品的集成变得异常的简单，并因此在这个过程中获得最大的利益。</p>
+<p>这个大家想想国内的QQ, 微信，微博，其实他们都已经经历过这三步了。就像你看完这篇文章之后，你就会很方便的通过下面的转发功能把它转发到你的QQ空间，微博，微信朋友圈等一样。^v^</p>
+<p>那么根据上面给出的模型，你觉得你正在努力的产品又是处于哪一个阶段之中呢？欢迎大家留言讨论。</p>
+<p>&lt;完&gt;</p>
+<hr>
+<p>参考英文文章：<a href="https://medium.com/backchannel/lessons-learned-growing-consumer-products-550fc04c63c2" target="_blank" rel="external">https://medium.com/backchannel/lessons-learned-growing-consumer-products-550fc04c63c2</a></p>
+<p>注：原文说的是消费品Consumer Products， 但本人-天地会珠海分舵觉得更适合应用在互联网产品上面。</p>
+<p>欢迎转载，转载请保留下面信息：</p>
+<p>作/译者：天地会珠海分舵<br>微信公众号：<strong>TechGoGoGo</strong><br>官网: <a href="http://techgogogo.com/" target="_blank" rel="external">http://techgogogo.com</a><br>微博：<a href="http://weibo.com/techgogogo" target="_blank" rel="external">http://weibo.com/techgogogo</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/03/29/这次面试就差不多了/" rel="next" title="这次面试就差不多了，你有什么问题需要问我呢？">
+                <i class="fa fa-chevron-left"></i> 这次面试就差不多了，你有什么问题需要问我呢？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/03/30/闭嘴-你的产品烂透了/" rel="prev" title="你丫闭嘴，你的产品烂透了！">
+                你丫闭嘴，你的产品烂透了！ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="kzlathander" />
+          <p class="site-author-name" itemprop="name">kzlathander</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#互联网产品成长三步曲"><span class="nav-number">1.</span> <span class="nav-text">互联网产品成长三步曲</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kzlathander</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
