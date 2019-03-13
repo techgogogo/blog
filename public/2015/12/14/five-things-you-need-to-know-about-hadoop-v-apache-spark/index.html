@@ -83,6 +83,8 @@
 
 
 
+  <link rel="alternate" href="/feed.xml" title="科技向前冲" type="application/atom+xml" />
+
 
 
 
@@ -93,12 +95,13 @@
 
 
 
-<meta name="description" content="谈到大数据，相信大家对Hadoop和Apache Spark这两个名字并不陌生。但我们往往对它们的理解只是提留在字面上，并没有对它们进行深入的思考，下面不妨跟我一块看下它们究竟有什么异同。 解决问题的层面不一样首先，Hadoop和Apache Spark两者都是大数据框架，但是各自存在的目的不尽相同。Hadoop实质上更多是一个分布式数据基础设施: 它将巨大的数据集分派到一个由普通计算机组成的集">
+<meta name="description" content="谈到大数据，相信大家对Hadoop和Apache Spark这两个名字并不陌生。但我们往往对它们的理解只是提留在字面上，并没有对它们进行深入的思考，下面不妨跟我一块看下它们究竟有什么异同。 解决问题的层面不一样首先，Hadoop和Apache Spark两者都是大数据框架，但是各自存在的目的不尽相同。Hadoop实质上">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2分钟读懂大数据框架Hadoop和Spark的异同">
 <meta property="og:url" content="http://yoursite.com/2015/12/14/five-things-you-need-to-know-about-hadoop-v-apache-spark/index.html">
 <meta property="og:site_name" content="科技向前冲">
 <meta property="og:description" content="谈到大数据，相信大家对Hadoop和Apache Spark这两个名字并不陌生。但我们往往对它们的理解只是提留在字面上，并没有对它们进行深入的思考，下面不妨跟我一块看下它们究竟有什么异同。 解决问题的层面不一样首先，Hadoop和Apache Spark两者都是大数据框架，但是各自存在的目的不尽相同。Hadoop实质上更多是一个分布式数据基础设施: 它将巨大的数据集分派到一个由普通计算机组成的集">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/264714-bd0ec567eee8a2b7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2017-07-17T01:55:32.000Z">
 <meta name="twitter:card" content="summary">
@@ -402,7 +405,7 @@
 <h3 id="灾难恢复"><a href="#灾难恢复" class="headerlink" title="灾难恢复"></a><strong><span style="color: #993300;">灾难恢复</span></strong></h3><p>两者的灾难恢复方式迥异，但是都很不错。因为Hadoop将每次处理后的数据都写入到磁盘上，所以其天生就能很有弹性的对系统错误进行处理。</p>
 <p>Spark的数据对象存储在分布于数据集群中的叫做弹性分布式数据集(RDD: Resilient Distributed Dataset)中。“这些数据对象既可以放在内存，也可以放在磁盘，所以RDD同样也可以提供完成的灾难恢复功能，”Borne指出。</p>
 <blockquote>
-<p><span style="color: #999999;">_注：更多文章请关注公众号:techgogogo或个人博客<a href="http://techgogogo.com/" target="_blank" rel="external">http://techgogogo.com</a>。当然，也非常欢迎您直接微信(zhubaitian1)勾搭。本文由天地会珠海分舵编译自<a href="http://www.infoworld.com/article/3014440/big-data/five-things-you-need-to-know-about-hadoop-v-apache-spark.html#tk.rss_all" target="_blank" rel="external">InforWorld</a>。转载请自觉。_</span></p>
+<p><span style="color: #999999;">_注：更多文章请关注公众号:techgogogo或个人博客<a href="http://techgogogo.com/" target="_blank" rel="noopener">http://techgogogo.com</a>。当然，也非常欢迎您直接微信(zhubaitian1)勾搭。本文由天地会珠海分舵编译自<a href="http://www.infoworld.com/article/3014440/big-data/five-things-you-need-to-know-about-hadoop-v-apache-spark.html#tk.rss_all" target="_blank" rel="noopener">InforWorld</a>。转载请自觉。_</span></p>
 </blockquote>
 
       
@@ -525,7 +528,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-count">150</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -555,6 +558,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/feed.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
@@ -605,11 +615,12 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">kzlathander</span>
+  <a href="http://www.miitbeian.gov.cn/">粤ICP备17146211号</a> 
 </div>
 
 

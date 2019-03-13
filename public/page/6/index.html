@@ -83,6 +83,8 @@
 
 
 
+  <link rel="alternate" href="/feed.xml" title="科技向前冲" type="application/atom+xml" />
+
 
 
 
@@ -97,6 +99,7 @@
 <meta property="og:title" content="科技向前冲">
 <meta property="og:url" content="http://yoursite.com/page/6/index.html">
 <meta property="og:site_name" content="科技向前冲">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="科技向前冲">
 
@@ -293,6 +296,169 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/06/12/how_unicorn_count_churn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kzlathander">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技向前冲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/06/12/how_unicorn_count_churn/" itemprop="url">一个市值110亿美元的独角兽是如何计算用户流失率的</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-06-12T08:03:30+08:00">
+                2015-06-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/创业/" itemprop="url" rel="index">
+                    <span itemprop="name">创业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://tomtunguz.com/images/huge_pipe_leak.jpg" alt=""></p>
+<blockquote>
+<p>编者注：<a href="http://tomtunguz.com/service-now-churn/" target="_blank" rel="noopener">本文</a>出自美国著名的红点创投<em>Tom Tunguz</em> 之手，被海外多家著名科技媒体和风投媒体所转载，中文版由天地会珠海分舵编译。大家怎么计算你自己的初创企业的用户流失率呢？以每月丢失了多少个用户算？那抓不住重点，因为有大客户和小客户之分。以向上销售率算？那有失偏颇，因为有可能你单个用户就给你带来大量销售额，而给你虚假繁荣的假想，看不到用户的大量流失这个事实。下面我们看看作者无意中窥破的ServiceNow的用户流失率的计算秘密…<br>之前在为全球第三大的SaaS公司ServiceNow准备他们的注册上市声明(S-1)的时候，我碰巧在他们叫做“影响我司效益之关键因数”的最近<a href="http://services.corporate-ir.net/SEC/Document.Service?id=P3VybD1hSFIwY0RvdkwyRndhUzUwWlc1cmQybDZZWEprTG1OdmJTOWtiM2R1Ykc5aFpDNXdhSEEvWVdOMGFXOXVQVkJFUmlacGNHRm5aVDB4TURFd056QTNNU1p6ZFdKemFXUTlOVGM9JnR5cGU9MiZmbj1TRVJWSUNFTk9XSU5DLnBkZg==" target="_blank" rel="noopener">年度报告</a>中，留意到了该公司用来计算用户流失率的两个方式。其中一个稍微比较常见，但是另外一个却是对SaaS公司非常有效的简单而又别开生面的计算方式的补充。下面我先把报告里面对这两种方式的描述给提供出来：</p>
+</blockquote>
+<ul>
+<li><p><strong>向上销售率：</strong>从已购买我们服务的顾客身上赚取更多的销售额对于我司的成长起着至关重要的作用，我们将之称为“向上销售率(Upsell rate)“。我们是这样计算我们的向上销售率的：在通过向上销售产生的年度合约价值(annualized contract value，也叫做ACV)的基础上扣除掉逃离用户造成的损失，再除以该时期内所有用户签订的ACV (<span style="color: #999999;"><em>天地会珠海分舵注：也就是说，向上销售率 = (向上销售ACV  - 逃离用户损失ACV)/共签约ACV。举例说明，假如你是个叫做酷视的视频内容提供商，你上一年有100个付费用户，每个用户购买了1000元/年的“普通用户”License。今年你通过向上销售方式，告诉这些用户说“普通用户”账号只能看日本动作片或者日本爱情片，而我们现在提供的“高级用户”账号可以观看日本”爱情动作片”，还可以提供有限次数的苍老师的O2O服务的哦，只是价钱要再加500元了。如此这般的勾引了20个用户升级了他们的License到“高级用户”账号。而同时，又有10个爱国者听说还没有国产爱情动作片可以看，就没有再继续续费，逃离了。所以这里你的向上销售率就可以这样计算：向上销售率 ＝ ((500 x 20 - 1000 x 10)/ (1000 x 90 + 500 x 20) ＝ 0％。也就是说，你向上销售赚来的钱其实刚好够你填补用户丢失所导致的损失的这个坑。</em></span>)。我司在2014，2013，2012的最后一天所计算出来的向上销售率分别是36%，31%和30%。我们的向上销售主要来自我们客户购买更多的License以及用户订阅的其他付费服务。<br>&nbsp;</p>
+</li>
+<li><p><strong>续约率: </strong>我们计算续约率的方式是用100%减去我们的用户逃离率。我们的用户逃离率指代的是，逃离用户所导致的ACV损失，除以该时期所有续约的用户的ACV以及逃离用户所损失的ACV之和…所以我们这几年对应的续约率就是97%，96%以及97%。<br>以上的向上销售率其实就是通过所谓的“<a href="http://tomtunguz.com/negative-churn/" target="_blank" rel="noopener">逆向用户逃离率</a>(Negative Churn)“方式所计算出来，这个方法在众多SaaS初创企业中被广泛使用。</p>
+</li>
+</ul>
+<p>“逆向用户流失率”这个概念其实很难去定义，所以我们先去通过描述它对初创企业所造成的影响来搞清楚它是怎么回事吧。下图表示的是对一个假想的SaaS公司在2014年的收入增长情况的描述。这个初创企业每个月都会有100个新客户，每个用户会缴纳1美金/月的费用来使用公司提供的产品及服务。正所谓有得必有失，这个公司每个月当然也会有用户流失，这里我们假定是每个月5%的流失率，所以这样子计算的话，在一月份进来的100个新用户，到了年末12月份的话，剩下的人就大概只有一半左右了。这个大家在图中可以很清楚的看出来。</p>
+<p><a href="http://tomtunguz.com/images/churn_five.png" target="_blank" rel="noopener"><img src="http://tomtunguz.com/images/churn_five.png" alt=""></a></p>
+<p>&nbsp;</p>
+<p>与之相对应，我们看一下下图显示的另外一家有着5%“逆向用户流失率”的公司。什么意思呢？说的是该公司一样是每月有5%的用户流失率，但是剩余的95%的保留用户在每月正常缴费的情况下还会额外花10%的金钱来购买其他服务(向上销售的功劳)，所以总共的收入就变成了105%。所以看上去用户是每个月都有流失，但是公司并没有停止增长，相反还是有着5%的增长率。</p>
+<p><img src="http://tomtunguz.com/images/negative_churn_five.png" alt=""></p>
+<p>&nbsp;</p>
+<p>但是这种方式也有一些缺点，如果单独使用它来判断一个公司的健康状况的话，也许会导致误判。</p>
+<p>比如，如果有些用户一个人就购买了你公司大量的服务， 你的向上销售率就会显得很高，甚至可能会达到100%。但是如果同时每个月有10%的用户丢失率的话，就算你这个向上销售率达到100%，你的初创企业肯定是存在问题的。</p>
+<p>所以除了使用这种方式外，初创企业还往往会对用户逃离个数进行统计，以便看清楚上面说的仅仅因为某一个人大量购买而导致向上销售率高涨的这种虚假繁荣的假象。</p>
+<p>但是一个个计算用户的逃离个数也有问题，因为如果你的初创企业的用户非常多元化，拥有着很多重量级用户，也拥有着一些就算丢失掉也无关痛痒的小用户的话，那么一部分的这些小用户的逃离可能就会让人觉得你的初创企业的用户逃离率太高了。</p>
+<p>所以ServiceNow所提出来的这种续约率的计算方法，是对用户逃离个数这种计算方法的很好的替代品。这种方式不会让少数的几个用户的大量消费来掩盖了用户逃离的事实，同时能够很好的反映出你的生意的健康状况。</p>
+<p>所以，如前所述，当我们要计算我们的续约率的时候，请使用以下方程式：</p>
+<blockquote>
+<p>续约率 = 100% - 逃离客户ACV/(逃离客户ACV + 总共续约用户ACV)<br>&nbsp;</p>
+</blockquote>
+<p>大家可以尝试将这个续约率带入到你的SaaS初创公司里面，相信必然会让你更清晰的认清楚你的用户的情况，给你带来意想不到的惊喜。</p>
+<p>&nbsp;</p>
+<hr>
+<p><em><strong>编者注</strong>:。更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="noopener">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></p>
+<p><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="noopener">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/06/10/一个苹果商标引发的冤案分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -397,7 +563,7 @@
 <p>其实我们的大脑将那些不重要的事物，声音，以及经验”抛诸脑后“是非常合理的，否则我们的大脑就会超负荷的运作，结果会适得其反。</p>
 <p>在Castel教授上面的两个实验当中，大部分接受实验的学生开始前都是信心满满的。他们认为自己肯定能完满的完成这个实验，因为他们大部分都是苹果设备用户，每天都接触着这些产品。而其实这种现象在心理学上也有专业名词来进行解析，那就是“<strong>可得性启发</strong>”(<span style="color: #999999;"><em>百度百科上的解析就是：可得性启发法 （availability heuristic）在使用启发法进行判断时，人们往往会依赖最先想到的经验和信息，并认定这些容易知觉到或回想起的事件更常出现，以此作为判断的依据，这种判断方法称为可得性启发法</em></span>)。</p>
 <p>在Castel教授的另外一项实验中，他邀请54个在同一间办公室中工作的同事作为实验对象，要求他们说出他们办公室中的灭火器究竟是在哪个具体位置。尽管灭火器的外观是非常鲜红易于辨认，且大家每天都会在它旁边经过，但实验中只有13个人可以说出它的具体位置在哪里。而在这次实验完成之后，全部人都能够准确的说出灭火器的位置了。这说明了什么？Castel教授认为这其实是一种叫做“<strong>后设认知(metacognition)</strong>”现象，认为对自己得失败或者对一个自己并没有接触过的事物，人们往往会有更深刻的记忆。</p>
-<p>“也许正是因为大家都认为我们现实中能碰到需要用上灭火器的情况的几率几乎为零，所以我们的大脑潜意识的就将这些信息(灭火器在哪里的信息)给过滤掉了，“ Castel教授说道，“用心理学家的专业说法，这其实就是一种“<strong>无意遗忘</strong>(<a href="http://search.bwh.harvard.edu/new/pubs/fleeting_memories.pdf" target="_blank" rel="external">inattentional amnesia</a>)“的现象 – <strong>当一个人对某样事情过于投入的时候，他就很容易忽略掉其他任何东西</strong>“。</p>
+<p>“也许正是因为大家都认为我们现实中能碰到需要用上灭火器的情况的几率几乎为零，所以我们的大脑潜意识的就将这些信息(灭火器在哪里的信息)给过滤掉了，“ Castel教授说道，“用心理学家的专业说法，这其实就是一种“<strong>无意遗忘</strong>(<a href="http://search.bwh.harvard.edu/new/pubs/fleeting_memories.pdf" target="_blank" rel="noopener">inattentional amnesia</a>)“的现象 – <strong>当一个人对某样事情过于投入的时候，他就很容易忽略掉其他任何东西</strong>“。</p>
 <p>&nbsp;</p>
 <h2 id="要旨记忆"><a href="#要旨记忆" class="headerlink" title="要旨记忆"></a><strong><span style="color: #993300;">要旨记忆</span></strong></h2><hr>
 <p>这里引发的另外一个心理学现象就是“要旨记忆(gist memory)“，人们通过它来对其他类似的但有着截然不同的细节区别的事物进行认知。当我们碰到一个新事物的时候，我们的大脑并不会一下子就钻入到事物的细枝末节上面去，而是先会联想到其他类似的有着共性的事物，也就是上面说的一个事物的“要旨”了。比如，我们看到特斯拉的时候，我们的大脑就先会联想到其他类型的车辆，因为它们都是有着方向盘和四个轮子，而不会去先去考虑它的颜色，形状，或者是什么型号这些细节，除此之外，我们的大脑也会先入为主的潜意识认为一辆车应该有的东西特斯拉应该都会存在，比如倒后镜，车内音响，雨刷等等。</p>
@@ -410,8 +576,8 @@
 <p>记不起一个商标其实并不是什么大事。我们的大脑需要对一些这样的细小东西进行遗忘，这样我们才能腾出我们的大脑空间来记住那些更重要的信息。难点是我们要意识到我们在关键的时候，不能让“要旨记忆”这种现象劫持我们的记忆，如果你能在关键时候意识到“后设认知“的存在的话，你就能在关键时刻专心的去注意那些你大脑可能将会忽略但又非常重要的细节上面去了，说不定你还能挽救一条本来清白的生命！</p>
 <p>&nbsp;</p>
 <hr>
-<p><span style="color: #999999;"><em><strong>编者注</strong>:本文来自<a href="http://www.inc.com/will-yakowicz/why-your-customers-cant-remember-logos-of-favorite-brands.html" target="_blank" rel="external">海外著名科技网站INC</a>,中文版由天地会珠海分舵编译。更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></span></p>
-<p><span style="color: #999999;"><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></span></p>
+<p><span style="color: #999999;"><em><strong>编者注</strong>:本文来自<a href="http://www.inc.com/will-yakowicz/why-your-customers-cant-remember-logos-of-favorite-brands.html" target="_blank" rel="noopener">海外著名科技网站INC</a>,中文版由天地会珠海分舵编译。更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="noopener">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></span></p>
+<p><span style="color: #999999;"><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="noopener">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></span></p>
 
           
         
@@ -556,29 +722,29 @@
       
         
           
-            <p><a href="http://img5.cache.netease.com/tech/2015/6/9/20150609083325dafea_550.jpg" target="_blank" rel="external"><img src="http://img5.cache.netease.com/tech/2015/6/9/20150609083325dafea_550.jpg" alt=""></a></p>
+            <p><a href="http://img5.cache.netease.com/tech/2015/6/9/20150609083325dafea_550.jpg" target="_blank" rel="noopener"><img src="http://img5.cache.netease.com/tech/2015/6/9/20150609083325dafea_550.jpg" alt=""></a></p>
 <blockquote>
-<p>编者按：针对投资回报率的正态分布和幂次法则我们在Peter Thiel的《从0到1》中算是领略过了，但是“贝比·鲁斯”效应又是怎么一回事呢？它给我们的创业者和风投从业人员又有怎么样的启示呢？请看CDIXON在他的<a href="http://cdixon.org/2015/06/07/the-babe-ruth-effect-in-venture-capital/" target="_blank" rel="external">最新文章</a>中是怎么说的，其中中文版由天地会珠海分舵进行编译。</p>
+<p>编者按：针对投资回报率的正态分布和幂次法则我们在Peter Thiel的《从0到1》中算是领略过了，但是“贝比·鲁斯”效应又是怎么一回事呢？它给我们的创业者和风投从业人员又有怎么样的启示呢？请看CDIXON在他的<a href="http://cdixon.org/2015/06/07/the-babe-ruth-effect-in-venture-capital/" target="_blank" rel="noopener">最新文章</a>中是怎么说的，其中中文版由天地会珠海分舵进行编译。</p>
 </blockquote>
 <p>“如何打出全垒打：我会用尽我十二成的全部功力进行挥杆，就像要将棒球给击穿一样…你对球棒握得越实，你击打棒球的力度就会越大，球就能飞得越远。在我用尽吃奶的力进行挥杆的时候，我有可能大力命中，也有很大的可能是三振出局收场。” – 贝比·鲁斯<br>众所周知，那些刚从事VC行业的新兵所碰到的最困难的问题之一，就是如何内化“贝比·鲁斯效应”这个概念。</p>
-<p>如果要让所有的投资组合都产生高额的投资回报率，你必须对其中的每一个投资都应用上精确的评估分析方法。但是令人惊讶的是，包括来自赌马、赌场、以及投资等的更行各业的领军人物，他们都强调的却是另外一面，投行称之为”贝比·鲁斯效应“：虽然贝比·鲁斯(卓越的VC)有过不少的三振出局(失败/亏损的投资)的经历，但这并不妨碍他成为史上最伟大的击球手(风头公司)之一。 – 出自”<a href="http://turtletrader.com/pdfs/babe-ruth.pdf" target="_blank" rel="external">贝比·鲁斯效应：频率和量级</a>“<br>贝比·鲁斯效应在不同种类的投资中都会碰上，但是在风投行业尤为显著。如注明投资人<a href="http://25iq.com/2014/07/13/a-dozen-things-ive-learned-from-peter-thiel/" target="_blank" rel="external">Peter Thiel所观察的</a>一样:</p>
-<p>事实上[风投]回报率是呈非常严重的偏态分布的。一个VC对这个偏态分布认知的越深入，他就越会是个优秀的VC。而糟糕的VC则倾向于认为回报曲线是成正态分布的，比如，误以为所有的公司都是在同等条件下诞生的，只是有些最终做死了，有些半死不活，而有些却在成长着而已。而事实上它们是遵循幂次法则的分布规律的(更多有关Peter Thiel对幂次法则和正态分布的描述，请查看本人官网之前的一篇文章《<a href="http://techgogogo.com/2015/03/%E5%88%9B%E4%B8%9A%E5%9C%A3%E7%BB%8F%E3%80%8A%E4%BB%8E0%E5%88%B01%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%B2%BE%E7%AE%80%E7%89%88%E9%A6%96%E5%8F%91%E8%99%8E%E5%97%85%E4%BB%8A%E6%97%A5/" target="_blank" rel="external">创业圣经《从0到1》读书笔记精简版</a>》)。<br>贝比·鲁斯效应之所以这么难以内化主要是因为人们心理上都倾向于逃避亏损。行为经济学早有非常著名的<a href="http://en.wikipedia.org/wiki/Loss_aversion" target="_blank" rel="external">演示</a>，表明人们对于损失一定金额的情绪低落程度，远大于赚取同等金额的情绪的愉悦程度。亏损总会让人感觉不爽，即使这个亏损只是成功的投资组合战略中的一小部分而已。</p>
-<p>当人们谈论到这个话题的时候，往往是难以深入，因为此前我们很难得到一份综合有效的风投公司的效益数据。而今天，大家走运了，非常感谢在众多风投基金公司中都备受尊重的投资人<a href="http://www.horsleybridge.com/" target="_blank" rel="external">Horsley Bridge</a>，他给我提供了这数百个风投公司自1985年起的投资回报率相关的匿名历史数据。</p>
+<p>如果要让所有的投资组合都产生高额的投资回报率，你必须对其中的每一个投资都应用上精确的评估分析方法。但是令人惊讶的是，包括来自赌马、赌场、以及投资等的更行各业的领军人物，他们都强调的却是另外一面，投行称之为”贝比·鲁斯效应“：虽然贝比·鲁斯(卓越的VC)有过不少的三振出局(失败/亏损的投资)的经历，但这并不妨碍他成为史上最伟大的击球手(风头公司)之一。 – 出自”<a href="http://turtletrader.com/pdfs/babe-ruth.pdf" target="_blank" rel="noopener">贝比·鲁斯效应：频率和量级</a>“<br>贝比·鲁斯效应在不同种类的投资中都会碰上，但是在风投行业尤为显著。如注明投资人<a href="http://25iq.com/2014/07/13/a-dozen-things-ive-learned-from-peter-thiel/" target="_blank" rel="noopener">Peter Thiel所观察的</a>一样:</p>
+<p>事实上[风投]回报率是呈非常严重的偏态分布的。一个VC对这个偏态分布认知的越深入，他就越会是个优秀的VC。而糟糕的VC则倾向于认为回报曲线是成正态分布的，比如，误以为所有的公司都是在同等条件下诞生的，只是有些最终做死了，有些半死不活，而有些却在成长着而已。而事实上它们是遵循幂次法则的分布规律的(更多有关Peter Thiel对幂次法则和正态分布的描述，请查看本人官网之前的一篇文章《<a href="http://techgogogo.com/2015/03/%E5%88%9B%E4%B8%9A%E5%9C%A3%E7%BB%8F%E3%80%8A%E4%BB%8E0%E5%88%B01%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%B2%BE%E7%AE%80%E7%89%88%E9%A6%96%E5%8F%91%E8%99%8E%E5%97%85%E4%BB%8A%E6%97%A5/" target="_blank" rel="noopener">创业圣经《从0到1》读书笔记精简版</a>》)。<br>贝比·鲁斯效应之所以这么难以内化主要是因为人们心理上都倾向于逃避亏损。行为经济学早有非常著名的<a href="http://en.wikipedia.org/wiki/Loss_aversion" target="_blank" rel="noopener">演示</a>，表明人们对于损失一定金额的情绪低落程度，远大于赚取同等金额的情绪的愉悦程度。亏损总会让人感觉不爽，即使这个亏损只是成功的投资组合战略中的一小部分而已。</p>
+<p>当人们谈论到这个话题的时候，往往是难以深入，因为此前我们很难得到一份综合有效的风投公司的效益数据。而今天，大家走运了，非常感谢在众多风投基金公司中都备受尊重的投资人<a href="http://www.horsleybridge.com/" target="_blank" rel="noopener">Horsley Bridge</a>，他给我提供了这数百个风投公司自1985年起的投资回报率相关的匿名历史数据。</p>
 <p>事实如我们预期一样，回报是非常集中的：大约占有这些公司所有投资组合的6%的投资(大约占所有投资金额的4.5%)，产生的投资回报率却占有了全部投资回报率的60个百分比左右。下面我们再对这些数据作深入的挖深，看下优秀的VC和糟糕的VC是怎么被区分开来的。</p>
 <p><strong>全垒打</strong>(编者注：也就是说该风投公司不少的投资组合都是获得超过10倍投资回报率的): 如我们所预期的，成功的风投公司拥有更多的“全垒打”级别的投资。</p>
-<p><a href="http://img1.cache.netease.com/catchpic/2/2B/2B80AC349D3FC40F3E32426857B9CDE7.png" target="_blank" rel="external"><img src="http://img1.cache.netease.com/catchpic/2/2B/2B80AC349D3FC40F3E32426857B9CDE7.png" alt="投资回报率"></a></p>
+<p><a href="http://img1.cache.netease.com/catchpic/2/2B/2B80AC349D3FC40F3E32426857B9CDE7.png" target="_blank" rel="noopener"><img src="http://img1.cache.netease.com/catchpic/2/2B/2B80AC349D3FC40F3E32426857B9CDE7.png" alt="投资回报率"></a></p>
 <p>(本文的所有图表中，X轴指代的是VC基金的效益：靠右的代表卓越的VC基金，靠左的代表糟糕的VC基金。)</p>
 <p>卓越的风投基金公司不但会有更多的高投资回报率投资组合，且这些投资组合的投资回报率往往都是高得超乎想象的。请看下图中描述的低效益和高效益的风投基金在都是全垒打(超过10倍的投资回报率)的情况下的投资回报率的差别。</p>
 <p><img src="http://img1.cache.netease.com/catchpic/8/89/896126DFE3405775B57E802DF8B24392.png" alt="量级投资回报率"></p>
-<p>通常好的风投基金的投资回报率是在20倍左右，而卓越的风投基金的投资回报率则高达70倍，如B<a href="http://25iq.com/2013/09/09/a-dozen-things-ive-learned-from-bill-gurley-about-investing-and-business/" target="_blank" rel="external">ill Curley曾经说过</a>的：“风投不仅仅是一个全垒打的生意，还是一个大灌满的生意。“</p>
+<p>通常好的风投基金的投资回报率是在20倍左右，而卓越的风投基金的投资回报率则高达70倍，如B<a href="http://25iq.com/2013/09/09/a-dozen-things-ive-learned-from-bill-gurley-about-investing-and-business/" target="_blank" rel="noopener">ill Curley曾经说过</a>的：“风投不仅仅是一个全垒打的生意，还是一个大灌满的生意。“</p>
 <p><strong>三振出局</strong>(失败的投资)：这里的Y轴代表的是一个风投基金的众多投资组合中亏损的投资所占的百分比。</p>
-<p><a href="http://img1.cache.netease.com/catchpic/2/29/299921AE6DFFDDD23BFFB817E21AE1AB.png" target="_blank" rel="external"><img src="http://img1.cache.netease.com/catchpic/2/29/299921AE6DFFDDD23BFFB817E21AE1AB.png" alt="亏损"></a></p>
+<p><a href="http://img1.cache.netease.com/catchpic/2/29/299921AE6DFFDDD23BFFB817E21AE1AB.png" target="_blank" rel="noopener"><img src="http://img1.cache.netease.com/catchpic/2/29/299921AE6DFFDDD23BFFB817E21AE1AB.png" alt="亏损"></a></p>
 <p>从图中可以得知，其实无论是糟糕的投资公司还是卓越的投资公司，他们的投资组合中都有不少一部分是亏损的。所以说风投行业本身就是一门高风险的生意。</p>
 <p>大家可以看到上图是呈U字型分布的，也就是说卓越的风投公司其实比普通的(处于图表中间的)风投公司更容易投到亏损的公司。所以这里卓越的风投基金公司刚好印证了上面所说的”贝比·鲁斯效应“效应：它们挥杆(投资)力度越大，有可能大力命中，也有可能三振出局(亏损)收场。但是你如果不敢冒着大量的三振出局(失败)的风险，你就不可能有大满贯(众多投资组合无数倍的投资回报率)的可能。比如，根据幂次法则，只要你的众多投资组合中有一个如Facebook般的公司，就算你所有的其他投资组合都是亏钱的，你依然会赚得盘满钵满！</p>
 <p>&nbsp;</p>
 <hr>
-<p><span style="color: #999999;"><em><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></span></p>
-<p><span style="color: #999999;"><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></span></p>
+<p><span style="color: #999999;"><em><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="noopener">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></span></p>
+<p><span style="color: #999999;"><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="noopener">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></span></p>
 
           
         
@@ -724,9 +890,9 @@
         
           
             <blockquote>
-<p>编者按: <a href="http://www.bothsidesofthetable.com/2015/06/05/what-is-it-like-to-negotiate-a-vc-round/" target="_blank" rel="external">本文</a>由著名风险投资机构GRP Partners的合伙人<em>Mark__Suster</em>撰写，中文版由天地会珠海分舵进行编译。文中作者根据自己深厚的风投经验，给大家阐述了在一轮融资过程中风投和创始人都需要注意的一些陷阱…<br>最近几年我写了大量的文章来描述“可转换债券”对初创企业带来的消极影响，大家可以到<a href="http://www.bothsidesofthetable.com/2014/09/17/bad-notes-on-venture-capital/" target="_blank" rel="external">这里</a>，<a href="http://www.bothsidesofthetable.com/2015/05/30/one-simple-paragraph-every-entrepreneur-should-add-to-their-convertible-notes/" target="_blank" rel="external">这里</a>和<a href="http://www.bothsidesofthetable.com/2015/05/30/one-simple-paragraph-every-entrepreneur-should-add-to-their-convertible-notes/" target="_blank" rel="external">这里</a>看看。事实上早在<a href="http://www.bothsidesofthetable.com/2010/08/30/is-convertible-debt-preferable-to-equity/" target="_blank" rel="external">2010年外界宣称“可转换债券”大获全胜</a>的那时候开始，我就一直提醒大家需要对此保持警惕。</p>
+<p>编者按: <a href="http://www.bothsidesofthetable.com/2015/06/05/what-is-it-like-to-negotiate-a-vc-round/" target="_blank" rel="noopener">本文</a>由著名风险投资机构GRP Partners的合伙人<em>Mark__Suster</em>撰写，中文版由天地会珠海分舵进行编译。文中作者根据自己深厚的风投经验，给大家阐述了在一轮融资过程中风投和创始人都需要注意的一些陷阱…<br>最近几年我写了大量的文章来描述“可转换债券”对初创企业带来的消极影响，大家可以到<a href="http://www.bothsidesofthetable.com/2014/09/17/bad-notes-on-venture-capital/" target="_blank" rel="noopener">这里</a>，<a href="http://www.bothsidesofthetable.com/2015/05/30/one-simple-paragraph-every-entrepreneur-should-add-to-their-convertible-notes/" target="_blank" rel="noopener">这里</a>和<a href="http://www.bothsidesofthetable.com/2015/05/30/one-simple-paragraph-every-entrepreneur-should-add-to-their-convertible-notes/" target="_blank" rel="noopener">这里</a>看看。事实上早在<a href="http://www.bothsidesofthetable.com/2010/08/30/is-convertible-debt-preferable-to-equity/" target="_blank" rel="noopener">2010年外界宣称“可转换债券”大获全胜</a>的那时候开始，我就一直提醒大家需要对此保持警惕。</p>
 </blockquote>
-<p>今天，我想跟大家说下的是，一个VC是如何看待你在某一轮融资中的股权定价的，特别是当该轮融资中还牵涉到“可转换债券”的时候。其实当我自己的公司在每次进行融资的时候，我都会提醒自己要警惕可转换债券所可能给我们带来的麻烦。所以我每次都会回想起Brad Feld有关这方面的那一篇优秀的文章《<a href="http://www.feld.com/archives/2015/06/pre-money-vs-post-money-confusion-convertible-notes.html" target="_blank" rel="external">投前估值(pre-money) vs. 投后估值(post-money)转换所带来的问题</a>》，希望大家有时间的话也好好参详下。</p>
+<p>今天，我想跟大家说下的是，一个VC是如何看待你在某一轮融资中的股权定价的，特别是当该轮融资中还牵涉到“可转换债券”的时候。其实当我自己的公司在每次进行融资的时候，我都会提醒自己要警惕可转换债券所可能给我们带来的麻烦。所以我每次都会回想起Brad Feld有关这方面的那一篇优秀的文章《<a href="http://www.feld.com/archives/2015/06/pre-money-vs-post-money-confusion-convertible-notes.html" target="_blank" rel="noopener">投前估值(pre-money) vs. 投后估值(post-money)转换所带来的问题</a>》，希望大家有时间的话也好好参详下。</p>
 <p>这里我尝试跟大家简要归结下这是怎么一回事。</p>
 <p>&nbsp;</p>
 <h2 id="投前估值-vs-投后估值"><a href="#投前估值-vs-投后估值" class="headerlink" title="投前估值 vs. 投后估值"></a><strong><span style="color: #993300;">投前估值 vs. 投后估值</span></strong></h2><hr>
@@ -760,8 +926,8 @@
 <p><div style="padding-left: 30px;">2. 我能获得的投后估值</div></p>
 <p><div style="padding-left: 30px;">3. 你的未分配期权池究竟多大为之合适</div><br>&nbsp;</p>
 <hr>
-<p><em><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></p>
-<p><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></p>
+<p><em><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="noopener">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></p>
+<p><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="noopener">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></p>
 <p>&nbsp;</p>
 
           
@@ -896,8 +1062,8 @@
       
         
           
-            <p><span style="color: #999999;"><em>编者注: 在Uber大行其道获得异常成功的今天，不同行业的很多企业都想照虎画猫，照搬人家的模式，常把提升价值链挂嘴边。但是你有考虑过提升价值链是否真的就适合你的行业和你的企业呢？也许正好相反，降低价值链才是你应该做的事情。下面请看来自<a href="https://hbr.org/2015/06/its-ok-to-move-down-yes-down-the-value-chain" target="_blank" rel="external">HBR</a>的Bradley Staats是怎么说的，中文版由天地会珠海分舵进行编译…</em></span></p>
-<p>当今很多企业的高层，无论是从事制造业的，还是从事软件服务业，抑或是从事咨询行业，甚至是保健行业的，一旦说到该如何为企业带来更多的利润的时候，常挂在嘴边的一句话就是：“我们需要提升我们的价值链”。这种说法乍一听上去是挺有道理的: 让企业做更高价值的事情，从而获得更高的利润。比如在本人之前编译的一篇文章《<a href="http://techgogogo.com/2015/04/%e5%8d%81%e4%ba%bf%e7%be%8e%e5%85%83%e7%ba%a7%e5%88%ab%e7%9a%84%e7%8b%ac%e8%a7%92%e5%85%bd%e4%bc%81%e4%b8%9a%e6%98%af%e6%80%8e%e4%b9%88%e5%85%bb%e6%88%90%e7%9a%84/" target="_blank" rel="external">十亿美元级别的“独角兽”企业是怎么养成的</a>》里面所提及的Uber的做法：</p>
+            <p><span style="color: #999999;"><em>编者注: 在Uber大行其道获得异常成功的今天，不同行业的很多企业都想照虎画猫，照搬人家的模式，常把提升价值链挂嘴边。但是你有考虑过提升价值链是否真的就适合你的行业和你的企业呢？也许正好相反，降低价值链才是你应该做的事情。下面请看来自<a href="https://hbr.org/2015/06/its-ok-to-move-down-yes-down-the-value-chain" target="_blank" rel="noopener">HBR</a>的Bradley Staats是怎么说的，中文版由天地会珠海分舵进行编译…</em></span></p>
+<p>当今很多企业的高层，无论是从事制造业的，还是从事软件服务业，抑或是从事咨询行业，甚至是保健行业的，一旦说到该如何为企业带来更多的利润的时候，常挂在嘴边的一句话就是：“我们需要提升我们的价值链”。这种说法乍一听上去是挺有道理的: 让企业做更高价值的事情，从而获得更高的利润。比如在本人之前编译的一篇文章《<a href="http://techgogogo.com/2015/04/%e5%8d%81%e4%ba%bf%e7%be%8e%e5%85%83%e7%ba%a7%e5%88%ab%e7%9a%84%e7%8b%ac%e8%a7%92%e5%85%bd%e4%bc%81%e4%b8%9a%e6%98%af%e6%80%8e%e4%b9%88%e5%85%bb%e6%88%90%e7%9a%84/" target="_blank" rel="noopener">十亿美元级别的“独角兽”企业是怎么养成的</a>》里面所提及的Uber的做法：</p>
 <blockquote>
 <p>将企业功能进行扩展，将乘客和司机的交互谈价钱等业务剥离出来，完全交给乘客和司机进行处理，从而大幅度的降低了边际成本，而自己之关注对自身具有更高价值的平台服务。<br>但是，是不是提升价值链的这种做法对每个公司都适合呢？我不以为然。</p>
 </blockquote>
@@ -912,7 +1078,7 @@
 </ul>
 <p>&nbsp;</p>
 <h1 id="提升效率"><a href="#提升效率" class="headerlink" title="提升效率"></a><span style="color: #993300;">提升效率</span></h1><hr>
-<p>随着企业对它们自己的运作模式和供应链有着越来越深刻的认知，企业有时反而会很感激它们那些“低价值(low-value)”的供应商们。一个很明显的例子就是处在加利福利亚的<a href="http://morningstarco.com/index.cgi" target="_blank" rel="external">Morning Start</a>这家企业，该企业可以说是世界上制作番茄酱这个产业的佼佼者。</p>
+<p>随着企业对它们自己的运作模式和供应链有着越来越深刻的认知，企业有时反而会很感激它们那些“低价值(low-value)”的供应商们。一个很明显的例子就是处在加利福利亚的<a href="http://morningstarco.com/index.cgi" target="_blank" rel="noopener">Morning Start</a>这家企业，该企业可以说是世界上制作番茄酱这个产业的佼佼者。</p>
 <p>在过去，它会将番茄运输到在加利福利亚的工厂进行加工，将这些番茄弄成番茄酱。后来它们开始觉得工厂效率太低，应该进行改进，以提升价值链中加工这一环节的价值 – 比如提升对番茄进行加热分解和冷却的技术以及改善番茄酱包装发货的流程等。</p>
 <p>不幸的是，工厂价值提升上去了但公司收益却不升反降。Morning Star的高层发现问题的瓶颈竟然是，至少有很大一部分是，因为它们的番茄供应商 – 那些种植番茄的农民的“低价值“所导致的。这些农民并没有因为工厂的效率提升了而很好的去计划番茄的播种和收成，所以提供不了足够的番茄给Morning Star。还有一种更甚的情况是，有些些农民竟然还在番茄中参入了很多杂质来滥竽充数。最终的结果就是，工厂效率上去了，但是番茄供应的数量却没有增多，反而是番茄的杂质增多了，番茄酱的质量也就下来了，最终导致公司收益也下来了。</p>
 <p>所以Morning Start当机立断：开始投钱自己组织农民进行系统的番茄种植和收成以满足需求，而不是为了提升价值链而完全将番茄的供应外包出去。最终Morning Start通过对整个番茄由头到尾的生产进行掌控，开始获取巨大的收益。</p>
@@ -924,7 +1090,7 @@
 <p>&nbsp;</p>
 <h1 id="更大的运作空间"><a href="#更大的运作空间" class="headerlink" title="更大的运作空间"></a><span style="color: #993300;"><strong>更大的运作空间</strong></span></h1><hr>
 <p>降低价值链还可以让你带来更大的运作空看。在这里，时装界就是个很好的例子。在20世纪末期，大部分时装的零售商的做法都是自己对时装进行设计，然后将时装的生产外包给成本非常低廉的如远在亚洲的工厂。这就意味着整个前置时间(<span style="color: #999999;">lead time - 是指从订购到供应商交货所间隔的时间</span>)将需要超过九个月的时间。最终导致的后果就是，零售商们在本季度的时装还没有卖完的时候，就需要匆匆忙忙的对下个季度的时装进行设计和订购了。</p>
-<p>我们看下在全世界88个国家都拥有连锁店<a href="http://www.inditex.com/en/brands/zara" target="_blank" rel="external">Zara</a>是怎么做的，<em>Zara</em>是西班牙Inditex集团(股票代码ITX)旗下的一个子公司。Zara拥有自己的服装制造工厂，所以它就能做到从时装创意的产生，到时装生产出来上架，仅仅需要几周的时间而已。所以它完全不需要去猜测下一季度吹的是什么流行风，因为它完全可以在获知这种潮流的时候以很短的时间就将时装给生产出来，这就是为什么它每年都能在不同季度提供多款时装的秘密了。</p>
+<p>我们看下在全世界88个国家都拥有连锁店<a href="http://www.inditex.com/en/brands/zara" target="_blank" rel="noopener">Zara</a>是怎么做的，<em>Zara</em>是西班牙Inditex集团(股票代码ITX)旗下的一个子公司。Zara拥有自己的服装制造工厂，所以它就能做到从时装创意的产生，到时装生产出来上架，仅仅需要几周的时间而已。所以它完全不需要去猜测下一季度吹的是什么流行风，因为它完全可以在获知这种潮流的时候以很短的时间就将时装给生产出来，这就是为什么它每年都能在不同季度提供多款时装的秘密了。</p>
 <p>&nbsp;</p>
 <h1 id="以防养虎为患"><a href="#以防养虎为患" class="headerlink" title="以防养虎为患"></a><span style="color: #993300;"><strong>以防养虎为患</strong></span></h1><hr>
 <p>我们新的竞争对手来自哪里呢？其实往往都是来自我们同行业的面向低端市场或者接受你的外包的那些企业，它们一直都在磨刀霍霍的准备着寻找机会对你进行逆袭。一旦它们学会了能打造出跟你一样的产品的技能，它们自己就能对自己的价值链进行提升，给予曾经是它们的衣食父母的你致命的一击。在个人计算机，自行车，软件服务，以及音乐乐器等行业都曾经发生过类似惨剧。</p>
@@ -932,13 +1098,13 @@
 <p>&nbsp;</p>
 <h1 id="站在道德的制高点上"><a href="#站在道德的制高点上" class="headerlink" title="站在道德的制高点上"></a><span style="color: #993300;"><strong>站在道德的制高点上</strong></span></h1><hr>
 <p>现在很多公司的供应链都是错综复杂的，复杂到这些企业自己都往往搞不清楚哪个打哪个。这就让你很难保证你给客户提供的产品是否真的是优质的，比如你可能根本不知道你从孟加拉吉大港所采购回来的钢条是不是拆自某一艘破船的，你也不能保证你远在亚洲的外包合作伙伴是否是个血汗工厂，更不知道你交给日本邻国(避讳，自己猜是谁)的供应商所打造的产品是否里面存有黑心棉。</p>
-<p>这并不是说我们非要亲力亲为的去完成这些事情，但，至少我们应该去找那些没有道德问题的口碑好的知根知底的合作伙伴。比如，总部在柬埔寨的提供超细纤维产品的<a href="http://pactics.com/" target="_blank" rel="external">Pactics</a>这家企业，它们就敢于向客户保证所提供的产品的整个制作流程都是没有违反人类的道德观念的。它们的做法就是亲力亲为的进行生产，如果当忙不过来真要外包出去的时候，它们会对外包公司进行非常深入的调查。</p>
-<p>星巴克的做法也很类似，大家都知道，它开发出了一套<a href="http://www.starbucks.com/responsibility/sourcing/coffee" target="_blank" rel="external"><em>咖啡</em>与种植农公平惯例准则(CAFE)</a>，里面有着它们的供应商应该满足的条件的完全指南，并且还提供了第三方机构进行监督以确保供应商有切实落实和满足这些条款。正是这种策略一直在守护着公司的金漆招牌和优秀的声誉。</p>
+<p>这并不是说我们非要亲力亲为的去完成这些事情，但，至少我们应该去找那些没有道德问题的口碑好的知根知底的合作伙伴。比如，总部在柬埔寨的提供超细纤维产品的<a href="http://pactics.com/" target="_blank" rel="noopener">Pactics</a>这家企业，它们就敢于向客户保证所提供的产品的整个制作流程都是没有违反人类的道德观念的。它们的做法就是亲力亲为的进行生产，如果当忙不过来真要外包出去的时候，它们会对外包公司进行非常深入的调查。</p>
+<p>星巴克的做法也很类似，大家都知道，它开发出了一套<a href="http://www.starbucks.com/responsibility/sourcing/coffee" target="_blank" rel="noopener"><em>咖啡</em>与种植农公平惯例准则(CAFE)</a>，里面有着它们的供应商应该满足的条件的完全指南，并且还提供了第三方机构进行监督以确保供应商有切实落实和满足这些条款。正是这种策略一直在守护着公司的金漆招牌和优秀的声誉。</p>
 <p>所以说，降低你的价值链也许看上去是个很愚蠢且疯狂的想法。但也许却正是你可以给你的客户带来更多价值，扩展你的企业，维持不败金身的最聪明的做法！</p>
 <p>&nbsp;</p>
 <hr>
-<p><em><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></p>
-<p><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></p>
+<p><em><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="noopener">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></p>
+<p><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="noopener">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></p>
 
           
         
@@ -1072,7 +1238,7 @@
       
         
           
-            <p><span style="color: #999999;"><em>编者注: 本文来自海外著名的商业评论网站<a href="https://hbr.org/2015/06/too-much-profit-can-doom-your-company" target="_blank" rel="external">HBR</a>，中文版由天地会珠海分舵进行编译。全文以亚马逊和微软作为分析案例，从它们关于怎么判定一门生意是否成功的不同观点开始说起，逐步深入的阐述了以前微软式的“利润定乾坤”的商业模式已经陈腐不堪不再适用，我们应该拥抱亚马逊式的新颖的”发展定江山“式的商业模式才能做大做强…</em></span></p>
+            <p><span style="color: #999999;"><em>编者注: 本文来自海外著名的商业评论网站<a href="https://hbr.org/2015/06/too-much-profit-can-doom-your-company" target="_blank" rel="noopener">HBR</a>，中文版由天地会珠海分舵进行编译。全文以亚马逊和微软作为分析案例，从它们关于怎么判定一门生意是否成功的不同观点开始说起，逐步深入的阐述了以前微软式的“利润定乾坤”的商业模式已经陈腐不堪不再适用，我们应该拥抱亚马逊式的新颖的”发展定江山“式的商业模式才能做大做强…</em></span></p>
 <p>&nbsp;</p>
 <h1 id="利润陷阱"><a href="#利润陷阱" class="headerlink" title="利润陷阱"></a><span style="color: #993366;">利润陷阱</span></h1><hr>
 <p>怎么判定一门生意是否成功？在上世纪的大部分时间里，我们都是用所获取的利润大小来定义一门生意是否获得成功的。当时全世界的成功的领军企业都是通过塑造出一个利润最大化的商业模式来进行赚钱的。</p>
@@ -1080,16 +1246,16 @@
 <p>但，时至今日，这个过去被认为是理所当然的观念，却转身变成了一个陷阱，使得身陷其中的人和企业开始再也看不到前面的方向，找不到方向感，最终裹足不前，困死其中。</p>
 <p>&nbsp;</p>
 <h1 id="微软之创新胆小如鼠-vs-亚马逊之气吞万里如虎"><a href="#微软之创新胆小如鼠-vs-亚马逊之气吞万里如虎" class="headerlink" title="微软之创新胆小如鼠 vs. 亚马逊之气吞万里如虎"></a><span style="color: #993366;">微软之创新胆小如鼠 vs. 亚马逊之气吞万里如虎</span></h1><hr>
-<p>这里有两个世界著名的技术公司刚好可以很好的阐述这种观念的转变。首先，我们必须要谈及的是微软，微软的前CEO史蒂夫·鲍尔默(<a href="https://www.google.com/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;es_th=1&amp;ie=UTF-8#q=steve%20ballmer&amp;es_th=1" target="_blank" rel="external">Steve Ballmer</a>)对根据获利能力来衡量一个公司是否成功是<a href="http://www.vanityfair.com/news/business/2014/11/satya-nadella-bill-gates-steve-ballmer-microsoft" target="_blank" rel="external">深信不疑</a>的，他常常对微软在他领导的14年间获得2500亿美金的利润而引以为豪。</p>
-<p>另一个要提及的科技公司就是亚马逊了，这应该是第一家在二十多年时间内没有任何获利，却能一直维持股价不断升值的传奇公司了。它和微软的的不同之处再明显不过了：它从不畏惧大刀阔斧的进行改革和创新，它表现的更像是我们常说的持续创业者；而反观微软，在破坏性创新面前一直是畏手畏脚，一直秉承对已经出现的创新进行“<a href="https://hbr.org/2012/06/first-mover-or-fast-follower" target="_blank" rel="external">快速跟进</a>”的做法，从来都是在已经证明切实可行的技术基础上进行获利。</p>
-<p>鲍尔默曾经对微软在西雅图的邻居 – 亚马逊进行不留情面的数落和批评，说亚马逊<a href="https://hbr.org/2014/10/at-amazon-its-all-about-cash-flow" target="_blank" rel="external">只是关注自身服务方面的成长和扩张</a>而不是关注自己的获利能力。从关注盈利能力这个范式的观点出发，我们并不会对鲍尔默的这种批评感觉惊讶。</p>
-<p>以这个老的范式的观念来看，亚马逊的这种做法让人感觉有着反万有引力而为之的意味。但事实刚好相反，如今的世人都垂青亚马逊的做法，很多硅谷的同行都开始认为微软如今已经<a href="http://ben-evans.com/benedictevans/2013/7/20/the-irrelevance-of-microsoft" target="_blank" rel="external">牵不起大风浪</a>的了，而与之相反的是，亚马逊的投资者们却非常看好亚马逊的前景。</p>
+<p>这里有两个世界著名的技术公司刚好可以很好的阐述这种观念的转变。首先，我们必须要谈及的是微软，微软的前CEO史蒂夫·鲍尔默(<a href="https://www.google.com/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;es_th=1&amp;ie=UTF-8#q=steve%20ballmer&amp;es_th=1" target="_blank" rel="noopener">Steve Ballmer</a>)对根据获利能力来衡量一个公司是否成功是<a href="http://www.vanityfair.com/news/business/2014/11/satya-nadella-bill-gates-steve-ballmer-microsoft" target="_blank" rel="noopener">深信不疑</a>的，他常常对微软在他领导的14年间获得2500亿美金的利润而引以为豪。</p>
+<p>另一个要提及的科技公司就是亚马逊了，这应该是第一家在二十多年时间内没有任何获利，却能一直维持股价不断升值的传奇公司了。它和微软的的不同之处再明显不过了：它从不畏惧大刀阔斧的进行改革和创新，它表现的更像是我们常说的持续创业者；而反观微软，在破坏性创新面前一直是畏手畏脚，一直秉承对已经出现的创新进行“<a href="https://hbr.org/2012/06/first-mover-or-fast-follower" target="_blank" rel="noopener">快速跟进</a>”的做法，从来都是在已经证明切实可行的技术基础上进行获利。</p>
+<p>鲍尔默曾经对微软在西雅图的邻居 – 亚马逊进行不留情面的数落和批评，说亚马逊<a href="https://hbr.org/2014/10/at-amazon-its-all-about-cash-flow" target="_blank" rel="noopener">只是关注自身服务方面的成长和扩张</a>而不是关注自己的获利能力。从关注盈利能力这个范式的观点出发，我们并不会对鲍尔默的这种批评感觉惊讶。</p>
+<p>以这个老的范式的观念来看，亚马逊的这种做法让人感觉有着反万有引力而为之的意味。但事实刚好相反，如今的世人都垂青亚马逊的做法，很多硅谷的同行都开始认为微软如今已经<a href="http://ben-evans.com/benedictevans/2013/7/20/the-irrelevance-of-microsoft" target="_blank" rel="noopener">牵不起大风浪</a>的了，而与之相反的是，亚马逊的投资者们却非常看好亚马逊的前景。</p>
 <p>盈利能力已经变得越来越像是一个老迈的衡量创新能力的明日黄花。微软连续三个季度的盈利都是源自它们远在20世纪80年代和90年代异常成功的两个产品：Windows操作系统和Office办公软件。</p>
-<p>有如YC联合创始人 – 创业教父 Paul Graham<a href="http://www.paulgraham.com/microsoft.html" target="_blank" rel="external">所言</a>：</p>
+<p>有如YC联合创始人 – 创业教父 Paul Graham<a href="http://www.paulgraham.com/microsoft.html" target="_blank" rel="noopener">所言</a>：</p>
 <blockquote>
 <p>“微软从80年代始，在长达20年的岁月中，让全世界所有的软件公司都活在它的阴影之下…。但这种情况将一去不复返了。我已经嗅到了这个变化。现在没有人再会畏惧微软了。尽管微软还在大把的赚取着钞票…但它已经构不成威胁了。“<br>而Paul Graham说这句话的时候其实已经是早在2007年。</p>
 </blockquote>
-<p>亚马逊一直坚持仅仅获取极其稀薄的利润，以便让亚马逊成为一个可以购买几乎任何东西的最好的平台。作为CEO的Jeff Bezos<a href="http://fortune.com/2012/11/16/amazons-jeff-bezos-the-ultimate-disrupter/" target="_blank" rel="external">曾经说过：</a></p>
+<p>亚马逊一直坚持仅仅获取极其稀薄的利润，以便让亚马逊成为一个可以购买几乎任何东西的最好的平台。作为CEO的Jeff Bezos<a href="http://fortune.com/2012/11/16/amazons-jeff-bezos-the-ultimate-disrupter/" target="_blank" rel="noopener">曾经说过：</a></p>
 <blockquote>
 <p>“你的利润正好是我的机遇。”<br>亚马逊对低价格的追逐达到几乎疯狂的程度，但是与其提高商品价格赚取利润，亚马逊宁愿将这些利润分给它们的顾客来赚取。</p>
 </blockquote>
@@ -1106,16 +1272,16 @@
 <p>那么我们从微软和亚马逊对赚取利润的不同观念中能学到什么东西呢？我们又是在什么时候应该关注赚钱，什么时候应该关注赢得未来了？</p>
 <p>尽管亚马逊现在还在不停的进行扩张，但是它却一直表现得像是一个初创企业。亚马逊从来都是一如既往的保持着对创新的开放性，这个从一开始就深入它们骨髓的特性。它关注着自身得成长发展和不停的发明创造。它通过增加的商品选择种类和提升用户体验来(比如提供“Amazone Prime”，“第二天送达”，以及“当天送达”这些服务)对它们的核心业务进行扩展。</p>
 <p>下面我们就尝试参照微软的“利润定乾坤”这个老模式，来对亚马逊得这个新颖的“成长定江山”模式进行参照性的阐述：</p>
-<p><div><a href="http://techgogogo.com/wp-content/uploads/2015/06/模式比较1.png" target="_blank" rel="external"><img src="http://techgogogo.com/wp-content/uploads/2015/06/模式比较1.png" alt="模式比较"></a></div><br>在微软的模式当中，很好的反映了它对成功的定义：一直围绕着利益这个主题进行兜圈。如我们的朋友上面所说的，其实微软以前并不是如此的 – 起码在微软的早期并非如此，当时的微软所遵循的模式其实更像是右边的亚马逊的模式。</p>
+<p><div><a href="http://techgogogo.com/wp-content/uploads/2015/06/模式比较1.png" target="_blank" rel="noopener"><img src="http://techgogogo.com/wp-content/uploads/2015/06/模式比较1.png" alt="模式比较"></a></div><br>在微软的模式当中，很好的反映了它对成功的定义：一直围绕着利益这个主题进行兜圈。如我们的朋友上面所说的，其实微软以前并不是如此的 – 起码在微软的早期并非如此，当时的微软所遵循的模式其实更像是右边的亚马逊的模式。</p>
 <p>不同的是，亚马逊最终找到一个可以持续下去的经得起考验的更具有创业性质的模式，通过如AWS服务，Kindle以及Fire这些产品，在稀薄得利润边缘上发展壮大它的生意。亚马逊对创新和创造一直初衷不改，一直保持着如创业早期般的激情。<strong>它通过它们市值的增长和用户满意度来对成功进行衡量，而非榨取大量的利润</strong>。</p>
 <p>高科技公司一般都会建立一个行之有效的实验室来对利润和创新之间的张力进行探索，因为高科技产品的生命周期是非常的短暂的，且只会越来越短。如微软这种成功且庞大的企业，它们倾向于把自己当作让它们获得成功的老方程式的拥护者和守护者，一直将目光放在利润的攥取上面。它们一直对利润进行榨取，过度的关注这方面的投入而不能自拔，从而使得在本可以引领它们打造出另外一个伟大的产品的创新上面却投入甚微，甚至无所建树。</p>
 <p>那么微软是否能从这种利润陷阱中走出来，重获当年创建时的大无畏精神，开始勇于进行更多的探索和冒险呢？又或者说，它会认为如亚马逊一样，降低它们任何产品的利润都将会时无利可图的事情呢？因为这不会给其带来任何的市场份额的增长。</p>
-<p>有意思的是，最近微软似乎在尝试打破围绕着“古老而传统”的Windows操作系统和Office办公软件进行利润榨取的这种商业模式。<a href="https://www.google.com/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;es_th=1&amp;ie=UTF-8#q=nadella&amp;es_th=1" target="_blank" rel="external">Satya Nadella</a> ，当前微软的CEO，正在尝试一步步的做一些调整，比如以牺牲利润的榨取为代价，以更合理的价格给用户提供基于云端的Windows和Office版本。新官上任三把火，看来才上任一年多的Nadella还是有尝试让微软打破这种陈旧模式的魔咒，让微软勇于接受更多的挑战和敢于投入更大的赌注的，比如虚拟现实产品HoloLens就是个很好的例子。</p>
+<p>有意思的是，最近微软似乎在尝试打破围绕着“古老而传统”的Windows操作系统和Office办公软件进行利润榨取的这种商业模式。<a href="https://www.google.com/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;es_th=1&amp;ie=UTF-8#q=nadella&amp;es_th=1" target="_blank" rel="noopener">Satya Nadella</a> ，当前微软的CEO，正在尝试一步步的做一些调整，比如以牺牲利润的榨取为代价，以更合理的价格给用户提供基于云端的Windows和Office版本。新官上任三把火，看来才上任一年多的Nadella还是有尝试让微软打破这种陈旧模式的魔咒，让微软勇于接受更多的挑战和敢于投入更大的赌注的，比如虚拟现实产品HoloLens就是个很好的例子。</p>
 <p>那么微软是否真的能够有效的仿效亚马逊创始人Bezos的作风，放弃传统的利润追逐，在新的领域获得全新的胜利？让我们拭目以待吧！</p>
 <p>&nbsp;</p>
 <hr>
-<p><span style="color: #999999;"><em><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></span></p>
-<p><span style="color: #999999;"><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></span></p>
+<p><span style="color: #999999;"><em><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="noopener">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></span></p>
+<p><span style="color: #999999;"><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="noopener">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></span></p>
 
           
         
@@ -1249,7 +1415,7 @@
       
         
           
-            <p><span style="color: #999999;"><em>编者注: 本文来自海文著名商业评论媒体<a href="http://www.businessinsider.com/google-and-apple-dont-compete-2015-5" target="_blank" rel="external">Business insider</a>, 全文从近来如火如荼的Google I/O大会谈起，然后逐步深入的描述了为什么Google和Apple从来就不可能成为死敌的原因…</em></span></p>
+            <p><span style="color: #999999;"><em>编者注: 本文来自海文著名商业评论媒体<a href="http://www.businessinsider.com/google-and-apple-dont-compete-2015-5" target="_blank" rel="noopener">Business insider</a>, 全文从近来如火如荼的Google I/O大会谈起，然后逐步深入的描述了为什么Google和Apple从来就不可能成为死敌的原因…</em></span></p>
 <p>这几天的Google I/O大会正在如火如荼的举行，如果说期间有一家公司大家必然都会不约而同的想到的话，那么我相信必然是Apple无疑了。</p>
 <p>这其实也很容易理解，因为Apple和Google在智能手机行业一直是被人们当作死对头来进行讨论的。据称乔布斯曾经认为安卓剽窃了iPhone而勃然大怒，曾发誓要消灭安卓。</p>
 <p>如果真是这样子的话，那么Google这几天在I/O大会上所宣布的 - 甚至是自Google在2009生产出第一台Android手机开始所宣布的 - 对Apple来说都是一种挑衅！</p>
@@ -1267,7 +1433,7 @@
 <p>Google曾夸下海口说将会让下一批全新的十亿人群使用互联网，并且Google也会不时的举办一些公益活动。但是，我们别忘记了，Google收益中的90%都是来自广告的收入。所以它如果能掌握越多广告所面向的用户的数据，这些广告就越值钱，这样广告投放商就会给Google支付更多的金钱。</p>
 <p>Google当年所以收购安卓的其中一个首要原因就是想圈地，它不能放任一个竞争对手弄出一个使用着与自己存在竞争关系的搜索引擎的操作系统，因为这样的话将会蚕食Google的广告生意。Google在这个市场上有着高达70%的市场份额，大量的人都在用安卓 – 且，关键的是，这些人都不用iOS或者其他手机设备。</p>
 <p>但问题来了，你使用安卓手机越多，你就会给Google提供越多的数据。然后Google就会运用这些数据来帮助它们卖更多的广告。如果Google将来真的能让额外的十亿人群使用互联网的话，那么你能想像到，这就意味着又有十亿人在帮衬Google的广告服务了。</p>
-<p>换句话说，如来自著名媒体“商业内幕”的Matt Rosoff所言: <a href="http://www.businessinsider.com/google-is-not-a-charity-2015-3" target="_blank" rel="external">Google并非慈善机构</a>。</p>
+<p>换句话说，如来自著名媒体“商业内幕”的Matt Rosoff所言: <a href="http://www.businessinsider.com/google-is-not-a-charity-2015-3" target="_blank" rel="noopener">Google并非慈善机构</a>。</p>
 <p>这对Google来说就产生了一个正面的副作用：Google获得的数据越多，它的产品能提供的服务就越精确。而这又会反过来吸引更多的用户过来提供更多的数据。这，对Google的产品质量的提升来说就会造成一个良性循环。</p>
 <p>现在Google Now服务可以通过收集你的数据来在你将要动身去机场的时候对你进行提醒，Google Photos服务可以告诉你哪张图片里面有你奶奶在里面，Google的搜索引擎可以预测到你也许正准备搜索“天地会珠海分舵”更多的文章…</p>
 <p>也许大家心里就会想：Apple并不是傻子啊，为什么不分一杯羹呢？其实，如果苹果想要的话，它当然完全可以在今年年底就打造出一款更便宜的iPhone，并亲自进军移动平台应用开发市场，打破安卓的市场垄断优势。你知道它们有着大量的优秀人才，以及烧不完的现金流。</p>
@@ -1275,8 +1441,8 @@
 <p>而反观Google则不一样，它需要到处染指，获取更多的数据，因为它的生意就是建立在数据之上的！而这，就是为什么Google和Apple不可能是死对头的主要原因了。</p>
 <p>&nbsp;</p>
 <hr>
-<p><em><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></p>
-<p><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></p>
+<p><em><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="noopener">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></p>
+<p><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="noopener">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></p>
 
           
         
@@ -1421,13 +1587,13 @@
       
         
           
-            <div><span style="color: #999999;"><em> 编者注: 本文来自海外著名科技博客VentureBeat， <a href="http://venturebeat.com/2015/05/26/value-add-vcs-are-not-bullsht-heres-why/" target="_blank" rel="external">英文原文</a>出自<a href="http://openviewpartners.com/people/kyle-lacy/" target="_blank" rel="external">Kyle Lacy</a>之手 ，中文版由天地会珠海分舵进行编译。文章主要是针对前几天德国VC Christian Claussen的一篇文章《<a href="http://techgogogo.com/2015/05/%e8%b5%84%e6%b7%b1%e6%8a%95%e8%b5%84%e4%ba%ba-vc%e7%9a%84%e5%a2%9e%e5%80%bc%e5%b9%b3%e5%8f%b0%e5%b0%b1%e6%98%af%e4%b8%80%e5%9b%a2%e7%8b%97%e5%b1%8e/" target="_blank" rel="external">资深投资人: VC的“增值平台”就是一坨狗屎</a>》所提出的观点进行反击，欢迎大家参照阅读。两文皆言辞犀利，针锋相对，言之有物，也许我们国内的创始人和VC们都可以从中获益…</em></span></div><br>在VentureBeat的最近一篇文章《<a href="http://techgogogo.com/2015/05/%e8%b5%84%e6%b7%b1%e6%8a%95%e8%b5%84%e4%ba%ba-vc%e7%9a%84%e5%a2%9e%e5%80%bc%e5%b9%b3%e5%8f%b0%e5%b0%b1%e6%98%af%e4%b8%80%e5%9b%a2%e7%8b%97%e5%b1%8e/" target="_blank" rel="external">资深投资人: VC的“增值平台”就是一坨狗屎</a>》中，一个来自欧洲Ventech风投公司的叫做Christian Claussen的VC对风投的”增值平台”进行了好一番狂轰猛炸。<br><br>该篇文章看上去很有可能是专门针对OpenView联合创始人Scott Maxwel、 <a href="http://www.feld.com/archives/2015/04/paradox-vc-value-add.html" target="_blank" rel="external">Brad Feld</a> 以及 <a href="https://www.newyorker.com/magazine/2015/05/18/tomorrows-advance-man" target="_blank" rel="external">Marc Andreessen</a>最近所编写的一篇支持VC”增值平台”模式的文章，Claussen尝试从各个角度来对该文章所描述到的VC增值模式进行密集的攻击。虽然文章中他言辞锋利，说的天花乱坠的，但是，我可以很负责任的告诉你，Claussen在该文章中大部分的观点都是站不住脚的！<br><br>对，外面确实有那么一小部分VC公司在兜售“增值平台”这个服务，目的只是为了敲定一笔新的投资，事后却没有兑现为所投资的企业提供增值服务的承诺。但是Claussen只是一叶蔽目，没有看到其实还有很多其他的VC为所投资的企业，在“增值服务”上面一直所提供的久经考验，反复锤炼的行之有效的服务。同时也正是因为并非每个“增值”团队都是在相同的环境条件下建立起来的，所以我们不同的VC才能为它们各自的投资组合(企业)的成长和扩展，提供适合各自的对号入座的有差异化而行之有效的增值服务。<br><br>&nbsp;<br><br>## <span style="color: #993300;">好的增值服务必须高度定制且有差异化</span><br><br><em> </em> <em><br><br>&nbsp;<br><br>文章中Claussen指出创新型初创企业需要的是量身定做的运营支持和资源，这个我是手脚并举的赞成。但是，Claussen文章中认为所有VC提供的增值服务都是千篇一律毫无特色可言的，是完全没有专门针对不同的企业的需求进行量身定做的。对此，我很难苟同。我认为事实正好相反，大部分VC不是有着长期关注尼基(niche，这里可以理解为专业领域)投资方面的经验，以便能提供高度专业化的服务，就是有着曾经亲自创业的大量的久经历炼的宝贵经验，来帮助更多无数的其他企业进行扩张，或者两者兼有之。<br><br>当OpenView在2006年创立的时候，我们就决定将我们的投资关注在一个非常特定的市场上面 – 那就是只关注投资那些处于扩张阶段的基于SaaS技术的B2B企业。慢慢的我们就在这个特别的行业积累下了大量的专业技能和信息，然后我们才开始在为企业提供增值服务上大展拳脚。我们的增值服务团队中的所有成员都曾经是在B2B公司中长期工作，并积累了大量相关行业运作技能的专业人才，而现在他们正在运用着他们的这些专业技能来帮助我们的投资组合进行自我增值。<br><br>&nbsp;<br><br>## <strong><span style="color: #993300;">增值团队以企业成功为己任</span></strong>
+            <div><span style="color: #999999;"><em> 编者注: 本文来自海外著名科技博客VentureBeat， <a href="http://venturebeat.com/2015/05/26/value-add-vcs-are-not-bullsht-heres-why/" target="_blank" rel="noopener">英文原文</a>出自<a href="http://openviewpartners.com/people/kyle-lacy/" target="_blank" rel="noopener">Kyle Lacy</a>之手 ，中文版由天地会珠海分舵进行编译。文章主要是针对前几天德国VC Christian Claussen的一篇文章《<a href="http://techgogogo.com/2015/05/%e8%b5%84%e6%b7%b1%e6%8a%95%e8%b5%84%e4%ba%ba-vc%e7%9a%84%e5%a2%9e%e5%80%bc%e5%b9%b3%e5%8f%b0%e5%b0%b1%e6%98%af%e4%b8%80%e5%9b%a2%e7%8b%97%e5%b1%8e/" target="_blank" rel="noopener">资深投资人: VC的“增值平台”就是一坨狗屎</a>》所提出的观点进行反击，欢迎大家参照阅读。两文皆言辞犀利，针锋相对，言之有物，也许我们国内的创始人和VC们都可以从中获益…</em></span></div><br>在VentureBeat的最近一篇文章《<a href="http://techgogogo.com/2015/05/%e8%b5%84%e6%b7%b1%e6%8a%95%e8%b5%84%e4%ba%ba-vc%e7%9a%84%e5%a2%9e%e5%80%bc%e5%b9%b3%e5%8f%b0%e5%b0%b1%e6%98%af%e4%b8%80%e5%9b%a2%e7%8b%97%e5%b1%8e/" target="_blank" rel="noopener">资深投资人: VC的“增值平台”就是一坨狗屎</a>》中，一个来自欧洲Ventech风投公司的叫做Christian Claussen的VC对风投的”增值平台”进行了好一番狂轰猛炸。<br><br>该篇文章看上去很有可能是专门针对OpenView联合创始人Scott Maxwel、 <a href="http://www.feld.com/archives/2015/04/paradox-vc-value-add.html" target="_blank" rel="noopener">Brad Feld</a> 以及 <a href="https://www.newyorker.com/magazine/2015/05/18/tomorrows-advance-man" target="_blank" rel="noopener">Marc Andreessen</a>最近所编写的一篇支持VC”增值平台”模式的文章，Claussen尝试从各个角度来对该文章所描述到的VC增值模式进行密集的攻击。虽然文章中他言辞锋利，说的天花乱坠的，但是，我可以很负责任的告诉你，Claussen在该文章中大部分的观点都是站不住脚的！<br><br>对，外面确实有那么一小部分VC公司在兜售“增值平台”这个服务，目的只是为了敲定一笔新的投资，事后却没有兑现为所投资的企业提供增值服务的承诺。但是Claussen只是一叶蔽目，没有看到其实还有很多其他的VC为所投资的企业，在“增值服务”上面一直所提供的久经考验，反复锤炼的行之有效的服务。同时也正是因为并非每个“增值”团队都是在相同的环境条件下建立起来的，所以我们不同的VC才能为它们各自的投资组合(企业)的成长和扩展，提供适合各自的对号入座的有差异化而行之有效的增值服务。<br><br>&nbsp;<br><br>## <span style="color: #993300;">好的增值服务必须高度定制且有差异化</span><br><br><em> </em> <em><br><br>&nbsp;<br><br>文章中Claussen指出创新型初创企业需要的是量身定做的运营支持和资源，这个我是手脚并举的赞成。但是，Claussen文章中认为所有VC提供的增值服务都是千篇一律毫无特色可言的，是完全没有专门针对不同的企业的需求进行量身定做的。对此，我很难苟同。我认为事实正好相反，大部分VC不是有着长期关注尼基(niche，这里可以理解为专业领域)投资方面的经验，以便能提供高度专业化的服务，就是有着曾经亲自创业的大量的久经历炼的宝贵经验，来帮助更多无数的其他企业进行扩张，或者两者兼有之。<br><br>当OpenView在2006年创立的时候，我们就决定将我们的投资关注在一个非常特定的市场上面 – 那就是只关注投资那些处于扩张阶段的基于SaaS技术的B2B企业。慢慢的我们就在这个特别的行业积累下了大量的专业技能和信息，然后我们才开始在为企业提供增值服务上大展拳脚。我们的增值服务团队中的所有成员都曾经是在B2B公司中长期工作，并积累了大量相关行业运作技能的专业人才，而现在他们正在运用着他们的这些专业技能来帮助我们的投资组合进行自我增值。<br><br>&nbsp;<br><br>## <strong><span style="color: #993300;">增值团队以企业成功为己任</span></strong>
 
 </em> <em> </em><br><br>&nbsp;<br><br>Claussen的第二个论点是声称增值团队的存在会让VC很难去扮演好一个专门为企业保驾护航的博学的导师角色。这，完完全全就是无稽之谈，根本没有事实根据。试问，还有一种比为企业提供整个专业的“增值团队”去提升企业的招聘，销售，和市场水平更好的更明显的为企业服务的方式吗？你要知道，VC攒取利益的方式，正是需要让所投资的每个企业快速的成功，并从中获利，然后迅速的功成身退，抽身出来寻求下一个投资机会。所以如果VC给企业提供的增值服务是妨碍该企业快速获得成长和成功的话，那么我们不是在跟我们自己投资进去的真金白银开玩笑吗？<br><br>&nbsp;<br><br>## <span style="color: #993300;">增值服务项目应该是可选的</span><br><br><em> </em> <em><br><br>另外很重要的一点是，企业是有权选择是否参加VC所提供的增值服务计划的，这并非强制性的。大部分这些项目都是(且本应是)可选的。优秀的VC公司从来不会强迫它们的投资组合必须要接受自己的帮助服务，且在新投资进来的时候，企业与VC所签订的条款也不应该附加这个选项。相反，VC应该在企业碰到它们缺乏经验和专业人才的领域的时候，才会给企业提供相关的增值服务。<br><br>&nbsp;<br><br>## <span style="color: #993300;"><strong>增值服务团队的失败将影响VC安身立命的声誉</strong></span>
 
 </em> <em> </em><br><br>&nbsp;<br><br>在一个像风投这样竞争非常激励的行业里面，名誉和口碑就是一切。如果一个VC在和所投资的企业签订条款的时候引诱该企业创始人接受了VC所提供的增值服务，而事后又没有兑现的话，那么这个VC的增值团队就很快在这个行业没有存在的必要性了，而同时VC公司的声誉也就大大受损，从而VC自己就会元气大伤，很难立足了。<br><br>同时，你要相信，当有多家VC向企业伸出将欲投资的橄榄枝的时候，我们的企业家们肯定会在跟任何一家拍板之前积极主动的进行调查和参考。当企业家多方打听，发觉所谓的增值服务等高尚的口号只是该VC的自我营销手段而已，并非能够真正的给企业提供实质意义的增值的话，企业家就会怀疑该VC所提供的其他的东西是否也仅仅是纸上谈兵而已了。<br><br>&nbsp;<br><br>## <strong><span style="color: #993300;">真正的自我增值项目的成果可以量化</span></strong><br><br><em> </em> <em><br><br>&nbsp;<br><br>最后，增值服务从来就不是一种犹如隔岸观花般模糊不清、无法量化的服务。相反，它们应该是可衡量且可跟踪的服务，是能经受得起放在显微镜下仔细观察的服务。<br><br>比如，VC增值团队所提供的招聘服务支持团队，应该很清楚在不同时期，企业所需要的是什么样的人才，并且很清楚从哪里可以找到这些人才候选人。<br><br>&nbsp;<br><br>同时，VC增值团队所提供的销售和市场服务应该和最开始和企业一起制定的目标相吻合，都是可以衡量的，无论最终衡量的方法是新增访问量百分比，敲定的交易次数，还是其他方式。<br><br>如果一个提供增值服务的VC真的能把为企业增值这个事情给做好的话，它从来就不会觉得为所投资的企业提供专业靠谱的统计数据是个多么难以企及的难题。<br><br>总的来说，和Claussen尝试让我们相信的观点相反，VC所提供的增益服务是尝试兼顾所有人的利益，从创始人到进行投资的VC公司。毕竟，如Marc Andreessen所言，帮助VC的投资组合们“更快的迈向成功”，让VC可以更快的获利并功成身退，从而让VC公司本身的有限合伙投资人(LPs)们得到更多的利益，这样每个人都成为了赢家。<br><br>&nbsp;
 
-</em> <em> </em><br><br>&nbsp;<br><div><br><br><span style="color: #808080;"><em><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></span><br><br><span style="color: #808080;"><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></span><br><br><em> </em> *<br><br></div>
+</em> <em> </em><br><br>&nbsp;<br><div><br><br><span style="color: #808080;"><em><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="noopener">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></span><br><br><span style="color: #808080;"><em>本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="noopener">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，转载时敬请保留公众号等信息。</em></span><br><br><em> </em> *<br><br></div>
           
         
       
@@ -1571,7 +1737,7 @@
       
         
           
-            <p><em>编者注：本文海外著名博客<a href="http://blog.strategyzer.com/posts/2015/5/26/7-ways-to-tank-your-business-model" target="_blank" rel="external">strategyzer</a>，中文版由天地会珠海分舵进行编译。文中作者对商业模式一些常见的又容易忽视的问题进行了深刻的思考，理解相当的精辟独到。希望国内的创业家们也能从中借鉴一二，将你的商业模式拿出来烧，拿出来拷问，看是否真的是真金不怕烘炉火…</em></p>
+            <p><em>编者注：本文海外著名博客<a href="http://blog.strategyzer.com/posts/2015/5/26/7-ways-to-tank-your-business-model" target="_blank" rel="noopener">strategyzer</a>，中文版由天地会珠海分舵进行编译。文中作者对商业模式一些常见的又容易忽视的问题进行了深刻的思考，理解相当的精辟独到。希望国内的创业家们也能从中借鉴一二，将你的商业模式拿出来烧，拿出来拷问，看是否真的是真金不怕烘炉火…</em></p>
 <p>一个初创企业失败了，死因往往会多种多样。比如：用人失误，步子迈大了扯着了蛋(scale too fast)， 或者无视顾客的诉求，等等不一而足。除此之外，很大一个原因是你的商业模式本身就存在问题，而你却视若无睹，甚至根本没有看到，那你就真的是NO ZUO NO DIE了。近来我和Alex Osterwalder一起对这个问题进行了一些深刻的思考，总结了一些我们的商业模式可能存在的关键问题，以供大家进行参考。</p>
 <p><img src="http://img3.cache.netease.com/tech/2015/5/27/201505270916096303e_550.jpg" alt=""></p>
 <h1 id="1-打造一个客户喜欢却不赚钱的产品"><a href="#1-打造一个客户喜欢却不赚钱的产品" class="headerlink" title="1. 打造一个客户喜欢却不赚钱的产品"></a><span style="color: #993300;"><strong>1. 打造一个客户喜欢却不赚钱的产品</strong></span></h1><hr>
@@ -1586,23 +1752,23 @@
 <p><img src="http://img3.cache.netease.com/tech/2015/5/27/20150527091615b3008_550.jpg" alt=""></p>
 <h1 id="4-过度在占领新市场份额上乱投钱"><a href="#4-过度在占领新市场份额上乱投钱" class="headerlink" title="4. 过度在占领新市场份额上乱投钱"></a><span style="color: #993300;"><strong>4. 过度在占领新市场份额上乱投钱</strong></span></h1><hr>
 <p>&nbsp;</p>
-<p>当你进入一个崭新的市场的时候，我们其实还不能谈怎么去占领市场份额 – 因为我们自己先要将这个市场给打造起来，这，可是一个非常耗费金钱的大头。所以说你不能像走进一个已经存在的市场一样可以轻松的大摇大摆的就进入一个新兴的市场，除非你非常善于打持久战，能够有办法一直将现金流烧到人们开始认识到你的产品确实存在独一无二的价值并开始大肆购买为止。正如创新大师，同时也是精益创业之父的Steve Blank所言，如果你在开创新兴市场，要等到目标客户开始真正的意识到他们确实对你的产品有需求，等到这个引爆点(Tipping Point)出现的话，<a href="http://steveblank.com/category/market-types/" target="_blank" rel="external">你的生意必须能够经受得起几年没有任何收益的严峻考验</a>，最终才有守得云开见月明可能。</p>
+<p>当你进入一个崭新的市场的时候，我们其实还不能谈怎么去占领市场份额 – 因为我们自己先要将这个市场给打造起来，这，可是一个非常耗费金钱的大头。所以说你不能像走进一个已经存在的市场一样可以轻松的大摇大摆的就进入一个新兴的市场，除非你非常善于打持久战，能够有办法一直将现金流烧到人们开始认识到你的产品确实存在独一无二的价值并开始大肆购买为止。正如创新大师，同时也是精益创业之父的Steve Blank所言，如果你在开创新兴市场，要等到目标客户开始真正的意识到他们确实对你的产品有需求，等到这个引爆点(Tipping Point)出现的话，<a href="http://steveblank.com/category/market-types/" target="_blank" rel="noopener">你的生意必须能够经受得起几年没有任何收益的严峻考验</a>，最终才有守得云开见月明可能。</p>
 <p><img src="http://img1.cache.netease.com/tech/2015/5/27/201505270916173a69a_550.jpg" alt=""></p>
 <h1 id="5-将目标瞄准那些壁垒森严的市场"><a href="#5-将目标瞄准那些壁垒森严的市场" class="headerlink" title="5. 将目标瞄准那些壁垒森严的市场"></a><span style="color: #993300;"><strong>5. 将目标瞄准那些壁垒森严的市场</strong></span></h1><hr>
 <p>尽管你的产品的价值主张独一无二，但是却有个“守门员”拒你于众多付钱用户的千里之外。这个守门员也许是个人，也许是个公司，或者其他一个手握你走进该市场的大门的钥匙的那么一个实体组织 – 且他们会竭尽所能的将你拒之门外。这就是为什么当前老牌的音乐媒体服务公司手持音乐内容版权的巨盾一直把流媒体服务商往外推赶的原因了。同时这也就是为什么现在亚马逊和出版产业打得不可开交的原因所在了。</p>
 <p><img src="http://img1.cache.netease.com/tech/2015/5/27/20150527091619b256d_550.jpg" alt=""></p>
 <h1 id="6-在一个快速运作的市场上龟速前行"><a href="#6-在一个快速运作的市场上龟速前行" class="headerlink" title="6. 在一个快速运作的市场上龟速前行"></a><span style="color: #993300;"><strong>6. 在一个快速运作的市场上龟速前行</strong></span></h1><hr>
 <p>&nbsp;</p>
-<p>当谈及为什么速度是进入一个快速运行的市场的一个关键因素的时候，我想技术产业应该是一个最明显的例子了。无论你是过早的进入市场(像前面提及的第4点)，还是过慢的进入该市场，很不幸，你都会面对着一群你很难把控的用户，他们或者是不知你的产品为何物(过早进入市场)，或者早已对你的产品没有兴趣，因为已经有更好的替代方案出现(过晚的进入市场)。比如铱卫星（<em>Iridium</em>），这是一个卫星电话公司，它就是因为在移动通讯这个快速运作的市场上<a href="http://content.time.com/time/specials/packages/article/0,28804,1898610_1898625_1898640,00.html" target="_blank" rel="external">行动过慢而饱尝苦果的活生生的例子</a>。因为到了它的卫星电话出来的时候，基于基站的移动电话已经覆盖了大部分铱卫星本想要占领的用户了。尽管卫星电话号称只要你能站在有太阳和月亮的地方就不会存在通信的盲区，而我们的移动公司充其量只能声称97%的覆盖区域。</p>
+<p>当谈及为什么速度是进入一个快速运行的市场的一个关键因素的时候，我想技术产业应该是一个最明显的例子了。无论你是过早的进入市场(像前面提及的第4点)，还是过慢的进入该市场，很不幸，你都会面对着一群你很难把控的用户，他们或者是不知你的产品为何物(过早进入市场)，或者早已对你的产品没有兴趣，因为已经有更好的替代方案出现(过晚的进入市场)。比如铱卫星（<em>Iridium</em>），这是一个卫星电话公司，它就是因为在移动通讯这个快速运作的市场上<a href="http://content.time.com/time/specials/packages/article/0,28804,1898610_1898625_1898640,00.html" target="_blank" rel="noopener">行动过慢而饱尝苦果的活生生的例子</a>。因为到了它的卫星电话出来的时候，基于基站的移动电话已经覆盖了大部分铱卫星本想要占领的用户了。尽管卫星电话号称只要你能站在有太阳和月亮的地方就不会存在通信的盲区，而我们的移动公司充其量只能声称97%的覆盖区域。</p>
 <p><img src="http://img6.cache.netease.com/tech/2015/5/27/201505270916228c6e8_550.jpg" alt=""></p>
 <h1 id="7-触犯法律制度的火线"><a href="#7-触犯法律制度的火线" class="headerlink" title="7. 触犯法律制度的火线"></a><span style="color: #993300;"><strong>7. 触犯法律制度的火线</strong></span></h1><hr>
-<p>一旦你触犯了版权方面的法律，那么你曾经快速增长的企业，可能就会因受困于应付各种官非而从此停步不前甚至急速倒退。如果你的新产品是如此的具有开创性，甚至现在围绕这个方面的法律都根本还没有建立起来的话，那么，你就是时候准备跟一群老牌传统的相关的企业，工会，甚至还处在尝试搞清楚你的产品是怎么一回事的情况下的政府机构，来开展一场浩大的战役了。而最终，你的企业很有可能面临的就是分崩离析的结局。Aereo公司曾经创造性的利用微型天线收集广播电视信号将节目通过网络传播给付费用户，最终在2014年陷入与传统电视运营商的官非之中并败诉，因为它侵犯了早已非常成熟且复杂的电视运营版权方面的法律。(编者注: 当然，这不是说我们从此要对开创性创新敬而远之，相反，我们依然应该鼓励大家去追求这种开创性的创新。但是，正如Peter Thiel在他的《从0到1》的“成功企业垄断，失败企业竞争“相关章节中提及的，现在大家都在提破坏性创新，其实我们更应该着重的不是创新所带来的破坏。而是从0到1的质变的同时，要考虑如何与其他企业的共存。这个过程中要尽量避开竞争，特别是当你要扩张到相邻的领域的时候！《<a href="http://techgogogo.com/2015/03/%E5%88%9B%E4%B8%9A%E5%9C%A3%E7%BB%8F%E3%80%8A%E4%BB%8E0%E5%88%B01%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%B2%BE%E7%AE%80%E7%89%88%E9%A6%96%E5%8F%91%E8%99%8E%E5%97%85%E4%BB%8A%E6%97%A5/" target="_blank" rel="external">从0到1</a>》的精简版请到本人官网或者微信公众号进行查阅。)</p>
+<p>一旦你触犯了版权方面的法律，那么你曾经快速增长的企业，可能就会因受困于应付各种官非而从此停步不前甚至急速倒退。如果你的新产品是如此的具有开创性，甚至现在围绕这个方面的法律都根本还没有建立起来的话，那么，你就是时候准备跟一群老牌传统的相关的企业，工会，甚至还处在尝试搞清楚你的产品是怎么一回事的情况下的政府机构，来开展一场浩大的战役了。而最终，你的企业很有可能面临的就是分崩离析的结局。Aereo公司曾经创造性的利用微型天线收集广播电视信号将节目通过网络传播给付费用户，最终在2014年陷入与传统电视运营商的官非之中并败诉，因为它侵犯了早已非常成熟且复杂的电视运营版权方面的法律。(编者注: 当然，这不是说我们从此要对开创性创新敬而远之，相反，我们依然应该鼓励大家去追求这种开创性的创新。但是，正如Peter Thiel在他的《从0到1》的“成功企业垄断，失败企业竞争“相关章节中提及的，现在大家都在提破坏性创新，其实我们更应该着重的不是创新所带来的破坏。而是从0到1的质变的同时，要考虑如何与其他企业的共存。这个过程中要尽量避开竞争，特别是当你要扩张到相邻的领域的时候！《<a href="http://techgogogo.com/2015/03/%E5%88%9B%E4%B8%9A%E5%9C%A3%E7%BB%8F%E3%80%8A%E4%BB%8E0%E5%88%B01%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%B2%BE%E7%AE%80%E7%89%88%E9%A6%96%E5%8F%91%E8%99%8E%E5%97%85%E4%BB%8A%E6%97%A5/" target="_blank" rel="noopener">从0到1</a>》的精简版请到本人官网或者微信公众号进行查阅。)</p>
 <p>当然，这里也有例外：Uber和Airbnb现在所以能如日中天，其实就是因为它们都能谨慎的跳过或者绕过法律的火线。</p>
 <p>上面就是我们总结的7点，当然这远远还不够了。这里希望各位看官发挥主观能动性，将你经历过的，想到的商业模式可能存在的需要注意的问题给列出来，无私的奉献给我们的同行进行参考，指引我们一起在创业路上翱翔！</p>
 <p>&nbsp;</p>
 <hr>
-<p><em><span style="color: #999999;"><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</span></em></p>
-<p><em><span style="color: #999999;"><strong>版权</strong>:本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，但转载时请保留公众号等信息。</span></em></p>
+<p><em><span style="color: #999999;"><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="noopener">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</span></em></p>
+<p><em><span style="color: #999999;"><strong>版权</strong>:本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="noopener">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，但转载时请保留公众号等信息。</span></em></p>
 <p>&nbsp;</p>
 
           
@@ -1763,7 +1929,7 @@
 <p>当中你也会发现有些分类的单词是很少的，比如O开头的单词其实就很少，你如果觉得受到打击的时候你就可以考虑先把这一类的单词搞定，这样你就会找回自己的信心了。</p>
 <h1 id="语感源于模仿"><a href="#语感源于模仿" class="headerlink" title="语感源于模仿"></a>语感源于模仿</h1><hr>
 <p>刚刚解决了词汇量，下一个要解决的就是语感，其实这两个也可以并行的做，并不是说非要有词汇量才会有语感。</p>
-<p>按照我自己的经验，我觉得语感是非常容易培养的。我记得当时我是这样子做的，在《新概念英语》第3本(多谢网友<a href="http://www.jianshu.com/users/223b9e7f432b" target="_blank" rel="external">@云隐柏舟</a> 指出的错误，已改)中找出10篇文章，将它们背得滚瓜烂熟，期间要听配套录音，完全模仿人家的语调进行，到你能随时随地用同样的语调将任何一篇文行大声朗读出来的时候，你的语感就会有了。</p>
+<p>按照我自己的经验，我觉得语感是非常容易培养的。我记得当时我是这样子做的，在《新概念英语》第3本(多谢网友<a href="http://www.jianshu.com/users/223b9e7f432b" target="_blank" rel="noopener">@云隐柏舟</a> 指出的错误，已改)中找出10篇文章，将它们背得滚瓜烂熟，期间要听配套录音，完全模仿人家的语调进行，到你能随时随地用同样的语调将任何一篇文行大声朗读出来的时候，你的语感就会有了。</p>
 <p>这个并不是虚言，我发觉语感跟语调是有很大关系的，一旦你看到新的文章中一个句子，你很容易就可以联想到你背过的文章中的类似的句子，然后心里面就会好像唱歌一样的用老美原声的语调把该句子从你的脑海中调出来。</p>
 <p>而当你和别人对话的时候，你也能基本不假思索的就将一句话给组织出来脱口而出了，因为英语句子的结构是很有限的，你要说的话句子结构，其实在你背的滚瓜烂熟的那十篇文章中肯定已经有出现过。</p>
 <h1 id="把它们用起来"><a href="#把它们用起来" class="headerlink" title="把它们用起来"></a>把它们用起来</h1><hr>
@@ -1774,225 +1940,7 @@
 <p>暂时先写到这吧，已经2:26AM了，文中可能会有些许错别字之类的，我就不Review了，大家看到了就把它挑出来，确实影响理解的话就在评论中帮我指出来，以便我改正后方便其他同学阅读，谢谢。当然，如果你有什么更好的学习英语的建议的话，也非常欢迎你在评论中提供出来给大家一起讨论，谢谢大家。</p>
 <p>最后欢迎大家加我的公众号，我们以文会友！</p>
 <hr>
-<p><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。<br><strong>版权</strong>:本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 若非授权，转发时切勿删除联系信息，否则追究相应责任。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/05/24/产品战略表之产品打造的五块照妖镜/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kzlathander">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="科技向前冲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2015/05/24/产品战略表之产品打造的五块照妖镜/" itemprop="url">产品战略表之产品打造的五块照妖镜</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-05-24T22:43:12+08:00">
-                2015-05-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/产品/" itemprop="url" rel="index">
-                    <span itemprop="name">产品</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/产品/创业/" itemprop="url" rel="index">
-                    <span itemprop="name">创业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><span style="color: #999999;"><em><strong>编者注</strong>：本文来自海外著名产品经理Tyner Blain的个人<a href="http://tynerblain.com/blog/2015/04/30/five-lenses/" target="_blank" rel="external">博客</a>，中文版由天地会珠海分舵进行编译。Steven Haines 在其著名书籍《<a href="http://amzn.com/0071824502/?tag=tbrb-20" target="_blank" rel="external">产品经理案头参考</a>》中，给大家带来了“产品战略表”的方法。当中主要从三个维度指导产品经理应该如何打造一个成功的产品，而Tyner Blain认为这三个维度确实非常优秀，但是却过于抽象，难以付诸行动。所以他结合了自己深厚的产品经理经验，对这三个维度进行了相应的扩展，以便产品经理可以更容易的将其应用到实战当中来…</em></span></p>
-<p><img src="https://images0.cnblogs.com/news/66372/201505/251024320532969.png" alt="3透镜"></p>
-<p>作为一个产品经理，你常常要对不同的需求进行评估，综合分析，以及排好优先次序。而这些需求其实都是围绕着“客户需求度“，”商业可行性“和”实现可行性“这三个主要目标来指导你该如何进行产品开发的。这三个目标在产品开发界备受赞誉，但是同时又因为它们过于抽象，所以很难付诸实践。这，就是为什么今天我需要将其进行扩展的主要原因了。这个扩展后的目标主要包含5个方面，我们就是通过这5个发面来透视我们应该如何对我们的产品进行打造的，所以这里我称之为“产品目标5透镜”</p>
-<p>&nbsp;</p>
-<h1 id="产品战略表"><a href="#产品战略表" class="headerlink" title="产品战略表"></a><span style="color: #800000;">产品战略表</span></h1><hr>
-<p>在Steven Haines 曾经出版的著名书籍《<a href="http://amzn.com/0071824502/?tag=tbrb-20" target="_blank" rel="external">产品经理案头参考</a>》中，我们学习到了“产品战略表”这个重要知识。多年以后，我将它进行相应的改良以便满足我的实际需求。</p>
-<p>作为一个产品经理，在产品开发的时候，我们需要<a href="http://tynerblain.com/blog/2014/12/03/opposite-views-of-a-product-roadmap/" target="_blank" rel="external">制作产品蓝图</a>来帮助我们有效的和团队进行沟通，就是说要设计好一整套的指导方针/目标/主旨来<a href="http://tynerblain.com/blog/2015/04/07/lists-are-not-roadmaps/" target="_blank" rel="external">申明我们的产品战略</a>。“产品战略表”可以出色的帮我们处理以下这些问题：</p>
-<ul>
-<li>让组织就围绕产品战略上达成一致，赋予公司未来一个明确的产品目标和愿景。</li>
-<li>明确的表达出公司领导团队的期望 -  定义清楚产品要达到何种程度才能謂之成功。</li>
-<li>在既定的投入中，确立一系列产品经理所预期可问责的的产出(也叫做产品蓝图)</li>
-<li>所有成员就基于同一未来的愿景进行协作沟通  - 不是基于短期的发布目标，也非局限于有限的几个成员。<br>此前，我曾声称：<a href="http://twitter.com/share?url=http://tynerblain.com/blog/2015/04/30/five-lenses/&amp;text=I+believe+the+product+manager+is+entitled+to+know+the+measures+of+success%2C+when+being+asked+to+build+the+roadmap&amp;via=sehlhorst&amp;related=sehlhorst" target="_blank" rel="external">我相信产品经理应该获得足够的授权来对如何衡量产品的成功进行定义，这样才能正确定义好产品的蓝图</a>。</li>
-</ul>
-<p>“产品战略表”并不是简单一篇博客就能描述清楚的 - 就算我善于编写长博客也无能为力。我曾经耗费几天的时间在一次研讨会上为一个特定的团队定义清楚这究竟是怎么一回事。我可以在2个小时内让一个充满激情和足够融入的团队单单从概念上了解清楚产品战略表的概念 - 我很清楚这一点，因为我曾经尝试想用一个小时来达成这个目标，但失败了！</p>
-<p>在本文中，我只会尝试就“5透镜”方面进行讨论，尝试描述清楚我是如何通过这5个透镜来打造一个产品战略表的(其中每一个透镜代表战略表中的一行)。也许还有其他更好的未知的方法来达成这个目标，但起码当前这个方法对我很实用，且相当的实用。所以非常感谢Steven在他的大作上将我引进门。</p>
-<p>&nbsp;</p>
-<h1 id="产品打造五透镜"><a href="#产品打造五透镜" class="headerlink" title="产品打造五透镜"></a><span style="color: #800000;">产品打造五透镜</span></h1><hr>
-<p>&nbsp;</p>
-<p><a href="https://images0.cnblogs.com/news/66372/201505/251024319124225.png" target="_blank" rel="external"><img src="https://images0.cnblogs.com/news/66372/201505/251024319124225.png" alt="5透镜"></a></p>
-<p>&nbsp;</p>
-<p>往下继续之前也许我应该给大家描述清楚究竟这里的“透镜”代表什么意思。这其实是一个企业行话，当企业成员在交流以及最终开会时使用到的宾果卡上时有出现。所以在这种情况下，这里所说的一个“透镜”代表的就是你看待你的产品的一个角度。</p>
-<p>不同的透镜会让我们从不同的角度思考如何对产品进行投入。如我们对产品的某些投入对提升我们产品的竞争力方面是至关重要的，而其他一些投入的目标可能是为了降低成本或者获取更高利润。</p>
-<p><a href="https://images0.cnblogs.com/news/66372/201505/251024318346669.jpg" target="_blank" rel="external"><img src="https://images0.cnblogs.com/news/66372/201505/251024318346669.jpg" alt="盲人摸象"></a></p>
-<p>将这些透镜应用到我们应该如何审视我们的产品上，将会让我们避免在打造产品的过程中陷入<a href="http://en.wikipedia.org/wiki/Blind_men_and_an_elephant" target="_blank" rel="external">盲人摸象</a>的情况。结合拥有不同特定行业专长和兴趣的各个利益相关者，从不同的角度对产品的目标做出贡献，同时让大家对产品有着共同而全面的理解。</p>
-<p>如上所述，每一个透镜代表着产品战略表的一行，而在对应一行的每一列上面其实还有很多东西需要进行定义。</p>
-<p>下面我们对每一个透镜进行逐一介绍。首先，你会注意到有些透镜会有箭头指向两个目标(如上面的“竞争环境”这个透镜就指向了“客户需求度“和”商业可行性“)，而有些又只是指向一个单一的目标。我这样做的目的是想让一个组织中不同的成员就其所关注的领域与不同的透镜给对应起来，这样做的话，大家就会对跟自己密切相关的透镜产生主人翁的感觉了。</p>
-<p>&nbsp;</p>
-<h1 id="客户环境"><a href="#客户环境" class="headerlink" title="客户环境"></a><span style="color: #800000;">客户环境</span></h1><hr>
-<p>当你问及”谁是我们的客户？”，“该产品将要解决的是客户的什么样的问题？” 这些问题的时候，我相信“客户环境 “就是那块你需要去仔细拿起来进行透视的透镜了。</p>
-<p>当我们谈及市场变动，目标客户定位，以及需求理解问题等的时候，我们实际上在说的就是我们对我们开发出来的产品的市场定位的理解。当我们在讨论产品的某一个相关功能的时候，我们可以看看这一面透镜并提出下面这些问题：</p>
-<ul>
-<li>这个功能真的会帮助我们特定的目标客户解决他们所关心的问题吗？</li>
-<li>解决方案到了哪种程度才算是”完美/足够好/可用”呢？<br>&nbsp;</li>
-</ul>
-<h1 id="竞争环境"><a href="#竞争环境" class="headerlink" title="竞争环境"></a><span style="color: #800000;">竞争环境</span></h1><hr>
-<p>当你想要搞清楚你的产品是否比其他竞品更加优秀的时候，你就应该关注这块透镜。</p>
-<p>当你需要跟别人谈及的话题是围绕关于市场定位，竞品分析等的时候，你就需要问问自己下面这些问题了：</p>
-<ul>
-<li>我们产品和其他市场上类似竞争产品的价格和成本的关系是怎么样的？</li>
-<li>面对最重要的市场上客户碰到的最重要的痛点，我们的产品的解决方案有着如何的竞争力？</li>
-</ul>
-<p>### </p>
-<h1 id="产品财务健康状况"><a href="#产品财务健康状况" class="headerlink" title="产品财务健康状况"></a><span style="color: #800000;">产品财务健康状况</span></h1><hr>
-<p>我们作为产品经理经常将注意力投放在客户碰到的问题上面，这无可厚非，但是，我们也不要过于短视。一个产品首先应该满足一系列财务上面的客观情况，以确定该投入是否真的值得，才能真正的考虑是否应该将该产品给做出来。关于这个方面，不同的公司可能会提出不同的问题，下面就是些示例：</p>
-<ul>
-<li>相对已有的产品收益，新产品又将会带来多少个百分比的额外收益呢？</li>
-<li>我们的自由现金流所带来的复合年度增长率又是几何？</li>
-<li>我们今年相对于上一年的用户流失率(或者保留率)是多少？</li>
-</ul>
-<p>### </p>
-<h1 id="技术环境"><a href="#技术环境" class="headerlink" title="技术环境"></a><span style="color: #800000;">技术环境</span></h1><hr>
-<p>如果对技术环境没有足够的了解的话，你所打造的产品也许会像在沙滩上所打造的房屋一样经不起风吹雨打，很快就会因为根基不稳而坍塌。所以我们在做产品的时候很有必要对我们所要用到的技术进行足够的了解。</p>
-<ul>
-<li>主动对产品质量进行投入：相对积极主动的产品质量的投入，我们被动应付产品质量所带来的问题的投入占了多少的百分比？</li>
-<li>技术支持难度：我们现在市面上有多少不同版本的产品需要进行支持。</li>
-<li>部署技术难度：客户所碰到的严重程度1到严重程度2的问题得90%得以部署到他们得环境耗时需要多长？</li>
-</ul>
-<p>### </p>
-<h1 id="运营效率"><a href="#运营效率" class="headerlink" title="运营效率"></a><span style="color: #800000;">运营效率</span></h1><hr>
-<p>在企业级软件上，单单把软件编写出来是远远不够的，你还需要将其部署起来。这也许需要消耗你几个月的时间。</p>
-<p>通过这个透镜你就可以去审视你的客户究竟是如何对成功(对购买你的产品是否是一个成功的选择)进行定义的，从中你就可以更全面的定义你的产品是如何帮客户成功的解决他们碰到的问题的。</p>
-<p>这里你也许你会针对这个透镜提出以下这些问题：</p>
-<ul>
-<li>你的产品在客户环境中进行部署需要耗费多少的努力和时间？</li>
-<li>我们的客户问题处理流程需要达到怎么样一个速度，客户才会认为他们采取我们的产品是个成功的选择？<br>&nbsp;</li>
-</ul>
-<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a><span style="color: #800000;">小结</span></h1><hr>
-<p>每一块透镜都在不同产品战略的角度上提供了一个视角，每个成员都会牵涉其中，而通常不同的成员又会有不同的着重点。当把这五块透镜合在一起进行考虑的时候，产品经理就能正确的决定该如何正确的对打造一个成功的产品进行正确的投入了。</p>
-<p>而我们的团队都是依赖于产品经理给出的产品backlog(产品功能清单)，并预期该backlog是对产品的正确功能和性能等有着正确的定义的。而如何对产品的方方面面进行正确的定义正是产品战略的一个非常重要的组成部分。</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<hr>
-<p><span style="color: #999999;"><em><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="external">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。</em></span></p>
-<p><span style="color: #999999;"><em><strong>版权</strong>:本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 欢迎转载，但转发时请保留公众号等信息。</em></span></p>
+<p><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>或官网<a href="http://techgogogo.com/" target="_blank" rel="noopener">www.techgogogo.com</a>。当然，也非常欢迎您直接微信(<strong>zhubaitian1</strong>)勾搭。<br><strong>版权</strong>:本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="noopener">创作共用署名3.0中国大陆版许可证</a>], 若非授权，转发时切勿删除联系信息，否则追究相应责任。</p>
 
           
         
@@ -2077,7 +2025,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-count">150</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2107,6 +2055,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/feed.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
@@ -2141,11 +2096,12 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">kzlathander</span>
+  <a href="http://www.miitbeian.gov.cn/">粤ICP备17146211号</a> 
 </div>
 
 

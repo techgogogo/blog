@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/feed.xml" title="科技向前冲" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="新年伊始，新年新决心， 各大网站到处大肆标榜高效率人士是如何提高生产率的，其中一个共同点就是如何高效的利用好有限的时间。什么有效的单位时间划分，番茄工作法， GTD(Get Things Done)，《清单革命》等方法论和书籍再次随着大家的唾沫子到处传播。 作为缺乏运动而免疫力底下且脑洞长期大开的程序员行列的一员，这些">
+<meta property="og:type" content="article">
+<meta property="og:title" content="晓日程-首款打通微信和桌面的免费日历应用">
+<meta property="og:url" content="http://yoursite.com/2019/03/13/晓日程-首款打通微信和桌面的免费日历应用/index.html">
+<meta property="og:site_name" content="科技向前冲">
+<meta property="og:description" content="新年伊始，新年新决心， 各大网站到处大肆标榜高效率人士是如何提高生产率的，其中一个共同点就是如何高效的利用好有限的时间。什么有效的单位时间划分，番茄工作法， GTD(Get Things Done)，《清单革命》等方法论和书籍再次随着大家的唾沫子到处传播。 作为缺乏运动而免疫力底下且脑洞长期大开的程序员行列的一员，这些唾沫子很容易就通过眼耳口鼻直接进入我的大脑，触碰着我的show觉神经，逼迫本人">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/264714-f613c93022d59171.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/264714-224406ce3ba42b3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/264714-4f5a3177da3ccc58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/264714-f613c93022d59171.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/264714-c88021e3fb117f7f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/264714-0b79b1909a4fc061.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/264714-f0fe7204512e8b58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/264714-69caa08a942037b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/264714-a6305ad3396441f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/264714-2826d61390529a51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/264714-8f9227b24d414a85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/264714-a6ca89cc46462472.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-03-13T02:36:02.016Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="晓日程-首款打通微信和桌面的免费日历应用">
+<meta name="twitter:description" content="新年伊始，新年新决心， 各大网站到处大肆标榜高效率人士是如何提高生产率的，其中一个共同点就是如何高效的利用好有限的时间。什么有效的单位时间划分，番茄工作法， GTD(Get Things Done)，《清单革命》等方法论和书籍再次随着大家的唾沫子到处传播。 作为缺乏运动而免疫力底下且脑洞长期大开的程序员行列的一员，这些唾沫子很容易就通过眼耳口鼻直接进入我的大脑，触碰着我的show觉神经，逼迫本人">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/264714-f613c93022d59171.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'kzlathander'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/13/晓日程-首款打通微信和桌面的免费日历应用/"/>
+
+
+
+
+
+  <title>晓日程-首款打通微信和桌面的免费日历应用 | 科技向前冲</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">科技向前冲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-startup">
+          <a href="/categories/创业" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fire"></i> <br />
+            
+            创业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pm">
+          <a href="/categories/产品" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-mobile-phone"></i> <br />
+            
+            产品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-oversea">
+          <a href="/categories/Hacker-News" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            海外
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-innovation">
+          <a href="/categories/创新" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            创新
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/13/晓日程-首款打通微信和桌面的免费日历应用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kzlathander">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技向前冲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">晓日程-首款打通微信和桌面的免费日历应用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-13T10:28:00+08:00">
+                2019-03-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/创业/" itemprop="url" rel="index">
+                    <span itemprop="name">创业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://upload-images.jianshu.io/upload_images/264714-f613c93022d59171.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>新年伊始，新年新决心， 各大网站到处大肆标榜高效率人士是如何提高生产率的，其中一个共同点就是如何高效的利用好有限的时间。什么有效的单位时间划分，番茄工作法， GTD(Get Things Done)，《清单革命》等方法论和书籍再次随着大家的唾沫子到处传播。 作为缺乏运动而免疫力底下且脑洞长期大开的程序员行列的一员，这些唾沫子很容易就通过眼耳口鼻直接进入我的大脑，触碰着我的show觉神经，逼迫本人给大家show一show自己的提高生产力的日程管理工具大杀器 - 「<a href="https://xricheng.com/" target="_blank" rel="noopener">晓日程</a>」。</p>
+<h1 id="时间管理工具的常见痛点"><a href="#时间管理工具的常见痛点" class="headerlink" title="时间管理工具的常见痛点"></a>时间管理工具的常见痛点</h1><p>谈到时间管理的工具，根据我多年的观察和体验，可谓琳琅满目。但大部分都存在以下的弊病：</p>
+<ul>
+<li><strong>臃肿</strong>： 效率的提高，最重要就是要化繁为简。但有些时间管理工具就是在各种不相关的功能中嵌入了一些时间管理的功能。比喻某某做邮件客户端的，偏偏要加上一个时间管理的功能，那我该叫你邮箱客户端还是时间管理工具呢？你就搞得我很混乱。这就好比高价买回来一个苹果电脑，回家一开机发现弹出了Windows的logo，那我该说我是在用Mac还是Windows呢？难道称之为Macdows? 你能不怀疑人生吗？</li>
+<li><strong>水土不服</strong>： 至于海外一些好用的日历工具，如google calendar等为何说水土不服，国内无法使用的原因，你看我在这里都不敢展开阐述，就知道原因所在了。</li>
+<li><strong>信息孤岛</strong>：不少时间管理工具都是关注单个人自身的事件和任务，无法提供和亲朋共享同一个事件或日历的功能，形成信息的孤岛。</li>
+<li><strong>无法同步</strong>： 有些时间管理工具只是提供了桌面端或者移动端，使用极其不便。 如iPhone的提醒应用等。</li>
+<li><strong>红色移动端</strong>： 也有少数的几个解决方案提供了桌面端和移动端的同步，但是每个移动端都需要安装独立的App，极其浪费资源。既然大家称免安装的应用为绿色应用，那么需要独立安装App的，这里不妨就称之为红色应用。</li>
+</ul>
+<p>而免费的「<a href="https://xricheng.com/" target="_blank" rel="noopener">晓日程</a>」则是一款让我比较满意的日程管理小工具，为我提供了堪称完美的解决方，而且它还是基于微信的。 目前市面上我还没有看到能够将微信和桌面能如此完美结合的解决方案。</p>
+<h1 id="晓日程桌面端：简约清爽风"><a href="#晓日程桌面端：简约清爽风" class="headerlink" title="晓日程桌面端：简约清爽风"></a>晓日程桌面端：简约清爽风</h1><p> 对于经常使用电脑端的童鞋，晓日程提供了<a href="https://xricheng.com/" target="_blank" rel="noopener">晓日程桌面日历</a> (Windows 桌面版)来提高你电脑办公的效率。简约是<a href="https://xricheng.com/" target="_blank" rel="noopener">晓日程</a>秉承的理念。打开<a href="https://xricheng.com/" target="_blank" rel="noopener">晓日程桌面日历</a>用后你应该会被其简约精美的风格所吸引。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/264714-224406ce3ba42b3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="晓日程 Windows 桌面程序"></p>
+<p>通过<a href="https://xricheng.com/" target="_blank" rel="noopener">晓日程桌面日历</a>应用，你可以快速的对自己的日历和日程等进行管理，其中的功能有待你的探索，彩蛋不断哦。</p>
+<p>最重要的是，无论是你在移动端创建的事项还是在桌面端创建的事项，晓日程都能通过云端很好的帮你将数据进行同步，让你做到可以随时随地对自己的日程安排了如指掌。</p>
+<p><a href="https://xricheng.com/" target="_blank" rel="noopener">晓日程桌面日历</a>除了提供桌面吸附功能让你能简单明了的查看自己的日程，还提供了月，周，日视图来让你做更精细的日程和任务管理。<br><img src="https://upload-images.jianshu.io/upload_images/264714-4f5a3177da3ccc58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="月视图"></p>
+<p>对于一名有志青年，心灵鸡汤当然不能少喝。 虽不能如罗永浩在《我的奋斗》中那样买一大堆励志书回来天天往心灵里灌， 但<a href="https://xricheng.com/" target="_blank" rel="noopener">晓日程桌面日历</a>提供了叫做桌面小语的功能，可以让你每天为你的桌面定制一份精美的心灵鸡汤， 时刻鞭笞自己前行。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/264714-f613c93022d59171.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="桌面小语"></p>
+<h1 id="晓日程移动端：基于微信的绿色日历"><a href="#晓日程移动端：基于微信的绿色日历" class="headerlink" title="晓日程移动端：基于微信的绿色日历"></a>晓日程移动端：基于微信的绿色日历</h1><hr>
+<p>「<a href="https://xricheng.com/" target="_blank" rel="noopener"><strong>晓日程</strong></a>」移动端是一款基于微信的日历管理与待办记事的绿色免费应用，同时提供了HTML5和小程序版本，用户无需繁琐的下载安装配置占用你手机上的存储空间，只要用微信扫一扫二维码即可直接使用。既然是基于微信，那当然也就是支持 iOS 和 Android 等手机端平台了。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/264714-c88021e3fb117f7f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="晓日程"></p>
+<p><a href="https://xricheng.com/" target="_blank" rel="noopener">晓日程</a> 聚合了日程安排和待办清单功能，界面简洁清爽，支持通过软键盘输入和「智能语音」创建事件任务，日历会以时间线形式展示，接下来要做什么一目了然。</p>
+<p>其中智能语音能作精确的语义分析，让你可以使用自然语言输入就能在想要的时间点建立自己的事件。</p>
+<h1 id="卓越体验：友好直观的时间轴界面与月视图"><a href="#卓越体验：友好直观的时间轴界面与月视图" class="headerlink" title="卓越体验：友好直观的时间轴界面与月视图"></a>卓越体验：友好直观的时间轴界面与月视图</h1><p>与那些看似功能大而全实则臃肿不堪的时间管理工具相比，<a href="https://xricheng.com/" target="_blank" rel="noopener">晓日程</a>移动端的界面非常的清爽直观，任何懂得用手机的人都能直接上手，学习成本趋近于零。</p>
+<p>比如<a href="https://xricheng.com/" target="_blank" rel="noopener">晓日程</a>一进去就是个简洁的时间轴页面，将你的事件按照时间线井然有序的列出来。<br><img src="https://upload-images.jianshu.io/upload_images/264714-0b79b1909a4fc061.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="时间轴视图"></p>
+<p>你也可以通过右上角的月视图图标，对某个月的事件安排作更详尽的了解。<br><img src="https://upload-images.jianshu.io/upload_images/264714-f0fe7204512e8b58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="月视图"></p>
+<h1 id="团队协作-多人共享日程，破除信息孤岛"><a href="#团队协作-多人共享日程，破除信息孤岛" class="headerlink" title="团队协作: 多人共享日程，破除信息孤岛"></a>团队协作: 多人共享日程，破除信息孤岛</h1><hr>
+<p>很多时候一些日程安排需要和他人一起共享，需要别人的协作，而不是所有信息只有自己知道，临时才通知他人，形成信息的孤岛。晓日程提供了不同的共享方式来让不同的人参与到你的计划安排中去。</p>
+<p>比如周日到外面和朋友一起聚餐，你可以创建一条指定时间和地点的对应的事件，然后分享到微信朋友圈或者微信群中。</p>
+<p>当朋友点开该分享并订阅了该事件后，可以确定是否订阅该事件， 一旦订阅了，你就会获得相应的提醒来通知你谁订阅了该日程，对应日程就会自动加入到对方的日历里，并能够获得提醒了。</p>
+<p>同时，订阅的朋友还可以在日程上看到有谁都参加该活动，也可以在上面发表评论来进行互动。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/264714-69caa08a942037b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="单个日程共享"></p>
+<p>另外一种共享方式是将整个日历和朋友进行共享。通过晓日程的分享功能，工作上您也可以方便的制定团队的工作日程，并与整个团队的成员分享，轻松协作并让所有人都能快速掌握项目状态，从而提高团队的协作效率。</p>
+<p>比如一个旅游团导游就可以创建一个欧洲七日旅游团的日历，然后在日历下创建好每天的行程， 分享给你的团友。 订阅了这个日历后，每个团友就都能准确知道具体的安排了。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/264714-a6305ad3396441f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="日历共享"></p>
+<h1 id="贴心功能：订阅你关心的热门日历"><a href="#贴心功能：订阅你关心的热门日历" class="headerlink" title="贴心功能：订阅你关心的热门日历"></a>贴心功能：订阅你关心的热门日历</h1><hr>
+<p>除了可以订阅你朋友分享出来的日历之外， <a href="https://xricheng.com/" target="_blank" rel="noopener">晓日程</a>还非常贴心的提供了很多热门公共日历进行订阅。你可以根据你自己对体育，娱乐，假期等的兴趣和需要进行订阅，让你可以轻松的被动式的掌握自己关心的领域的资讯信息。 </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/264714-2826d61390529a51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="热门日历"></p>
+<p>比如如果你喜欢足球，是皇马的拥趸， 那么你就可以订阅皇马这个热门日历， 让你对比赛信息了然于胸。<br><img src="https://upload-images.jianshu.io/upload_images/264714-8f9227b24d414a85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="皇马"></p>
+<h1 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h1><hr>
+<p>移动端打开微信，扫一扫下面的二维码即可开始使用<a href="https://xricheng.com/" target="_blank" rel="noopener">晓日程</a>：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/264714-a6ca89cc46462472.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="晓日程二维码"></p>
+<p><a href="https://xricheng.com/" target="_blank" rel="noopener">晓日程桌面日历</a>可以从<a href="https://xricheng.com/" target="_blank" rel="noopener">晓日程</a>的<a href="http://xricheng.com/04_desktop.html" target="_blank" rel="noopener">官网</a>点击下载按钮进行下载安装：<a href="http://xricheng.com/04_desktop.html。" target="_blank" rel="noopener">http://xricheng.com/04_desktop.html。</a></p>
+<blockquote>
+<p>本文由天地会珠海分舵原创编写，欢迎转载，喜欢点个赞，吐槽请评论，进一步交流请关注公众号<strong>techgogogo</strong>或者直接联系本人微信<strong>zhubaitian1</strong></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/13/create-new-business-model/" rel="next" title="开辟新战场，打造新的商业模式">
+                <i class="fa fa-chevron-left"></i> 开辟新战场，打造新的商业模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="kzlathander" />
+          <p class="site-author-name" itemprop="name">kzlathander</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">150</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/feed.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#时间管理工具的常见痛点"><span class="nav-number">1.</span> <span class="nav-text">时间管理工具的常见痛点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#晓日程桌面端：简约清爽风"><span class="nav-number">2.</span> <span class="nav-text">晓日程桌面端：简约清爽风</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#晓日程移动端：基于微信的绿色日历"><span class="nav-number">3.</span> <span class="nav-text">晓日程移动端：基于微信的绿色日历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#卓越体验：友好直观的时间轴界面与月视图"><span class="nav-number">4.</span> <span class="nav-text">卓越体验：友好直观的时间轴界面与月视图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#团队协作-多人共享日程，破除信息孤岛"><span class="nav-number">5.</span> <span class="nav-text">团队协作: 多人共享日程，破除信息孤岛</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#贴心功能：订阅你关心的热门日历"><span class="nav-number">6.</span> <span class="nav-text">贴心功能：订阅你关心的热门日历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始使用"><span class="nav-number">7.</span> <span class="nav-text">开始使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kzlathander</span>
+  <a href="http://www.miitbeian.gov.cn/">粤ICP备17146211号</a> 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

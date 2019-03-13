@@ -83,6 +83,8 @@
 
 
 
+  <link rel="alternate" href="/feed.xml" title="科技向前冲" type="application/atom+xml" />
+
 
 
 
@@ -93,13 +95,14 @@
 
 
 
-<meta name="description" content="&amp;#13;# React Native使用初探February 06 2015Facebook让所有React Conf的参与人员都可以初尝React Native的源码—一个编写原生移动应用的方法。该方法运用了React.js的所有强大的功能来将其应用到原生应用。你可以通过使用其内嵌的基本元素来编写基于Javascript的组件，这些组件都是拥有着iOS和Android控件的支撑的。首先，我知道">
+<meta name="description" content="&amp;#13;# React Native使用初探February 06 2015Facebook让所有React Conf的参与人员都可以初尝React Native的源码—一个编写原生移动应用的方法。该方法运用了React.js的所有强大的功能来将其应用到原生应用。你可以通过使用其内嵌的基本元素来编写基于Jav">
 <meta name="keywords" content="facebook,HTML5,Phonegap,React Native">
 <meta property="og:type" content="article">
 <meta property="og:title" content="移动应用跨平台框架江湖将现终结者？速来参拜来自Facebook的React Native">
 <meta property="og:url" content="http://yoursite.com/2015/02/08/移动应用跨平台框架江湖将现终结者/index.html">
 <meta property="og:site_name" content="科技向前冲">
 <meta property="og:description" content="&amp;#13;# React Native使用初探February 06 2015Facebook让所有React Conf的参与人员都可以初尝React Native的源码—一个编写原生移动应用的方法。该方法运用了React.js的所有强大的功能来将其应用到原生应用。你可以通过使用其内嵌的基本元素来编写基于Javascript的组件，这些组件都是拥有着iOS和Android控件的支撑的。首先，我知道">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://img.blog.csdn.net/20150207192155391?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20150207194726708?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20150208004154020">
@@ -386,13 +389,13 @@
       
 
       
-        <div id="article_content" class="article_content">&#13;<br><br><img src="http://img.blog.csdn.net/20150207192155391?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><br># React Native使用初探<br><div class="date" data-reactid=".ak5mvhrugw.1.1.1.1:3.2" style="box-sizing: border-box; color: silver; font-size: 0.9em; font-family: palatino, serif; font-style: italic; line-height: 30px; background-color: rgb(255, 255, 252);">February 06 2015</div><div data-reactid=".ak5mvhrugw.1.1.1.1:3.3" style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: palatino, serif; font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);"><br><br>Facebook让所有<a href="http://conf.reactjs.com/" target="_blank" rel="external">React Conf</a>的参与人员都可以初尝<a href="https://www.youtube.com/watch?v=KVZ-P-ZI6W4" target="_blank" rel="external">React Native</a>的源码—一个编写原生移动应用的方法。该方法运用了React.js的所有强大的功能来将其应用到原生应用。你可以通过使用其内嵌的基本元素来编写基于Javascript的组件，这些组件都是拥有着iOS和Android控件的支撑的。<br><br>首先，我知道Facebook现在还没有完全将其开源是个很挫的事情啦，但他们现在正在将该项目往开源的方向推进了。他们现在正在把跟Facebook环境相关的代码给移除掉并且正在准备建立一套接受开发人员对该开源项目进行贡献和参与的流程。我认为他们在努力往开源这个方向推进是个很好的事情，说明他们真的很在意React社区了。相信这个项目很快就能完全开源了。<br><br>其实本人并不认为开源的步骤慢点是个根本性的错误了。如果你认为是的话我将很乐意跟你进行探讨，但请允许我把该讨论放在另外一个议题里面吧。<br><br>因为如果你被该讨论打断思路的话，在这里你可能会错过我们今天对如何通过React Native编写原生移动应用的潮流已经发生改变的讨论。这种改变最大的地方就是它使用起来更像是在编写一个网路应用。<br><br>本人已经算是开发iOS应用多年的老手了，故此我有着很多原生应用开发的经验。在跟React Native勾搭上后，我只能用以下的表情来表达我的心情:<br><br><img src="http://img.blog.csdn.net/20150207194726708?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><br></div>
+        <div id="article_content" class="article_content">&#13;<br><br><img src="http://img.blog.csdn.net/20150207192155391?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><br># React Native使用初探<br><div class="date" data-reactid=".ak5mvhrugw.1.1.1.1:3.2" style="box-sizing: border-box; color: silver; font-size: 0.9em; font-family: palatino, serif; font-style: italic; line-height: 30px; background-color: rgb(255, 255, 252);">February 06 2015</div><div data-reactid=".ak5mvhrugw.1.1.1.1:3.3" style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: palatino, serif; font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);"><br><br>Facebook让所有<a href="http://conf.reactjs.com/" target="_blank" rel="noopener">React Conf</a>的参与人员都可以初尝<a href="https://www.youtube.com/watch?v=KVZ-P-ZI6W4" target="_blank" rel="noopener">React Native</a>的源码—一个编写原生移动应用的方法。该方法运用了React.js的所有强大的功能来将其应用到原生应用。你可以通过使用其内嵌的基本元素来编写基于Javascript的组件，这些组件都是拥有着iOS和Android控件的支撑的。<br><br>首先，我知道Facebook现在还没有完全将其开源是个很挫的事情啦，但他们现在正在将该项目往开源的方向推进了。他们现在正在把跟Facebook环境相关的代码给移除掉并且正在准备建立一套接受开发人员对该开源项目进行贡献和参与的流程。我认为他们在努力往开源这个方向推进是个很好的事情，说明他们真的很在意React社区了。相信这个项目很快就能完全开源了。<br><br>其实本人并不认为开源的步骤慢点是个根本性的错误了。如果你认为是的话我将很乐意跟你进行探讨，但请允许我把该讨论放在另外一个议题里面吧。<br><br>因为如果你被该讨论打断思路的话，在这里你可能会错过我们今天对如何通过React Native编写原生移动应用的潮流已经发生改变的讨论。这种改变最大的地方就是它使用起来更像是在编写一个网路应用。<br><br>本人已经算是开发iOS应用多年的老手了，故此我有着很多原生应用开发的经验。在跟React Native勾搭上后，我只能用以下的表情来表达我的心情:<br><br><img src="http://img.blog.csdn.net/20150207194726708?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1YmFpdGlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><br></div>
 
-<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">相信我们都听过各种由Javascript驱动的跨平台原生应用开发框架，比如<a href="http://www.appcelerator.com/" target="_blank" rel="external">Titanium</a>, <a href="http://phonegap.com/" target="_blank" rel="external">PhoneGap</a>, 以及其他各种各样的允许不同层面与原生环境进行转化的项目。所有这些框架看起来都是比较挫的：无论你现在是想把一个网络应用包装在一个WebView里面，或者是想要硬套HTML&amp;CSS这套很难用来构建移动应用的技术。对于后者，你几乎无时无刻不在直面原生对象，这在性能方面来说注定就是一个失败的尝试。React Native就不一样，它的布局方面其实是运行在一个独立的线程里面的，所以UI主线程就能如往常一样的尽可能的空闲出来进行界面动画等的呈现处理(它同时也提供了<a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">flexbox</a> 来简化布局，这可并不是所有框架都能提供出来的)。</span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">相信我们都听过各种由Javascript驱动的跨平台原生应用开发框架，比如<a href="http://www.appcelerator.com/" target="_blank" rel="noopener">Titanium</a>, <a href="http://phonegap.com/" target="_blank" rel="noopener">PhoneGap</a>, 以及其他各种各样的允许不同层面与原生环境进行转化的项目。所有这些框架看起来都是比较挫的：无论你现在是想把一个网络应用包装在一个WebView里面，或者是想要硬套HTML&amp;CSS这套很难用来构建移动应用的技术。对于后者，你几乎无时无刻不在直面原生对象，这在性能方面来说注定就是一个失败的尝试。React Native就不一样，它的布局方面其实是运行在一个独立的线程里面的，所以UI主线程就能如往常一样的尽可能的空闲出来进行界面动画等的呈现处理(它同时也提供了<a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener">flexbox</a> 来简化布局，这可并不是所有框架都能提供出来的)。</span></span></p>
 <p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">这里你仅仅需要浅尝就能领略到React Native所隐藏的无限潜力。它工作起来会让你感觉你是在做网络开发一样的舒畅。而事实上你确是在开发着一个真实的原生应用，事实上是根本分不出来这里面的区别的。在UI层面上，这事实上是根本没有区别的，使用到的都是像正常一样眩眼滑动的原生的UIViews。</span></span></p>
 <p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">这其实都是软件工程的功劳。同时这就完全进一步的证明了一个事实就是React.js是构建一个跨平台应用的正确方式。我可以使用该方式来像编写一个网络应用一样来编写一个原生应用。我们完全可以从今开始把DOM作为一个实现的细节，就好像UIViews一样。</span></span></p>
 <p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">我不否认我是很喜欢网络编程的，但如果我们一步步的埋头慢慢的认真检查每一个错误，我们就很容易把一些重大的问题跟忽略掉。网络编程的方式来编写应用从根本上说就是个很古怪的事情：HTML加上CSS所造成的混乱会对各种框架制造路障而不是让它们变得更好。也许React Native会最终是一个指引你回到正确的道路上面来的正确方式。我期盼着看到它是如何让网络编程方式变成一个更好的移动应用编程方式。我们不要把它想象成一个和网络编程背道而驰的东西，而要把它想象成是一个从网络编程进入到另外一个方向的原型。</span></span></p>
-<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">到了这里你是否已经感觉眼花缭乱无所适从了？没事，我将会通过示例告诉你React Native是如何工作的！当然你可以在<a href="https://www.youtube.com/watch?v=KVZ-P-ZI6W4" target="_blank" rel="external">这里</a>和<a href="https://www.youtube.com/watch?v=7rDsRXj9-cU" target="_blank" rel="external">这里</a>通过视频学到更多的这方面的知识了。</span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">到了这里你是否已经感觉眼花缭乱无所适从了？没事，我将会通过示例告诉你React Native是如何工作的！当然你可以在<a href="https://www.youtube.com/watch?v=KVZ-P-ZI6W4" target="_blank" rel="noopener">这里</a>和<a href="https://www.youtube.com/watch?v=7rDsRXj9-cU" target="_blank" rel="noopener">这里</a>通过视频学到更多的这方面的知识了。</span></span></p>
 <p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">React Native使用的是iOS上的JavaScriptCore来运行Javascript(Android和其他平台将会在将来进行支持)。重要的一点是它将Javascript放在一个独立的线程上运行(其他框架如Titanium也是这样做的)。你使用Javascript来编写一个控件跟使用React.js其实没有太大的区别，除了你应该使用的是如View和Text而非div和a之外。你将会获得使用React生成UI组件的所有的优点(保守的说，这是非常牛X的!!!)。请谨记，JavaScript不仅仅是一门语言，它还是一个平台。存在着大量的优秀的”JS转换”工具供你使用。</span></span></p>
 <p><span style="font-family: palatino, serif;"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);"><span style="color: rgb(51, 51, 51);">React Native将你在另外一个线程通过Javascript编写的UI以最小数量的数据发送给UI主线程来把它桥接转换成原生的组件。比如把一个View转换成UIView。最赞的地方是你不需要担心你的UI主线程的更新来现实最新的改动；你只要声明你将需要UI基于某种状态进行桥接转换就行了，React使用的是一个独特的算法把最小量的必须的改动发送到该桥接来反映UI的变化(</span><span style="color: rgb(255, 0, 0);">天地会珠海分舵注：如果你清楚增量存储的概念的话将会很容易理解这句话</span><span style="color: rgb(51, 51, 51);">)。</span></span></span></p>
 <p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">编写原生UI从未如此的简单，况且这将不会有如播放动画卡顿等诸如此类的问题的出现，因为JS是在一个独立于UI主线程的线程中运行的。动画播放将会比吃了泻药还要顺畅！</span></span></p>
@@ -454,13 +457,13 @@
 }</pre>
 
 <p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">RCT_EXPORT()将该方法标识成使一个导出方法(事实上在其他地方实现的对该类进行实例化的工作会有点多)。这些方法将会在一个独立的线程中被调用，但是我这里需要的使在主线程对该mesh进行加载(因为这将会把数据加载到OpenGL当中)，所以这里我网队列中排队了一块运行在主线程中的代码。</span></span></p>
-<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">以下的视频将会给大家一个更完整的演示：<a href="https://www.youtube.com/embed/OPFf53fdUmQ" target="_blank" rel="external">https://www.youtube.com/embed/OPFf53fdUmQ</a></span></span></p>
-<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">在声明的过程中来构建我们的UI控件并对简单的改变状态所产生的事件进行相应的能力是非常的强大的，React.js一定证明了这一点。到此为止，我们突然间就到了需要对原生应用进行同样处理的时候了。”一次学习，多平台编写“，犹如React开发人员所倡导的。同时请查看：<a href="https://medium.com/@ericflo/facebook-just-taught-us-all-how-to-build-websites-51f1e7e996f2" target="_blank" rel="external">Facebook来教我我们如何编写网站</a>。</span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">以下的视频将会给大家一个更完整的演示：<a href="https://www.youtube.com/embed/OPFf53fdUmQ" target="_blank" rel="noopener">https://www.youtube.com/embed/OPFf53fdUmQ</a></span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">在声明的过程中来构建我们的UI控件并对简单的改变状态所产生的事件进行相应的能力是非常的强大的，React.js一定证明了这一点。到此为止，我们突然间就到了需要对原生应用进行同样处理的时候了。”一次学习，多平台编写“，犹如React开发人员所倡导的。同时请查看：<a href="https://medium.com/@ericflo/facebook-just-taught-us-all-how-to-build-websites-51f1e7e996f2" target="_blank" rel="noopener">Facebook来教我我们如何编写网站</a>。</span></span></p>
 <p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">－－－－－－－－－－－－－－完－－－－－－－－－－－－－－－－－－</span></span></p>
-<table border="1" cellspacing="0" cellpadding="0" style="color: rgb(54, 46, 43); font-family: Arial; font-size: 14px; line-height: 26px;"><tbody><tr><td valign="top" style="background: rgb(250, 191, 143);"><br><br><strong>转载请尊重原创/译</strong><br></td><td valign="top" style="background: rgb(250, 191, 143);"><br><br><strong>微信公众号</strong><br></td><td valign="top" style="background: rgb(250, 191, 143);"><br><br><strong>CSDN</strong><br></td></tr><tr><td valign="top" style="background: rgb(227, 228, 228);"><br><br><strong>天地会珠海分舵</strong><br></td><td valign="top"><br><br>服务号:TechGoGoGo<br></td><td valign="top"><br><br><u><a href="http://blog.csdn.net/zhubaitian" target="_blank" rel="external">http://blog.csdn.net/zhubaitian</a></u><br></td></tr><tr><td valign="top" style="background: rgb(251, 212, 180);"><br><br><strong>优秀资源推荐</strong><br></td><td valign="top" style="background: rgb(251, 212, 180);"><br><br><strong>地址</strong><br></td><td valign="top" style="background: rgb(251, 212, 180);"><br><br><strong>点评</strong><br></td></tr><tr><td valign="top" style="background: rgb(227, 228, 228);"><br><br>DoctorQ博客<br></td><td valign="top"><br><br><a href="http://testerhome.com/doctorq/topics" target="_blank" rel="external">http://testerhome.com/doctorq/topics</a><br><br></td><td valign="top"><br><br>安卓自动化领域才俊，技术分享先驱，<br></td></tr></tbody></table>
+<table border="1" cellspacing="0" cellpadding="0" style="color: rgb(54, 46, 43); font-family: Arial; font-size: 14px; line-height: 26px;"><tbody><tr><td valign="top" style="background: rgb(250, 191, 143);"><br><br><strong>转载请尊重原创/译</strong><br></td><td valign="top" style="background: rgb(250, 191, 143);"><br><br><strong>微信公众号</strong><br></td><td valign="top" style="background: rgb(250, 191, 143);"><br><br><strong>CSDN</strong><br></td></tr><tr><td valign="top" style="background: rgb(227, 228, 228);"><br><br><strong>天地会珠海分舵</strong><br></td><td valign="top"><br><br>服务号:TechGoGoGo<br></td><td valign="top"><br><br><u><a href="http://blog.csdn.net/zhubaitian" target="_blank" rel="noopener">http://blog.csdn.net/zhubaitian</a></u><br></td></tr><tr><td valign="top" style="background: rgb(251, 212, 180);"><br><br><strong>优秀资源推荐</strong><br></td><td valign="top" style="background: rgb(251, 212, 180);"><br><br><strong>地址</strong><br></td><td valign="top" style="background: rgb(251, 212, 180);"><br><br><strong>点评</strong><br></td></tr><tr><td valign="top" style="background: rgb(227, 228, 228);"><br><br>DoctorQ博客<br></td><td valign="top"><br><br><a href="http://testerhome.com/doctorq/topics" target="_blank" rel="noopener">http://testerhome.com/doctorq/topics</a><br><br></td><td valign="top"><br><br>安卓自动化领域才俊，技术分享先驱，<br></td></tr></tbody></table>
 
 <p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"></span></p>
-<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">英文版原文：<a href="http://jlongster.com/First-Impressions-using-React-Native" target="_blank" rel="external">http://jlongster.com/First-Impressions-using-React-Native</a></span></span></p>
+<p><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><span style="font-size: 20px; line-height: 30px; background-color: rgb(255, 255, 252);">英文版原文：<a href="http://jlongster.com/First-Impressions-using-React-Native" target="_blank" rel="noopener">http://jlongster.com/First-Impressions-using-React-Native</a></span></span></p>
 <div><span style="font-family: palatino, serif; color: rgb(51, 51, 51);"><br></span></div></div>
       
     </div>
@@ -594,7 +597,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-count">150</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -624,6 +627,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/feed.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
@@ -674,11 +684,12 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">kzlathander</span>
+  <a href="http://www.miitbeian.gov.cn/">粤ICP备17146211号</a> 
 </div>
 
 

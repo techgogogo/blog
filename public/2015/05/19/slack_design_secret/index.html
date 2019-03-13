@@ -83,6 +83,8 @@
 
 
 
+  <link rel="alternate" href="/feed.xml" title="科技向前冲" type="application/atom+xml" />
+
 
 
 
@@ -93,12 +95,13 @@
 
 
 
-<meta name="description" content="编者注：本文来自Medium，作者Andrew Wilkinson，中文版由天地会珠海分舵编译(有根据国情进行删改)。Andrew Wilkinson所率领的团队外包了Slack的设计实现，本文从Andrew Wilkinson的角度描述当前市值28亿美元的Slack是如何在众多先行者中突出重围脱颖而出，成为市场的新霸主的…“Slack成功的秘诀究竟是什么？你们团队究竟为其做了什么特别的事情而让">
+<meta name="description" content="编者注：本文来自Medium，作者Andrew Wilkinson，中文版由天地会珠海分舵编译(有根据国情进行删改)。Andrew Wilkinson所率领的团队外包了Slack的设计实现，本文从Andrew Wilkinson的角度描述当前市值28亿美元的Slack是如何在众多先行者中突出重围脱颖而出，成为市场的新霸">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Slack设计团队告诉你市值28亿美元的秘密武器是什么">
 <meta property="og:url" content="http://yoursite.com/2015/05/19/slack_design_secret/index.html">
 <meta property="og:site_name" content="科技向前冲">
 <meta property="og:description" content="编者注：本文来自Medium，作者Andrew Wilkinson，中文版由天地会珠海分舵编译(有根据国情进行删改)。Andrew Wilkinson所率领的团队外包了Slack的设计实现，本文从Andrew Wilkinson的角度描述当前市值28亿美元的Slack是如何在众多先行者中突出重围脱颖而出，成为市场的新霸主的…“Slack成功的秘诀究竟是什么？你们团队究竟为其做了什么特别的事情而让">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/2000/1*quxuSggwBdYkyCoYlE3OAA.png">
 <meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/2000/1*Ryu8xQJ-6KRjP73jZe4HWg.png">
 <meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/2000/1*Eyy-KRgOtGcOnaAIJPV28Q.png">
@@ -409,7 +412,7 @@
 
       
         <blockquote>
-<p>编者注：本文来自<a href="https://medium.com/@awilkinson/slack-s-2-8-billion-dollar-secret-sauce-5c5ec7117908" target="_blank" rel="external">Medium</a>，作者Andrew Wilkinson，中文版由天地会珠海分舵编译(有根据国情进行删改)。Andrew Wilkinson所率领的团队外包了Slack的设计实现，本文从Andrew Wilkinson的角度描述当前市值28亿美元的Slack是如何在众多先行者中突出重围脱颖而出，成为市场的新霸主的…<br>“Slack成功的秘诀究竟是什么？你们团队究竟为其做了什么特别的事情而让它如此的成功呢？“，电话另一边是一个来自某个非常成功的SaaS应用的CEO，他正想聘请我们团队为其做产品设计。再次的，我不得不又老调重弹的开始向他说起这个我已经说了无数遍的故事。</p>
+<p>编者注：本文来自<a href="https://medium.com/@awilkinson/slack-s-2-8-billion-dollar-secret-sauce-5c5ec7117908" target="_blank" rel="noopener">Medium</a>，作者Andrew Wilkinson，中文版由天地会珠海分舵编译(有根据国情进行删改)。Andrew Wilkinson所率领的团队外包了Slack的设计实现，本文从Andrew Wilkinson的角度描述当前市值28亿美元的Slack是如何在众多先行者中突出重围脱颖而出，成为市场的新霸主的…<br>“Slack成功的秘诀究竟是什么？你们团队究竟为其做了什么特别的事情而让它如此的成功呢？“，电话另一边是一个来自某个非常成功的SaaS应用的CEO，他正想聘请我们团队为其做产品设计。再次的，我不得不又老调重弹的开始向他说起这个我已经说了无数遍的故事。</p>
 </blockquote>
 <p>在过去的一年多时间里，我几乎每天都被客户/投资人/想通过逆向工程窥探Slack得以成功的设计师们问及这个问题。确实，近来全世界都在讨论着Slack，毕竟Slack现在已经被估值28亿美元，拥有几十万个用户，并且还在以飞快的速度增长着。</p>
 <p>大家也许奇怪为什么他们会问我Slack的事情，而不是直接找Slack的团队来问。皆因Slack在2013年末聘请了我们团队来把他们的Slack原型打造成一个光芒四射产品。我们为其做了商标，市场网页，基于浏览器和移动设备的应用方面的设计，整个过程我们只用了6个星期。除了后来的一些小修改，现在大家看到的Slack和我们之前所设计的基本上是一模一样的。</p>
@@ -438,7 +441,7 @@
 <p>Slack的熬制秘诀其实和佳肴的熬制秘诀并无二致。所用的素材和技术都是众所周知的，但问题是我们如何才能正确的将它们天衣无缝的组合在一起以达到最好的效果。大家纵观Slack所实现的功能，其实并没有哪一个功能是Hipchat以及Campfire等其他软件所不能实现的，大家的底层都是企业级别的聊天软件那一套而已。但，Slack就胜在它更人格化，更具有情怀，更充满幽默感，更让人爱不惜手。所有这些组合在一起就让Slack变成了你生活中的一个活生生的人物，一个更像是TARS而非HAL9000的语言风趣的小家伙。</p>
 <p>当大家知道了这个秘诀之后，Slack的竞争对手们就开始争相模仿。但，根据先行者优势，这时已经为时已晚了。大家都已经选择了并习惯了Slack作为自己的机器人伴侣，你如果没有提供超过Slack十倍以上的改进的话你是不可能在这个市场上撼动得了它的霸主地位的了。</p>
 <hr>
-<p><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>。当然，也非常欢迎您直接私人微信(<strong>zhubaitian1</strong>)勾搭。<br><strong>版权</strong>:本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="external">创作共用署名3.0中国大陆版许可证</a>], 若非授权，转发时切勿删除联系信息，否则追究相应责任。本文首发虎嗅。</p>
+<p><strong>提醒</strong>:更多文章请关注公众号:<strong>techgogogo</strong>。当然，也非常欢迎您直接私人微信(<strong>zhubaitian1</strong>)勾搭。<br><strong>版权</strong>:本作品采用[<a href="http://creativecommons.org/licenses/by/3.0/cn/" target="_blank" rel="noopener">创作共用署名3.0中国大陆版许可证</a>], 若非授权，转发时切勿删除联系信息，否则追究相应责任。本文首发虎嗅。</p>
 
       
     </div>
@@ -560,7 +563,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">149</span>
+                <span class="site-state-item-count">150</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -590,6 +593,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/feed.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
@@ -640,11 +650,12 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">kzlathander</span>
+  <a href="http://www.miitbeian.gov.cn/">粤ICP备17146211号</a> 
 </div>
 
 
